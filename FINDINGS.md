@@ -10,6 +10,96 @@ amendment** and stays proposed until it is argued and numbered under §11.
 
 ---
 
+## F6 — Primary figure 1 cannot separate outcome switching from results posting
+
+**31 August 2026 · `data/register/versions-2026-08-30/verdicts.ndjson.gz` ·
+proposed amendment · the most serious issue in the project**
+
+Primary figure 1 is **25,187 of 126,760 trials, 19.9%**, computed exactly as
+`PREREGISTRATION.md` §5.1 and §6 specify. The figure stands. **What it means does
+not survive the following.**
+
+### The rate depends almost entirely on whether the trial reported
+
+| | Trials | Flagged as switching | Rate |
+|---|---|---|---|
+| **Posted results** | 35,265 | 20,818 | **59.0%** |
+| **Posted nothing** | 91,495 | 4,369 | **4.8%** |
+
+A **12-fold** difference. And it propagates straight into the sponsor breakdown,
+which now reads as a near-perfect inversion of the reporting table in F4:
+
+| Lead sponsor | Silent rate (F4) | "Switching" rate |
+|---|---|---|
+| `NIH` | 27.7% (best) | **56.1%** (worst) |
+| `FED` | 35.7% | 39.5% |
+| `INDUSTRY` | 52.8% | 32.6% |
+| `OTHER` (academic) | 79.8% | 14.7% |
+| `OTHER_GOV` | 96.2% (worst) | **7.8%** (best) |
+
+**The sponsors who report best appear to switch most, in near-exact rank order.**
+That is not a finding about research integrity. It is the reporting rate,
+measured twice.
+
+### The mechanism, verified
+
+Among defensible retrospective changes in trials that posted results:
+
+| | |
+|---|---|
+| Change within **7 days** of results posting | 19.8% |
+| Change within **31 days** | **70.9%** |
+| Change within **92 days** | 88.9% |
+| Median gap (posting − change) | **24 days** |
+
+ClinicalTrials.gov's results-submission process requires the sponsor to restate
+the outcome measures in a structured results format. That restatement is
+submitted as a **new record version, dated at posting time** — which is after
+primary completion by construction. The registry cannot distinguish it from a
+substantive edit, and neither can Tier 1.
+
+**~14,767 of the 25,187 trials in primary figure 1 — 58.6% — changed their
+outcome within a month of posting results.**
+
+### What this does and does not license
+
+It would be wrong to conclude the changes are therefore benign. **Results posting
+is precisely when genuine outcome switching would occur** — it is the moment the
+sponsor writes up what they found, having seen it. The classic form of the
+offence and the mechanical artefact of the submission format happen at the same
+instant, in the same field, and the timestamp cannot separate them.
+
+So the honest statement is not "19.9% is inflated" and not "19.9% is real". It is:
+
+> **The measure conflates two things that occur simultaneously, and no amount of
+> date arithmetic separates them.** Distinguishing them requires reading whether
+> the *substance* of the endpoint changed — the semantic tier — against a
+> hand-labelled gold set. That is M5, and it is now load-bearing rather than an
+> enhancement.
+
+### Consequences, none applied unilaterally
+
+1. **The figure is not withdrawn.** It is computed as pre-registered and reported
+   with this caveat attached wherever it appears, including on the site.
+2. **Reporting status must be a published stratum**, not a footnote: 59.0% vs
+   4.8% is the second-most important number the project holds.
+3. **Proposed amendment:** report figure 1 stratified by reporting status, and
+   report the posting-coincident share alongside it. Excluding changes within 31
+   days of posting would give **10,420 trials, 8.2% of the frame** — still above
+   the 5% kill condition, but a different claim. **Not applied**: excluding a
+   category after seeing it move the headline by more than half is exactly what
+   §11 requires an amendment for.
+4. **The sponsor breakdown of figure 1 must not be published** in its current
+   form. It reads as a ranking of integrity and is a ranking of compliance.
+
+**This is the fourth time this project has met the same failure mode**, and the
+first time it reached a *primary* figure rather than a secondary one. The pattern
+is now unmistakable: every naive aggregate over this registry has been
+substantially an artefact, and each was caught only by asking what else could
+produce the number.
+
+---
+
 ## F5 — Primary figure 3's raw sum is not reportable as written
 
 **31 August 2026 · [`data/figures/reporting.txt`](data/figures/reporting.txt) ·

@@ -241,6 +241,22 @@ def main():
             if pc and cd and (cd - pc).days > 0:
                 retro_flagged += 1
 
+    # FINDINGS.md F6: figure 1 stratified by whether the trial reported at all.
+    f1_def = f1_posted_n = f1_posted_d = f1_silent_n = f1_silent_d = 0
+    if outcomes_available:
+        DEFS = ('COUNT_CHANGED', 'SUBSTANTIVE')
+        for r in rows:
+            v = verdicts.get(r['nct'])
+            hit = bool(v and v.get('retrospective') and v.get('label') in DEFS)
+            if hit:
+                f1_def += 1
+            if r['has_results'] == '1':
+                f1_posted_n += 1
+                f1_posted_d += 1 if hit else 0
+            else:
+                f1_silent_n += 1
+                f1_silent_d += 1 if hit else 0
+
     summary = {
         'provenance': built,
         'figure_2_non_reporting': {
@@ -274,13 +290,28 @@ def main():
         'figure_1_outcome_switching': ({
             'available': True,
             'adjudicated': len(verdicts),
-            'defensible_retrospective': sum(
-                1 for v in verdicts.values()
-                if v.get('retrospective') and v.get('label') in ('COUNT_CHANGED', 'SUBSTANTIVE')),
-            'rate': round(sum(
-                1 for v in verdicts.values()
-                if v.get('retrospective') and v.get('label') in ('COUNT_CHANGED', 'SUBSTANTIVE')
-            ) / float(n), 4),
+            'defensible_retrospective': f1_def,
+            'rate': round(f1_def / float(n), 4),
+            # FINDINGS.md F6. The single most important qualifier the project
+            # holds, carried in the data so a frontend cannot render the headline
+            # without it.
+            'confounded_by_results_posting': {
+                'posted_results': {'trials': f1_posted_n, 'switched': f1_posted_d,
+                                   'rate': round(f1_posted_d / float(f1_posted_n), 4) if f1_posted_n else None},
+                'no_results': {'trials': f1_silent_n, 'switched': f1_silent_d,
+                               'rate': round(f1_silent_d / float(f1_silent_n), 4) if f1_silent_n else None},
+                'warning': 'The rate among trials that posted results is roughly '
+                           'twelve times the rate among trials that posted nothing, '
+                           'and 70.9% of flagged changes in reporting trials fall '
+                           'within 31 days of the posting date. Submitting results '
+                           'requires restating the outcome measures, which is filed '
+                           'as a new version dated after completion by construction. '
+                           'This figure cannot separate that restatement from a '
+                           'genuine switch. Do not render it as "X% of trials '
+                           'switched their outcomes", and do not break it down by '
+                           'sponsor: that ranking tracks reporting compliance, not '
+                           'integrity. See FINDINGS.md F6.',
+            },
         } if outcomes_available else {
             'available': False,
             'status': 'pending',

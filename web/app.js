@@ -325,7 +325,7 @@ function renderProvenance(m) {
     rateTable('#phase-table', breakdowns.by_phase, 'Phase', { min: 500 });
     renderLateness(distributions);
     renderFunnel(funnel);
-    renderSwitching(summary);
+    renderSwitchingPanel(summary);
     renderParticipants(summary, distributions);
     renderProvenance(manifest);
     await initExplorer(breakdowns);
