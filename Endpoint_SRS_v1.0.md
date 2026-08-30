@@ -1,8 +1,8 @@
 # Endpoint — Software Requirements Specification v1.0
 
-**Status:** Draft, 30 August 2026. M1 passed; no blocking item remains (§11.1).
-Not baselined — baselining waits on the frame freeze, which is a decision, not a
-dependency.
+**Status:** 30 August 2026. M1 and M2 complete. The frame is frozen at 126,760
+trials and `frame/MANIFEST` is committed, so §5.1 is now fixed rather than
+proposed. M3 (the history crawl) is the next buildable step.
 **Author:** Muhammad Haris Khokhar
 **Companion documents:** [`FEASIBILITY.md`](FEASIBILITY.md) (what was measured
 before any of this was designed), [`PREREGISTRATION.md`](PREREGISTRATION.md)
@@ -183,13 +183,18 @@ so any published figure can be regenerated from the register alone.
 ### 5.1 Frame
 
 Interventional studies with a primary completion date in a fixed window and an
-end-state status. **Measured at 126,760 trials** for 2015–2022 /
-`COMPLETED|TERMINATED` (`FEASIBILITY.md` §2). The window ends in 2022 so that
-every trial in it is more than three years past the 12-month deadline: an absent
-result is settled, not pending.
+end-state status. **Frozen at 126,760 trials** for 2015–2022 /
+`COMPLETED|TERMINATED`. The window ends in 2022 so that every trial in it is more
+than three years past the 12-month deadline: an absent result is settled, not
+pending.
 
-The frame is fixed in `PREREGISTRATION.md` before collection and **does not
-grow**. It is written to `frame/frame.json` with a SHA-256 in `frame/MANIFEST`.
+Resolved 30 August 2026 across 127 pages, matching the API's `totalCount`
+exactly with zero duplicate rows (`PREREGISTRATION.md` §2.4). Written to
+`frame/studies.tsv` (sorted by NCT ID) and `frame/frame.json`, with SHA-256 of
+both plus the pre-registration recorded in `frame/MANIFEST`.
+
+**The frame is closed and does not grow.** Changing it now requires a numbered
+amendment under `PREREGISTRATION.md` §11.
 
 ### 5.2 Cold store
 
@@ -445,7 +450,7 @@ unescapes twice, deliberately.
 |---|---|---|
 | **M0** | Feasibility | ✅ Done. `FEASIBILITY.md`, backed by committed pilot data |
 | **M1** | Runner access probe | ✅ Done. Both runners served; result committed to `data/pilot/` |
-| **M2** | Frame freeze | `frame/MANIFEST` committed; pre-registration frozen |
+| **M2** | Frame freeze | ✅ Done. 126,760 trials; `frame/MANIFEST` committed; pre-registration v1.0 FROZEN |
 | **M3** | History crawl | Version index for the full frame in the cold store |
 | **M4** | Version crawl + Tier 1 | Every flagged change adjudicated deterministically |
 | **M5** | Gold set + Tier 2 | Precision/recall published |

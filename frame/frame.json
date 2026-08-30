@@ -35,7 +35,8 @@
     ],
     "studies": "studies.tsv"
   },
-  "frozen": false,
+  "frozen": true,
+  "frozen_utc": "2026-08-30T12:45:01Z",
   "rule": {
     "fields": "protocolSection.identificationModule.nctId,protocolSection.statusModule.overallStatus,protocolSection.statusModule.primaryCompletionDateStruct,protocolSection.statusModule.resultsFirstPostDateStruct,protocolSection.designModule.phases,protocolSection.designModule.enrollmentInfo,protocolSection.sponsorCollaboratorsModule.leadSponsor,hasResults",
     "filter_advanced": "AREA[StudyType]INTERVENTIONAL AND AREA[PrimaryCompletionDate]RANGE[2015-01-01,2022-12-31]",

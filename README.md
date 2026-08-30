@@ -9,13 +9,15 @@ registration version history, and a per-trial record of what the primary outcome
 was, what it became, and whether it changed before or after the sponsor could see
 the answer.
 
-> **Status: feasibility complete, M1 passed, collection not started.**
-> Nothing has been crawled. The pilot in [`data/pilot/`](data/pilot/) is a
-> feasibility check and is explicitly not a result. The measurement that was
-> blocking the frame freeze — whether a CI runner can reach the archive endpoints
-> — ran on both `ubuntu-latest` and `windows-latest` and passed on both, at
-> 2 req/s with zero refusals ([`FEASIBILITY.md`](FEASIBILITY.md) §7.1). The
-> freeze is unblocked and has not been taken.
+> **Status: frame frozen 30 August 2026. No history crawled.**
+> The cohort is closed at **126,760 trials** and
+> [`frame/MANIFEST`](frame/MANIFEST) records the SHA-256 of the frame, its
+> metadata and the pre-registration. From here the frame can only change by a
+> numbered amendment.
+>
+> The pilot in [`data/pilot/`](data/pilot/) is a feasibility check and is
+> explicitly not a result. **The retrospective-change rate over the frame is
+> unknown and unobserved** — it needs the crawl, which has not run.
 
 ---
 
@@ -79,18 +81,28 @@ after primary completion.** The clearest cases are not subtle:
 | `NCT00478361` | +1,906 days | **4 primary outcomes → 1** |
 | `NCT01360606` | +2,267 days | **1 → 2 primary outcomes** |
 
-And separately, on the same 400 trials, all more than three years past the
-12-month results deadline:
+### Reporting, which needs no crawl at all
 
-| | Measured |
+`hasResults` is carried in the frame itself, so this one is a **census, not a
+sample**, and it was visible the moment the frame resolved:
+
+| | Frame census (n = 126,760) |
 |---|---|
-| No results posted | **294 / 400 = 73.5%** |
-| Of those posted, later than 365 days | **90 / 106 = 84.9%** |
-| Enrolled participants in trials with no posted results | **76,384** |
+| **No results posted** | **91,495 = 72.2%** |
+| Results posted | 35,265 = 27.8% |
 
-That last figure is a count, not an estimate. It is **not** extrapolated to the
-frame here, and doing so from a non-random sample of 400 would be exactly the
-move this project exists to avoid.
+Every trial in that denominator is more than three years past the 12-month
+results deadline, so an absent result is settled rather than pending.
+
+The pilot's 400-trial estimate of the same quantity was 73.5%, against a census
+of 72.2%. That is reassurance about the pilot's *sampling* and nothing else — it
+says nothing about whether the pilot's 19.0% outcome-change figure is
+representative, because that quantity is not in the frame and remains unobserved.
+
+Lateness among the posted, and participant counts in silent trials, are reported
+after the crawl. The pilot's figures for those (84.9% late; 76,384 participants
+across 294 trials) are **not** extrapolated here, and doing so from a non-random
+sample of 400 would be exactly the move this project exists to avoid.
 
 ## Why 19.0% is still an upper bound
 
@@ -162,12 +174,16 @@ false.
 
 | Path | |
 |---|---|
+| [`frame/MANIFEST`](frame/MANIFEST) | The freeze: SHA-256 of the frame, its metadata, and the pre-registration |
+| `frame/studies.tsv` | The cohort. 126,760 rows, sorted by NCT ID |
 | [`FEASIBILITY.md`](FEASIBILITY.md) | What was measured before anything was designed |
 | [`Endpoint_SRS_v1.0.md`](Endpoint_SRS_v1.0.md) | Requirements, architecture, milestones |
 | [`PREREGISTRATION.md`](PREREGISTRATION.md) | Analysis rules — draft, not frozen |
 | [`scripts/fetch.py`](scripts/fetch.py) | HTTP layer, and why it shells to curl |
 | [`scripts/pilot.py`](scripts/pilot.py) | The feasibility measurement |
 | [`scripts/adjudicate.py`](scripts/adjudicate.py) | The check that caught the artefact |
+| [`scripts/build_frame.py`](scripts/build_frame.py) | Resolves the frame from the pre-registered rule |
+| [`scripts/freeze_frame.py`](scripts/freeze_frame.py) | The freeze. Refuses more than it does |
 | [`data/pilot/`](data/pilot/) | Raw output of both, committed as evidence |
 
 ## Reproducing the pilot

@@ -1,0 +1,20 @@
+# Endpoint frame manifest
+#
+# The frame is closed. PREREGISTRATION.md 2.1 defines it and can now only
+# change by a numbered amendment under 11. Every figure Endpoint publishes
+# cites the hashes below.
+#
+# Verify:  sha256sum frame/studies.tsv frame/frame.json PREREGISTRATION.md
+# against a checkout of the commit that contains THIS file. The digests
+# below are the authority; git_commit_at_freeze records where HEAD stood
+# when the freeze ran, which is the commit before this manifest existed.
+
+frozen_utc        2026-08-30T12:45:01Z
+git_commit_at_freeze 8f4fa68a891ac190087dcb8f90ce2730de262196
+frame_size        126760
+first_nct         NCT00000409
+last_nct          NCT07793448
+
+frame/studies.tsv    33a0128f48affe66cfc692d5a6999eaf28e44db121c08e428640c2c1053bd030  8538567 bytes
+frame/frame.json     ff9b588d3cb1495df2ecd85c4c50ba40dc18dcb041fa08920044b9954fad91a6  1533 bytes
+PREREGISTRATION.md   54074c3ad5f4f72c88f08c52cceba9c4365c4917105bd99824652e0e5ad31b35  13257 bytes
