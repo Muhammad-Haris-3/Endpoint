@@ -1,0 +1,68 @@
+FRAME ADJUDICATION  (M4)
+versions batch: versions-2026-08-30   history batch: history-2026-08-30
+frame: 126760 trials    Jaccard threshold: 0.80 (PREREG 5.1)
+
+RECONCILIATION
+   flagged by the history register              54203
+   adjudicated pairs                            53479
+   MISSING pairs                                  724
+   adjudicated but not flagged                      0
+   named in missing_pairs.txt, EXCLUDED from every figure below
+   and never imputed (PREREGISTRATION.md 3).
+
+ALL ADJUDICATED PAIRS   (n=53479)
+   verdict             count     share
+   --------------------------------------
+   COUNT_CHANGED       10331     19.3%
+   SUBSTANTIVE         19739     36.9%
+   REWORDED             3061      5.7%
+   TIMEFRAME_ONLY       7816     14.6%
+   COSMETIC             4963      9.3%
+   IDENTICAL            7569     14.2%
+   --------------------------------------
+   defensible          30070     56.2%
+
+RETROSPECTIVE ONLY (change dated after primary completion)   (n=42028)
+   verdict             count     share
+   --------------------------------------
+   COUNT_CHANGED        8357     19.9%
+   SUBSTANTIVE         16476     39.2%
+   REWORDED             2326      5.5%
+   TIMEFRAME_ONLY       5447     13.0%
+   COSMETIC             4745     11.3%
+   IDENTICAL            4677     11.1%
+   --------------------------------------
+   defensible          24833     59.1%
+
+PRIMARY FIGURE 1  (PREREGISTRATION.md 6)
+   frame                                      126760
+   flagged and adjudicated                     53479  42.2% of frame
+   retrospective (any verdict)                 42028  33.2% of frame
+   >>> DEFENSIBLE RETROSPECTIVE CHANGE         24833  19.6% of frame <<<
+   share of retrospective flags surviving      59.1%
+   median days after completion                  532
+   max days after completion                    4151
+
+THE EMPTY-BEFORE CAVEAT  (see module docstring)
+   pairs where the earlier version had NO primary outcome       402  0.8% of pairs
+   ...of those, retrospective                                   271
+   ...as a share of the defensible retrospective figure        1.1%
+   pairs where the later version has NO primary outcome           0
+
+   These satisfy the frozen COUNT_CHANGED rule and ARE counted above.
+   They are broken out because "a registration was completed" is not the
+   same act as "four declared outcomes became one", and a reader should be
+   able to see how much of the figure rests on them. Excluding them now,
+   after seeing which way it moves the headline, is exactly what
+   PREREGISTRATION.md 11 requires an amendment for.
+
+DEFENSIBLE RETROSPECTIVE CHANGES by lead sponsor class
+   OTHER             12821  51.6%
+   INDUSTRY          10433  42.0%
+   NIH                 695  2.8%
+   FED                 464  1.9%
+   OTHER_GOV           200  0.8%
+   NETWORK             193  0.8%
+   INDIV                25  0.1%
+   UNKNOWN               2  0.0%
+
