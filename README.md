@@ -112,26 +112,50 @@ and the pre-registration accepts it rather than pretending it away.
 
 ### Reporting, which needs no crawl at all
 
-`hasResults` is carried in the frame itself, so this one is a **census, not a
-sample**, and it was visible the moment the frame resolved:
+`hasResults` is carried in the frame itself, so this is a **census, not a
+sample** — every trial in the denominator is more than three years past the
+12-month deadline, so an absent result is settled rather than pending.
 
 | | Frame census (n = 126,760) |
 |---|---|
 | **No results posted** | **91,495 = 72.2%** |
-| Results posted | 35,265 = 27.8% |
+| Of those that did post, later than 365 days | **30,741 = 87.2%** |
+| Median days, completion → posting | **584** |
 
-Every trial in that denominator is more than three years past the 12-month
-results deadline, so an absent result is settled rather than pending.
+**The variation by sponsor is larger than the headline, and runs opposite to the
+direction most readers would guess:**
 
-The pilot's 400-trial estimate of the same quantity was 73.5%, against a census
-of 72.2%. That is reassurance about the pilot's *sampling* and nothing else — it
-says nothing about whether the pilot's 19.0% outcome-change figure is
-representative, because that quantity is not in the frame and remains unobserved.
+| Lead sponsor class | Trials | Silent | Rate |
+|---|---|---|---|
+| `OTHER_GOV` | 2,586 | 2,487 | **96.2%** |
+| `OTHER` (academic, hospital, foundation) | 88,403 | 70,572 | **79.8%** |
+| `INDUSTRY` | 32,449 | 17,125 | **52.8%** |
+| `NIH` | 1,265 | 351 | **27.7%** |
 
-Lateness among the posted, and participant counts in silent trials, are reported
-after the crawl. The pilot's figures for those (84.9% late; 76,384 participants
-across 294 trials) are **not** extrapolated here, and doing so from a non-random
-sample of 400 would be exactly the move this project exists to avoid.
+**Industry reports at roughly twice the rate of academia.** `PHASE3` — the trials
+that support approvals — is 43.7% silent.
+
+These are rates, so they survive the outlier problem that sinks the participant
+sum below. They are the most defensible numbers the project holds.
+
+### The participant count, and why it is not the headline
+
+The pre-registered figure 3 is the raw sum of enrolment over silent trials:
+**58,650,765 participants**. It was going to be the landing figure precisely
+because it is a count rather than an estimate.
+
+It is not reportable alone. The median silent trial has **52 participants**; the
+single largest carries **21% of the total** and is `NCT05438901`, a single-group
+before/after study of *leech therapy* recorded as having enrolled 12,317,546
+people. Most of the other top contributors are behavioural megastudies — SMS
+nudges, online health ads — which really did enrol millions, but not in the sense
+the phrase invites.
+
+Depending on the estimator the figure ranges from **4.8 million to 58.7 million**.
+The frozen one is reported unmodified and an amendment is *proposed*, not applied
+— see [`FINDINGS.md`](FINDINGS.md) F5. **This is the third time this project has
+met the same failure mode**, and it is starting to look like the default outcome
+of any naive aggregate over this registry rather than bad luck.
 
 ## Why 19.0% is still an upper bound
 
@@ -218,6 +242,7 @@ false.
 |---|---|
 | [`frame/MANIFEST`](frame/MANIFEST) | The freeze: SHA-256 of the frame, its metadata, and the pre-registration |
 | `frame/studies.tsv` | The cohort. 126,760 rows, sorted by NCT ID |
+| [`FINDINGS.md`](FINDINGS.md) | Discoveries and corrections, accumulating |
 | [`FEASIBILITY.md`](FEASIBILITY.md) | What was measured before anything was designed |
 | [`Endpoint_SRS_v1.0.md`](Endpoint_SRS_v1.0.md) | Requirements, architecture, milestones |
 | [`PREREGISTRATION.md`](PREREGISTRATION.md) | Analysis rules — draft, not frozen |
@@ -226,6 +251,7 @@ false.
 | [`scripts/adjudicate.py`](scripts/adjudicate.py) | The check that caught the artefact |
 | [`scripts/collect_history.py`](scripts/collect_history.py) | The sharded crawl |
 | [`scripts/register_report.py`](scripts/register_report.py) | What the register supports, and what it does not |
+| [`scripts/reporting_figures.py`](scripts/reporting_figures.py) | Primary figures 2 and 3, from the frame alone |
 | [`scripts/build_frame.py`](scripts/build_frame.py) | Resolves the frame from the pre-registered rule |
 | [`scripts/freeze_frame.py`](scripts/freeze_frame.py) | The freeze. Refuses more than it does |
 | [`data/pilot/`](data/pilot/) | Raw output of both, committed as evidence |

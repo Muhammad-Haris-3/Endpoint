@@ -1,0 +1,32 @@
+{
+ "figure_2": {
+  "posted": 35265,
+  "rate": 0.7218,
+  "silent": 91495
+ },
+ "figure_3_preregistered": {
+  "enrolment_absent": 53,
+  "largest": {
+   "enrollment": 12317546,
+   "nct": "NCT05438901"
+  },
+  "median_trial": 52.0,
+  "top100_share": 0.6325,
+  "top10_share": 0.3879,
+  "top1_share": 0.21,
+  "total_enrolled": 58650765,
+  "trials_with_enrolment": 91442
+ },
+ "frame": 126760,
+ "lateness": {
+  "datable": 35265,
+  "median_days": 584,
+  "over_deadline": 30741
+ },
+ "not_preregistered_alternatives": {
+  "capped_at_100000": 30681187,
+  "dropping_largest": 46333219,
+  "excluding_phase_NA": 7291573,
+  "median_times_count": 4754984.0
+ }
+}

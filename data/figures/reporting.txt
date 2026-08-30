@@ -1,0 +1,88 @@
+REPORTING FIGURES  (primary figures 2 and 3)
+source: frame/studies.tsv, frozen and hashed in frame/MANIFEST
+frame: 126,760 trials
+
+FIGURE 2 - NON-REPORTING RATE
+   no results posted               91,495   72.2% of frame
+   results posted                  35,265   27.8%
+
+   Every trial in the denominator has a primary completion date in
+   2015-2022 and an end-state status, so it is more than three years
+   past the 12-month deadline. An absent result is settled, not pending.
+
+   This is NOT a count of legal violations. FDAAA applicability is not
+   exposed by the API and is not adjudicated here (PREREGISTRATION.md 10).
+
+LATENESS AMONG THE 35,265 TRIALS THAT DID POST
+   datable                         35,265
+   posted later than 365 days      30,741   87.2% of datable
+   median days completion->post       584
+   90th percentile                  1,522
+
+FIGURE 3 - PARTICIPANTS IN SILENT TRIALS  (as pre-registered: a raw sum)
+   silent trials                   91,495
+   ...with an enrolment figure     91,442
+   ...enrolment absent                 53   (reported, never imputed)
+   >>> TOTAL ENROLLED           58,650,765 <<<
+
+WHY THAT SUM MUST NOT BE PRESENTED ALONE
+   median silent trial                 52 participants
+   mean silent trial                  641 participants
+
+   top     1 trials carry       12,317,546   21.0% of the total
+   top    10 trials carry       22,749,661   38.8% of the total
+   top   100 trials carry       37,096,595   63.2% of the total
+   top  1000 trials carry       47,295,143   80.6% of the total
+
+   Largest contributors:
+       12,317,546  NCT05438901  phase=NA      OTHER
+        2,600,000  NCT05607082  phase=NA      OTHER
+        2,000,000  NCT03439553  phase=NA      INDUSTRY
+        1,825,937  NCT05993260  phase=NA      OTHER
+          900,000  NCT02527915  phase=NA      OTHER
+          811,795  NCT05010395  phase=NA      FED
+
+   NCT05438901 is a single-group before/after study of hirudotherapy
+   (leech therapy) recorded as ACTUAL enrolment of 12,317,546. That is
+   not a plausible count for that design. It is over a fifth of the
+   figure on its own, and it is almost certainly a data-entry error.
+
+   Most other top contributors are behavioural megastudies - SMS nudges,
+   online health advertisements, vaccine-booking reminders. They really
+   did enrol millions, but "enrolled in a trial that never reported"
+   invites a reader to picture something other than receiving a text.
+
+ROBUST ALTERNATIVES - NOT PRE-REGISTERED, FOR AMENDMENT DISCUSSION ONLY
+   sum, each trial capped at 100,000      30,681,187   (52.3% of the raw sum)
+   sum, excluding phase=NA trials      7,291,573   over 31,776 trials
+   sum, dropping the single largest    46,333,219   (79.0% of the raw sum)
+   median x number of silent trials    4,754,984
+
+   None of these is the pre-registered figure and none may be reported as
+   it. Substituting an estimator after seeing which reads better is the
+   move PREREGISTRATION.md exists to prevent. Any change needs a numbered
+   amendment under 11, argued from this table.
+
+NON-REPORTING BY LEAD SPONSOR CLASS
+   class             trials    silent     rate
+   OTHER             88,403    70,572    79.8%
+   INDUSTRY          32,449    17,125    52.8%
+   OTHER_GOV          2,586     2,487    96.2%
+   NIH                1,265       351    27.7%
+   FED                1,187       424    35.7%
+   NETWORK              744       455    61.2%
+   INDIV                109        67    61.5%
+   UNKNOWN               16        13    81.2%
+   AMBIG                  1         1   100.0%
+
+NON-REPORTING BY PHASE
+   NA                71,676    59,696    83.3%
+   PHASE2            14,960     6,323    42.3%
+   PHASE1            14,170    11,385    80.3%
+   PHASE3             9,694     4,236    43.7%
+   PHASE4             8,940     5,585    62.5%
+   PHASE1|PHASE2      3,890     1,822    46.8%
+   PHASE2|PHASE3      1,780     1,155    64.9%
+   EARLY_PHASE1       1,565     1,293    82.6%
+   (none)                85         0     0.0%
+
