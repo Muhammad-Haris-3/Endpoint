@@ -21,7 +21,7 @@ were wrong or missing, and both showed up within the first few real examples.
 **The very first pair drawn is a reorder** — four primary outcomes, same four
 after, listed in a different order, with `2 years` restated as `baseline and 2
 years`. The codebook said nothing about ordering at all, so the labeller's first
-decision would have been an undocumented judgement call. **Rule 8** now states
+decision would have been an undocumented judgement call. **Rule 7** now states
 that order is not meaning and sets are compared as sets.
 
 **Rule 4 was actively wrong.** It said merging two outcomes into one is `SAME`

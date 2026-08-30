@@ -115,12 +115,12 @@ honestly rather than assumed.)
 classic form of outcome switching and Tier 1 cannot see it at all. The labelling
 tool shows the secondary outcomes for exactly this reason.
 
-**Rule 8 — order is not meaning.** Compare the outcome sets as *sets*. The
+**Rule 7 — order is not meaning.** Compare the outcome sets as *sets*. The
 results form reorders outcomes routinely. If the same measures appear in both
 versions with only their positions changed, that is `SAME`; judge only whether a
 measure was added, dropped, or altered.
 
-**Rule 7 — when genuinely torn, label `UNCLEAR`.** A forced guess is worse than a
+**Rule 8 — when genuinely torn, label `UNCLEAR`.** A forced guess is worse than a
 recorded uncertainty: `UNCLEAR` is reported as a count and excluded from the
 metrics, so it costs coverage rather than corrupting accuracy.
 
@@ -185,7 +185,7 @@ therefore recorded here with what had been labelled when they were made.
 
 | # | Date | Change | Labels existing at the time |
 |---|---|---|---|
-| 1 | 31 Aug 2026 | **Rule 8 added** (order is not meaning) and **Rule 4 corrected** (merging is `SAME` only if the parts are still judged separately; a *composite* is `DIFFERENT`). Both gaps surfaced on first contact with real pairs — the very first pair drawn is a reorder, and a worked example was a two-endpoint→composite merge that Rule 4 as written would have waved through. | **3** (`NCT00329706`, `NCT00475982`, `NCT00508794`) |
+| 1 | 31 Aug 2026 | **Rule 7 added** (order is not meaning) and **Rule 4 corrected** (merging is `SAME` only if the parts are still judged separately; a *composite* is `DIFFERENT`). Both gaps surfaced on first contact with real pairs — the very first pair drawn is a reorder, and a worked example was a two-endpoint→composite merge that Rule 4 as written would have waved through. | **3** (`NCT00329706`, `NCT00475982`, `NCT00508794`) |
 
 **On revision 1 and those three labels.** None contradicts the new rules.
 `NCT00329706` is a reorder already labelled `SAME`, which is what Rule 8 now
