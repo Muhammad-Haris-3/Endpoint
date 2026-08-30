@@ -1,0 +1,53 @@
+{
+  "built_utc": "2026-08-30T12:38:56Z",
+  "composition": {
+    "by_sponsor_class": {
+      "AMBIG": 1,
+      "FED": 1187,
+      "INDIV": 109,
+      "INDUSTRY": 32449,
+      "NETWORK": 744,
+      "NIH": 1265,
+      "OTHER": 88403,
+      "OTHER_GOV": 2586,
+      "UNKNOWN": 16
+    },
+    "by_status": {
+      "COMPLETED": 113059,
+      "TERMINATED": 13701
+    },
+    "month_precision_completion": 33189,
+    "with_results_posted": 35265,
+    "without_results_posted": 91495
+  },
+  "files": {
+    "columns": [
+      "nct",
+      "status",
+      "primary_completion",
+      "pc_type",
+      "has_results",
+      "results_first_post",
+      "phase",
+      "enrollment",
+      "enrollment_type",
+      "sponsor_class"
+    ],
+    "studies": "studies.tsv"
+  },
+  "frozen": false,
+  "rule": {
+    "fields": "protocolSection.identificationModule.nctId,protocolSection.statusModule.overallStatus,protocolSection.statusModule.primaryCompletionDateStruct,protocolSection.statusModule.resultsFirstPostDateStruct,protocolSection.designModule.phases,protocolSection.designModule.enrollmentInfo,protocolSection.sponsorCollaboratorsModule.leadSponsor,hasResults",
+    "filter_advanced": "AREA[StudyType]INTERVENTIONAL AND AREA[PrimaryCompletionDate]RANGE[2015-01-01,2022-12-31]",
+    "overall_status": "COMPLETED|TERMINATED",
+    "page_size": 1000
+  },
+  "walk": {
+    "api_total_count": 126760,
+    "difference": 0,
+    "distinct": 126760,
+    "duplicate_rows": 0,
+    "duplicates": [],
+    "pages": 127
+  }
+}

@@ -1,20 +1,17 @@
-# Endpoint — pre-registration v1.0 (DRAFT — NOT FROZEN)
+# Endpoint — pre-registration v1.0 (FROZEN)
 
-> ## ⚠ DRAFT — not frozen. The blocking measurement has passed; the freeze is a decision, not a dependency.
+> ## 🔒 FROZEN 30 August 2026. The frame is closed.
 >
-> **§7.1 of [`FEASIBILITY.md`](FEASIBILITY.md) is resolved.** The archive
-> endpoints gate on a client handshake profile, and the concern was that a Linux
-> CI runner would be refused, making the collection architecture in §8
-> unbuildable. Measured on 30 August 2026: `ubuntu-latest` and `windows-latest`
-> both reach both archive endpoints, 20/20 at 2 req/s, zero refusals. §8 holds.
+> **`frame/MANIFEST` records the SHA-256 of `frame/studies.tsv`,
+> `frame/frame.json` and this document, and the git commit the freeze was taken
+> at.** From here §2.1 can only change by a numbered amendment under §11, kept in
+> git history beside the original.
 >
-> **One item in §5.3 remains open** — the gold-set protocol for the semantic
-> tier. It does not block the freeze, because Tier 2 is excluded from every
-> primary figure by §5.3 and the primary figures depend only on Tier 1.
+> **The frame resolved to 126,760 trials**, matching the API's own `totalCount`
+> exactly, with zero duplicate rows across a 127-page walk (§2.4).
 >
-> **No crawl has run. `frame/MANIFEST` does not exist. The frame is not frozen.**
-> Freezing is now a deliberate act rather than a blocked one, and it is
-> irreversible by design: after it, §2.1 can only change by numbered amendment.
+> **No history has been crawled.** The retrospective-change rate — the figure the
+> kill condition in §7 is written against — is unknown and unobserved.
 
 **Drafted 30 August 2026, after the pilot in [`FEASIBILITY.md`](FEASIBILITY.md)
 and before any collection.** That pilot had been seen when this was written, and
@@ -92,6 +89,53 @@ that has passed.
 Membership rests on the API's own `PrimaryCompletionDate` indexing. A trial whose
 completion date is absent or malformed is not returned and is missed. Nothing in
 this design would detect that, and the count of such records is not established.
+
+### 2.4 The frame as resolved, 30 August 2026
+
+Built by [`scripts/build_frame.py`](scripts/build_frame.py), 127 pages of 1,000.
+
+| | |
+|---|---|
+| Distinct NCT IDs | **126,760** |
+| API `totalCount` at start of walk | 126,760 |
+| Difference | **0** |
+| Duplicate rows across the walk | **0** |
+
+The walk and the API agree exactly. That is recorded rather than assumed: a
+cursor-paginated walk over a live database can return a record twice or skip one
+whose sort key moves mid-walk, and Halflife's equivalent build caught two such
+duplicates. Here there were none, and the frame size is a fact about the fetch
+rather than a round number the fetch is presumed to have delivered.
+
+| Composition | | |
+|---|---|---|
+| `COMPLETED` | 113,059 | 89.2% |
+| `TERMINATED` | 13,701 | 10.8% |
+| Lead sponsor `OTHER` (academic, hospital, foundation) | 88,403 | 69.7% |
+| Lead sponsor `INDUSTRY` | 32,449 | 25.6% |
+| Month-precision primary completion date | 33,189 | 26.2% |
+
+### 2.5 One primary figure is observable at freeze, and this says so
+
+`hasResults` is carried in the frame itself, so **primary figure 2 (§6) is
+computable without any crawl**, and it was visible the moment the walk finished:
+
+> **91,495 of 126,760 trials — 72.2% — have no results posted.**
+
+That is stated here, at freeze, rather than presented later as a pre-registered
+prediction that was subsequently confirmed. Its *rule* — the denominator, the
+window, the end-state filter — was fixed before the build, which is what
+pre-registration is for. But no reader should be left with the impression that
+this number was unknown when the document was sealed. It was not.
+
+The pilot's 400-trial estimate for the same quantity was 73.5%
+([`FEASIBILITY.md`](FEASIBILITY.md) §6), against a census of 72.2%. That is
+reassurance about the pilot's *sampling*, and nothing else — it says nothing
+about whether the pilot's outcome-change estimate is representative, because
+that quantity is not in the frame and remains unobserved.
+
+**Figures 1 and 3 are not observable at freeze** and require the crawl. The kill
+condition in §7 is written against figure 1.
 
 ---
 
@@ -273,7 +317,8 @@ a verifier cannot reproduce is not evidence.
 
 ## 11. Amendments
 
-None. The document is not yet frozen.
+None. The document was frozen at v1.0 on 30 August 2026 with no prior
+amendments.
 
 | # | Date | Change | What had been seen |
 |---|---|---|---|
