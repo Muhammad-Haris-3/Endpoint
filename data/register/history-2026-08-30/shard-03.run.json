@@ -1,0 +1,33 @@
+{
+ "attempted": 15845,
+ "batch": "history-2026-08-30",
+ "cold_store_written": false,
+ "complete": true,
+ "effective_rate": 2.0,
+ "elapsed_seconds": 7922.7,
+ "failure_count": 0,
+ "failures": {},
+ "frame_sha256": "33a0128f48affe66cfc692d5a6999eaf28e44db121c08e428640c2c1053bd030",
+ "probe": {
+  "attempted": 20,
+  "effective_rate": 2.073,
+  "ok": 20,
+  "refusal_share": 0.0,
+  "refused": 0
+ },
+ "shard": 3,
+ "shard_size": 15845,
+ "shards": 8,
+ "started_utc": "2026-08-30T13:00:52Z",
+ "stats": {
+  "bytes": 453358313,
+  "http_403": 0,
+  "http_404": 0,
+  "http_429": 0,
+  "ok": 15845,
+  "other_error": 0,
+  "unparseable": 0
+ },
+ "target_rate": 2.0,
+ "workers": 4
+}

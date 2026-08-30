@@ -1,0 +1,31 @@
+{
+ "batch": "history-2026-08-30",
+ "complete": true,
+ "duplicate_count": 0,
+ "failure_count": 0,
+ "frame_size": 126760,
+ "manifest_lines": 126760,
+ "missing_count": 0,
+ "records": 126760,
+ "shards_declared": 8,
+ "shards_incomplete": [],
+ "shards_present": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "stats": {
+  "bytes": 3675145342,
+  "http_403": 0,
+  "http_404": 0,
+  "http_429": 0,
+  "ok": 126760,
+  "other_error": 0,
+  "unparseable": 0
+ }
+}
