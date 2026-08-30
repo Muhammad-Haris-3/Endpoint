@@ -117,6 +117,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # a shallow checkout cannot rebase onto a moved main
 
       - uses: actions/setup-python@v5
         with:
@@ -164,7 +166,22 @@ jobs:
           in PREREGISTRATION.md 5.1. Reconciliation against the flagged list is in
           verdicts.txt; any pair the crawl could not complete is named in
           missing_pairs.txt and is excluded, never half-compared."
-          git push
+          # A collection run takes hours and main can move while it does. That is
+          # exactly what happened to versions-2026-08-30: the crawl and the
+          # adjudication both succeeded, main had moved, the push was rejected,
+          # and the whole run went red with the register stranded in its
+          # artefacts. Rebase onto whatever landed and retry instead.
+          #
+          # The register files are new paths, so a rebase does not conflict. If
+          # one ever does, this fails loudly rather than forcing.
+          for i in 1 2 3 4 5; do
+            if git push; then echo "pushed on attempt $i"; exit 0; fi
+            echo "push rejected; rebasing onto origin/main (attempt $i)"
+            git pull --rebase origin main || { echo "rebase failed - resolve by hand"; exit 1; }
+            sleep 5
+          done
+          echo "could not push after 5 attempts; the register is still in this run's artefacts"
+          exit 1
 
       - name: Fail if the batch is incomplete
         if: steps.adj.outcome != 'success'
