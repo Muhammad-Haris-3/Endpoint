@@ -39,6 +39,13 @@ on:
         description: 'Write and upload the full documents (~1.25 GB total)'
         type: boolean
         default: false
+      batch:
+        description: 'Register batch name (blank = history-<today>). Use e.g. rehearsal-<date> for a limited run so it does not share a batch with the real crawl.'
+        default: ''
+      commit:
+        description: 'Commit the merged register to the repository'
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -54,7 +61,9 @@ jobs:
         run: |
           N=${{ github.event.inputs.shards }}
           echo "matrix=$(python3 -c "import json,sys;print(json.dumps(list(range($N))))")" >> $GITHUB_OUTPUT
-          echo "batch=history-$(date -u +%Y-%m-%d)" >> $GITHUB_OUTPUT
+          B="${{ github.event.inputs.batch }}"
+          if [ -z "$B" ]; then B="history-$(date -u +%Y-%m-%d)"; fi
+          echo "batch=$B" >> $GITHUB_OUTPUT
 
   collect:
     needs: plan
@@ -135,6 +144,7 @@ jobs:
         run: python scripts/merge_shards.py --batch ${{ needs.plan.outputs.batch }}
 
       - name: Commit the register
+        if: ${{ github.event.inputs.commit != 'false' }}
         run: |
           git config user.name  "endpoint-collector"
           git config user.email "noreply@github.com"
