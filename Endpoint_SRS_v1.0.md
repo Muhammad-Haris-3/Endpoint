@@ -1,9 +1,10 @@
 # Endpoint — Software Requirements Specification v1.0
 
-**Status:** 30 August 2026. M0–M2 complete; M3 built and smoke-tested but **not
-run**. The frame is frozen at 126,760 trials and `frame/MANIFEST` is committed,
-so §5.1 is fixed rather than proposed. §5.2.1 corrects a durability claim this
-document made before the sizes were measured.
+**Status:** 30 August 2026. M0–M3 complete. The frame is frozen at 126,760 trials
+and the full version-history crawl has landed with zero failures. M4 (version
+fetches plus Tier 1 adjudication) is the next step and is what makes primary
+figure 1 computable. §5.2.1 corrects a durability claim this document made before
+the sizes were measured.
 **Author:** Muhammad Haris Khokhar
 **Companion documents:** [`FEASIBILITY.md`](FEASIBILITY.md) (what was measured
 before any of this was designed), [`PREREGISTRATION.md`](PREREGISTRATION.md)
@@ -472,7 +473,7 @@ unescapes twice, deliberately.
 | **M0** | Feasibility | ✅ Done. `FEASIBILITY.md`, backed by committed pilot data |
 | **M1** | Runner access probe | ✅ Done. Both runners served; result committed to `data/pilot/` |
 | **M2** | Frame freeze | ✅ Done. 126,760 trials; `frame/MANIFEST` committed; pre-registration v1.0 FROZEN |
-| **M3** | History crawl | Collector, merge and workflow built and smoke-tested; **the full crawl has not been run** |
+| **M3** | History crawl | ✅ Done 30 Aug 2026. 126,760/126,760, zero failures, zero missing, zero duplicates |
 | **M3.1** | Durable cold store | Documents published as release assets. Not built |
 | **M4** | Version crawl + Tier 1 | Every flagged change adjudicated deterministically |
 | **M5** | Gold set + Tier 2 | Precision/recall published |

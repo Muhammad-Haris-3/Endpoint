@@ -9,15 +9,17 @@ registration version history, and a per-trial record of what the primary outcome
 was, what it became, and whether it changed before or after the sponsor could see
 the answer.
 
-> **Status: frame frozen 30 August 2026. No history crawled.**
-> The cohort is closed at **126,760 trials** and
-> [`frame/MANIFEST`](frame/MANIFEST) records the SHA-256 of the frame, its
-> metadata and the pre-registration. From here the frame can only change by a
-> numbered amendment.
+> **Status: frame frozen and version history collected, 30 August 2026.**
+> The cohort is closed at **126,760 trials**; [`frame/MANIFEST`](frame/MANIFEST)
+> records the SHA-256 of the frame, its metadata and the pre-registration.
 >
-> The pilot in [`data/pilot/`](data/pilot/) is a feasibility check and is
-> explicitly not a result. **The retrospective-change rate over the frame is
-> unknown and unobserved** — it needs the crawl, which has not run.
+> **The history crawl is complete: 126,760 of 126,760, zero failures, zero
+> missing, zero duplicates.** The register is committed.
+>
+> **The headline figure is still not computable.** What the register carries is
+> the registry's own change *flag*; primary figure 1 requires reading the outcome
+> text at both versions, which is M4 and has not run. On the pilot, 37.7% of that
+> flag did not survive reading the text.
 
 ---
 
@@ -80,6 +82,33 @@ after primary completion.** The clearest cases are not subtle:
 | `NCT02100631` | +2,228 days | `Seroconversion by vibriocidal antibody (4-fold rise over baseline titer)` → `Seroconversion Rate at Day 11` |
 | `NCT00478361` | +1,906 days | **4 primary outcomes → 1** |
 | `NCT01360606` | +2,267 days | **1 → 2 primary outcomes** |
+
+### The full frame, as far as the crawl takes it
+
+The history crawl is complete, so the *flagged* rate is now a census. The
+*adjudicated* rate still is not — that needs M4.
+
+| | Frame (n = 126,760) | Pilot (n = 400) |
+|---|---|---|
+| Trials with >1 submitted version | 89.8% | 89.5% |
+| Median versions per trial | 5 | 5 |
+| Primary outcome **flagged** as changed | **42.8%** | 40.2% |
+| **Flagged** as changed after primary completion | **33.6%** | 30.5% |
+| Median days after completion | 529 | 565 |
+| Adjudicated against the outcome text | **not yet computed** | 19.0% |
+
+The pilot's sampling held up: every row it estimated lands within a few points of
+the census. **That is not permission to apply its 62.3% survival ratio to
+33.6%.** Whether the flag survives reading the text is a property of the text,
+not of the sample, and the only way to know is M4 — 108,406 version fetches,
+about 1.9 h across 8 shards.
+
+The largest single history in the frame runs to **1,651 submitted versions**.
+
+**The §5.4 blind spot is now measured: 27,612 trials — 21.8% — have more than one
+outcome-touching version.** The primary figure reads only the *last* one, so any
+earlier change is invisible to it. This biases the reported rate **downward**,
+and the pre-registration accepts it rather than pretending it away.
 
 ### Reporting, which needs no crawl at all
 
@@ -195,6 +224,8 @@ false.
 | [`scripts/fetch.py`](scripts/fetch.py) | HTTP layer, and why it shells to curl |
 | [`scripts/pilot.py`](scripts/pilot.py) | The feasibility measurement |
 | [`scripts/adjudicate.py`](scripts/adjudicate.py) | The check that caught the artefact |
+| [`scripts/collect_history.py`](scripts/collect_history.py) | The sharded crawl |
+| [`scripts/register_report.py`](scripts/register_report.py) | What the register supports, and what it does not |
 | [`scripts/build_frame.py`](scripts/build_frame.py) | Resolves the frame from the pre-registered rule |
 | [`scripts/freeze_frame.py`](scripts/freeze_frame.py) | The freeze. Refuses more than it does |
 | [`data/pilot/`](data/pilot/) | Raw output of both, committed as evidence |
