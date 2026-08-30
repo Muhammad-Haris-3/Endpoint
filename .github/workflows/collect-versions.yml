@@ -1,0 +1,174 @@
+# M4. Fetch the version pair bracketing each flagged change, then adjudicate.
+#
+# 54,203 flagged trials x 2 versions = 108,406 requests. Measured on a spread
+# sample: 41.8 KB mean response (version documents are full study records, so
+# larger than the 28.3 KB history index), and 1.96 req/s per runner with 4
+# workers.
+#
+# Eight shards at ~6,775 trials each is ~1.9 h per shard. The extraction commits
+# at ~29 MB; the documents would be ~1.8 GB and do not, on the same reasoning as
+# M3 (see collect_history.py and README).
+#
+# THE ADJUDICATION IS A SEPARATE STEP ON PURPOSE. It touches no network and is a
+# pure function of what the crawl stored, so a rule change under
+# PREREGISTRATION.md 11 costs one re-run of adjudicate_frame.py rather than
+# another 108,406 requests against a public API.
+#
+# Not scheduled. One-shot collection over a frozen, closed frame.
+name: collect-versions
+
+on:
+  workflow_dispatch:
+    inputs:
+      history_batch:
+        description: 'M3 register batch naming the flagged trials'
+        default: 'history-2026-08-30'
+      shards:
+        description: 'Number of shards (runners)'
+        default: '8'
+      rate:
+        description: 'Requests per second, per shard'
+        default: '2.0'
+      workers:
+        description: 'Concurrent requests per shard'
+        default: '4'
+      limit:
+        description: 'Trials per shard (0 = all; small number to rehearse)'
+        default: '0'
+      cold_store:
+        description: 'Write and upload the full documents (~1.8 GB total)'
+        type: boolean
+        default: false
+      batch:
+        description: 'Register batch name (blank = versions-<today>)'
+        default: ''
+      commit:
+        description: 'Commit the register and verdicts'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.build.outputs.matrix }}
+      batch: ${{ steps.build.outputs.batch }}
+    steps:
+      - id: build
+        run: |
+          N=${{ github.event.inputs.shards }}
+          echo "matrix=$(python3 -c "import json;print(json.dumps(list(range($N))))")" >> $GITHUB_OUTPUT
+          B="${{ github.event.inputs.batch }}"
+          if [ -z "$B" ]; then B="versions-$(date -u +%Y-%m-%d)"; fi
+          echo "batch=$B" >> $GITHUB_OUTPUT
+
+  collect:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false          # one refused shard must not cancel the rest
+      max-parallel: 8
+      matrix:
+        shard: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Collect shard ${{ matrix.shard }}
+        run: |
+          python scripts/collect_versions.py \
+            --history-batch ${{ github.event.inputs.history_batch }} \
+            --shard ${{ matrix.shard }} \
+            --shards ${{ github.event.inputs.shards }} \
+            --rate ${{ github.event.inputs.rate }} \
+            --workers ${{ github.event.inputs.workers }} \
+            --limit ${{ github.event.inputs.limit }} \
+            --batch ${{ needs.plan.outputs.batch }} \
+            ${{ github.event.inputs.cold_store == 'true' && ' ' || '--no-cold' }}
+
+      - name: Upload register shard
+        if: always()            # a shard that died still recorded what it saw
+        uses: actions/upload-artifact@v4
+        with:
+          name: versions-${{ needs.plan.outputs.batch }}-shard-${{ matrix.shard }}
+          path: data/register/${{ needs.plan.outputs.batch }}/shard-*
+          if-no-files-found: warn
+
+      - name: Upload cold store
+        if: ${{ github.event.inputs.cold_store == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: cold-${{ needs.plan.outputs.batch }}-shard-${{ matrix.shard }}
+          path: data/cold/
+          retention-days: 7
+          if-no-files-found: warn
+
+  adjudicate:
+    needs: [plan, collect]
+    if: always()                # adjudicate whatever landed; the reconciliation
+                                # is the point, including when it is bad
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Confirm the frozen rules have not moved
+        run: python scripts/verdict.py --selftest
+
+      - name: Download all version shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: versions-${{ needs.plan.outputs.batch }}-shard-*
+          path: /tmp/shards
+          merge-multiple: true
+
+      - name: Stage shards into the batch directory
+        run: |
+          mkdir -p data/register/${{ needs.plan.outputs.batch }}
+          cp -v /tmp/shards/* data/register/${{ needs.plan.outputs.batch }}/ || true
+          ls -la data/register/${{ needs.plan.outputs.batch }}/
+
+      - name: Adjudicate against the frozen rules
+        id: adj
+        continue-on-error: true # exit 2 means "adjudicated, but incomplete",
+                                # which is a result to commit, not a build error
+        run: |
+          python scripts/adjudicate_frame.py \
+            --batch ${{ needs.plan.outputs.batch }} \
+            --history-batch ${{ github.event.inputs.history_batch }}
+
+      - name: Commit the register and verdicts
+        if: ${{ github.event.inputs.commit != 'false' }}
+        run: |
+          git config user.name  "endpoint-collector"
+          git config user.email "noreply@github.com"
+          git add data/register/
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "Register: ${{ needs.plan.outputs.batch }} version pairs and verdicts
+
+          Collected by .github/workflows/collect-versions.yml, run ${{ github.run_id }}.
+          Verdicts produced by scripts/adjudicate_frame.py under the rules frozen
+          in PREREGISTRATION.md 5.1. Reconciliation against the flagged list is in
+          verdicts.txt; any pair the crawl could not complete is named in
+          missing_pairs.txt and is excluded, never half-compared."
+          git push
+
+      - name: Fail if the batch is incomplete
+        if: steps.adj.outcome != 'success'
+        run: |
+          echo "Adjudication ran but did not cover every flagged trial."
+          echo "See verdicts.txt and missing_pairs.txt. Committed either way -- a gap is data."
+          exit 1

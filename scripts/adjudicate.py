@@ -48,40 +48,15 @@ are the same endpoint, nor that a promoted secondary outcome is a switch. That
 is the semantic layer the SRS specifies, and its value is measured against this
 floor rather than asserted.
 """
-import argparse, html, json, os, re, sys
+import argparse, json, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import fetch                                                    # noqa: E402
+from verdict import classify, norm, jaccard, ORDER, REWORD_JACCARD   # noqa: E402,F401
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'data', 'pilot')
 VERSION = 'https://clinicaltrials.gov/api/int/studies/%s/history/%d'
-
-REWORD_JACCARD = 0.80       # token overlap above which a text change is "rewording"
-
-
-def norm(s):
-    """Case, HTML entities, punctuation and whitespace all removed.
-
-    ClinicalTrials.gov double-escapes: the JSON carries `&#x2F;` for a slash.
-    Unescaping twice is deliberate, not a mistake.
-    """
-    if not s:
-        return ''
-    s = html.unescape(html.unescape(s))
-    s = s.lower()
-    s = re.sub(r'[^a-z0-9]+', ' ', s)
-    return ' '.join(s.split())
-
-
-def jaccard(a, b):
-    sa, sb = set(a.split()), set(b.split())
-    if not sa and not sb:
-        return 1.0
-    if not sa or not sb:
-        return 0.0
-    return len(sa & sb) / float(len(sa | sb))
-
 
 def outcomes_of(doc):
     """[(measure, timeFrame)] for the primary outcomes of one version document."""
@@ -89,32 +64,6 @@ def outcomes_of(doc):
     om = (study.get('protocolSection') or {}).get('outcomesModule') or {}
     return [(o.get('measure') or '', o.get('timeFrame') or '')
             for o in (om.get('primaryOutcomes') or [])]
-
-
-def classify(before, after):
-    """Compare two primary-outcome sets. Returns (label, detail)."""
-    if len(before) != len(after):
-        return 'COUNT_CHANGED', '%d -> %d primary outcomes' % (len(before), len(after))
-
-    if before == after:
-        return 'IDENTICAL', 'byte-identical primary outcome set'
-
-    # Order within the set is not meaningful, so compare as sorted normalised sets.
-    nb = sorted(norm(m) for m, _ in before)
-    na = sorted(norm(m) for m, _ in after)
-    tb = sorted(norm(t) for _, t in before)
-    ta = sorted(norm(t) for _, t in after)
-
-    if nb == na and tb == ta:
-        return 'COSMETIC', 'identical after normalisation'
-    if nb == na:
-        return 'TIMEFRAME_ONLY', '%s -> %s' % (tb[0][:60], ta[0][:60])
-
-    sims = [jaccard(x, y) for x, y in zip(nb, na)]
-    worst = min(sims) if sims else 0.0
-    if worst >= REWORD_JACCARD:
-        return 'REWORDED', 'min token jaccard %.2f' % worst
-    return 'SUBSTANTIVE', 'min token jaccard %.2f' % worst
 
 
 def main():
@@ -171,8 +120,7 @@ def main():
     log('  adjudicated %d, failed %d' % (len(verdicts), failures))
     log('')
 
-    order = ['COUNT_CHANGED', 'SUBSTANTIVE', 'REWORDED', 'TIMEFRAME_ONLY',
-             'COSMETIC', 'IDENTICAL']
+    order = ORDER
     retro = [v for v in verdicts if v['retrospective']]
 
     def table(title, subset):
