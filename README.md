@@ -9,11 +9,13 @@ registration version history, and a per-trial record of what the primary outcome
 was, what it became, and whether it changed before or after the sponsor could see
 the answer.
 
-> **Status: feasibility complete, collection not started.**
+> **Status: feasibility complete, M1 passed, collection not started.**
 > Nothing has been crawled. The pilot in [`data/pilot/`](data/pilot/) is a
-> feasibility check and is explicitly not a result. One measurement blocks the
-> frame freeze — whether a Linux CI runner can reach the archive endpoints at all
-> ([`FEASIBILITY.md`](FEASIBILITY.md) §7.1).
+> feasibility check and is explicitly not a result. The measurement that was
+> blocking the frame freeze — whether a CI runner can reach the archive endpoints
+> — ran on both `ubuntu-latest` and `windows-latest` and passed on both, at
+> 2 req/s with zero refusals ([`FEASIBILITY.md`](FEASIBILITY.md) §7.1). The
+> freeze is unblocked and has not been taken.
 
 ---
 
@@ -143,10 +145,18 @@ circumvented — a browser visiting the page receives the same bytes. So
 [`scripts/fetch.py`](scripts/fetch.py) shells out to curl, paced at 2 req/s with
 backoff and an identifying `User-Agent`.
 
-**This is the open risk.** That curl links Schannel on Windows and OpenSSL on a
-Linux runner, and the runner may be refused. Halflife assumed the CI runner was
-the clean environment and found the assumption exactly inverted. Until that is
-measured, the frame is not frozen.
+**This was the open risk, and it is now measured.** The worry was that curl links
+Schannel here and OpenSSL on a Linux runner, so the runner might be refused and
+the whole sharded plan would collapse. It is not: both `ubuntu-latest` and
+`windows-latest` are served, 20/20 at 2 req/s with zero refusals.
+
+**The stated reason was wrong, though.** On the Ubuntu runner Python's `ssl`
+reports OpenSSL 3.0.13 and curl links OpenSSL/3.0.13 — same library, same
+machine — and curl is served while `urllib` is refused. So the TLS library is not
+the discriminator; the handshake profile is. Running the probe on both operating
+systems instead of only the one in doubt is what caught that. A single-OS run
+would have returned "works", and the explanation attached to it would have been
+false.
 
 ## Layout
 

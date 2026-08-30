@@ -1,13 +1,20 @@
 # Endpoint — pre-registration v1.0 (DRAFT — NOT FROZEN)
 
-> ## ⚠ DRAFT — not frozen. One measurement blocks the freeze.
+> ## ⚠ DRAFT — not frozen. The blocking measurement has passed; the freeze is a decision, not a dependency.
 >
-> **§7.1 of [`FEASIBILITY.md`](FEASIBILITY.md) is open.** The archive endpoints
-> gate on a TLS client fingerprint. Whether a Linux CI runner reaches them at all
-> is unmeasured, and if it does not, the collection architecture in §8 is not
-> buildable as written.
+> **§7.1 of [`FEASIBILITY.md`](FEASIBILITY.md) is resolved.** The archive
+> endpoints gate on a client handshake profile, and the concern was that a Linux
+> CI runner would be refused, making the collection architecture in §8
+> unbuildable. Measured on 30 August 2026: `ubuntu-latest` and `windows-latest`
+> both reach both archive endpoints, 20/20 at 2 req/s, zero refusals. §8 holds.
+>
+> **One item in §5.3 remains open** — the gold-set protocol for the semantic
+> tier. It does not block the freeze, because Tier 2 is excluded from every
+> primary figure by §5.3 and the primary figures depend only on Tier 1.
 >
 > **No crawl has run. `frame/MANIFEST` does not exist. The frame is not frozen.**
+> Freezing is now a deliberate act rather than a blocked one, and it is
+> irreversible by design: after it, §2.1 can only change by numbered amendment.
 
 **Drafted 30 August 2026, after the pilot in [`FEASIBILITY.md`](FEASIBILITY.md)
 and before any collection.** That pilot had been seen when this was written, and

@@ -1,6 +1,8 @@
 # Endpoint — Software Requirements Specification v1.0
 
-**Status:** Draft, 30 August 2026. Not baselined — one measurement blocks it (§11.1)
+**Status:** Draft, 30 August 2026. M1 passed; no blocking item remains (§11.1).
+Not baselined — baselining waits on the frame freeze, which is a decision, not a
+dependency.
 **Author:** Muhammad Haris Khokhar
 **Companion documents:** [`FEASIBILITY.md`](FEASIBILITY.md) (what was measured
 before any of this was designed), [`PREREGISTRATION.md`](PREREGISTRATION.md)
@@ -363,9 +365,16 @@ fingerprint, not an authorization check — there is nothing to authenticate to,
 and a browser visiting the page receives the same bytes.
 
 **Consequence:** the transport is an external binary (`scripts/fetch.py` shells
-to curl) whose behaviour is not guaranteed across platforms. This machine's curl
-links Schannel; a Linux CI runner links OpenSSL and **may be refused**. That is
-an open risk, not a solved problem — see §11.1.
+to curl). Measured on CI 30 August 2026, both `ubuntu-latest` (curl/OpenSSL) and
+`windows-latest` (curl/Schannel) reach both archive endpoints, 20/20 at 2 req/s
+with zero refusals. **The transport holds on the deployment target.**
+
+The library is not the discriminator. On the Ubuntu runner Python's `ssl` reports
+OpenSSL 3.0.13 and curl links OpenSSL/3.0.13 — same library, same machine — and
+curl is served while `urllib` is refused. What differs is the handshake profile:
+cipher and extension ordering, ALPN, HTTP/2 negotiation. The dependency is
+therefore on curl's specific profile continuing to be accepted, which is a
+weaker guarantee than "any OpenSSL client works" and is carried in §11.2.
 
 ### 9.4 Escaping
 
@@ -396,11 +405,16 @@ unescapes twice, deliberately.
 
 ### 11.1 Blocking
 
-1. **Does a Linux CI runner reach the internal endpoint?** (§9.3.) If OpenSSL's
-   fingerprint is refused, the entire collection architecture changes and NFR-2
-   is unachievable as written. Must be measured on the runner, not assumed.
-   Halflife assumed the runner was the clean environment and found the
-   assumption inverted; this project does not get to make that mistake twice.
+**None. The one blocking item is closed.**
+
+1. ~~Does a Linux CI runner reach the internal endpoint?~~ **Answered 30 August
+   2026, M1.** Both runners reach both archive endpoints at 2 req/s with zero
+   refusals (`FEASIBILITY.md` §7.1). NFR-2 is achievable as written.
+
+   The probe ran on both operating systems rather than only the one in doubt,
+   which is what revealed that the OpenSSL-vs-Schannel explanation was wrong
+   (§9.3). A single-OS run would have returned a passing result attached to a
+   false reason.
 
 ### 11.2 Carried risks
 
@@ -430,7 +444,7 @@ unescapes twice, deliberately.
 | ID | Deliverable | Exit criterion |
 |---|---|---|
 | **M0** | Feasibility | ✅ Done. `FEASIBILITY.md`, backed by committed pilot data |
-| **M1** | Runner access probe | §11.1 answered on Linux CI, recorded |
+| **M1** | Runner access probe | ✅ Done. Both runners served; result committed to `data/pilot/` |
 | **M2** | Frame freeze | `frame/MANIFEST` committed; pre-registration frozen |
 | **M3** | History crawl | Version index for the full frame in the cold store |
 | **M4** | Version crawl + Tier 1 | Every flagged change adjudicated deterministically |

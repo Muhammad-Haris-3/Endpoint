@@ -74,9 +74,13 @@ A browser `User-Agent`, an `Accept` header, a `Referer` from the study page, a
 warmed cookie jar and `Accept-Encoding` were each tried and each refused. What
 separates curl from the two Python clients is the TLS handshake, so the gate is
 a **client fingerprint, not an authorization check** — there is nothing to
-authenticate to, and any browser visiting the page receives the same bytes. Two
-curl builds were served (8.14.1 mingw and 8.21.0 Windows), both linking Schannel,
-which is the detail §7.1 turns on.
+authenticate to, and any browser visiting the page receives the same bytes.
+
+**It is not the TLS library, and the first draft of this section said it was.**
+See §7.1: on a Linux CI runner, Python's `ssl` reports OpenSSL 3.0.13 and curl
+links OpenSSL/3.0.13 — the same library, the same version, the same machine —
+and curl is served while `urllib` is refused. The discriminator is the handshake
+profile the client presents, not the library underneath it.
 
 The collector therefore shells out to curl ([`scripts/fetch.py`](scripts/fetch.py)).
 That is a finding, not a shortcut, and it carries a risk this check cannot close
@@ -271,16 +275,40 @@ document exists to prevent.
 
 ## 7. Open before pre-registration
 
-### 7.1 Blocking
+### 7.1 Resolved — M1, measured on CI 30 August 2026
 
-**Does a Linux CI runner reach the internal endpoints at all?** §1.1 established
-that the gate is a TLS fingerprint. This machine's curl links Schannel; a GitHub
-Actions runner links OpenSSL, presents a different fingerprint, and **may be
-refused**. If it is, the entire collection architecture changes.
+The question was whether a Linux CI runner reaches the archive endpoints at all.
+This machine's curl links Schannel; a GitHub Actions runner links OpenSSL, and
+the draft of this section predicted it might therefore be refused — which would
+have invalidated the entire sharded collection plan.
 
-Halflife assumed the runner was the clean environment and found the assumption
-exactly inverted. This project does not get to make that mistake twice, and the
-probe must run on the runner before anything is scheduled there.
+Run on both runners
+([`runner_probe_ci_ubuntu.txt`](data/pilot/runner_probe_ci_ubuntu.txt),
+[`runner_probe_ci_windows.txt`](data/pilot/runner_probe_ci_windows.txt)):
+
+| Runner | curl build | archive index | archive version | 20-request burst @ 2 req/s |
+|---|---|---|---|---|
+| `ubuntu-latest` | 8.5.0, **OpenSSL/3.0.13** | **200** | **200** | 20/20, 0 refused, 2.08 req/s |
+| `windows-latest` | 8.16.0, Schannel | **200** | **200** | 20/20, 0 refused, 2.07 req/s |
+
+**M1 passes. The collection architecture holds and the freeze is unblocked.**
+
+**The prediction was wrong, in an instructive way.** On the Ubuntu runner
+Python's `ssl` module reports **OpenSSL 3.0.13** and curl links
+**OpenSSL/3.0.13** — same library, same version, same machine — and curl is
+served 200 while `urllib` is refused 403. The TLS *library* is therefore not the
+discriminator. What differs is the handshake profile each client presents:
+cipher and extension ordering, ALPN, HTTP/2 negotiation. §1.1 is corrected
+accordingly.
+
+This is why the probe ran on both operating systems rather than only the one in
+doubt. A single-OS run would have returned "ubuntu works", the plan would have
+proceeded, and the stated reason for it working would have been false — which
+survives undetected until the fingerprint rule changes and nobody knows which
+property mattered.
+
+*Caveat: `requests` is not installed on either runner, so the CI rows report it
+`absent`. The three-client comparison in §1.1 rests on the local measurement.*
 
 ### 7.2 Carried
 
