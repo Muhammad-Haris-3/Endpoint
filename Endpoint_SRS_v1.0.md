@@ -477,7 +477,7 @@ unescapes twice, deliberately.
 | **M3.1** | Durable cold store | Documents published as release assets. Not built |
 | **M4** | Version crawl + Tier 1 | Every flagged change adjudicated deterministically |
 | **M5** | Gold set + Tier 2 | Precision/recall published |
-| **M6** | Warehouse + materialisation | Static serving artefacts regenerable end to end |
+| **M6** | Warehouse + materialisation | ◐ Partial. `materialise.py` writes every artefact; outcome sections materialise as `available:false` until M4 lands |
 | **M7** | Web | UI-1 … UI-8 |
 | **M8** | Decision memo | `DECISION_MEMO.md`, two pages, no statistics required |
 

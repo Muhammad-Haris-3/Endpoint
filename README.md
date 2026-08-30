@@ -252,6 +252,7 @@ false.
 | [`scripts/collect_history.py`](scripts/collect_history.py) | The sharded crawl |
 | [`scripts/register_report.py`](scripts/register_report.py) | What the register supports, and what it does not |
 | [`scripts/reporting_figures.py`](scripts/reporting_figures.py) | Primary figures 2 and 3, from the frame alone |
+| [`scripts/materialise.py`](scripts/materialise.py) | Static serving artefacts for the web tier |
 | [`scripts/build_frame.py`](scripts/build_frame.py) | Resolves the frame from the pre-registered rule |
 | [`scripts/freeze_frame.py`](scripts/freeze_frame.py) | The freeze. Refuses more than it does |
 | [`data/pilot/`](data/pilot/) | Raw output of both, committed as evidence |
