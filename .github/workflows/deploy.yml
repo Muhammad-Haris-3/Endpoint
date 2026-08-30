@@ -1,0 +1,108 @@
+# M6/M7. Build the serving artefacts and publish the site to GitHub Pages.
+#
+# data/serve/ is NOT committed -- it is a pure function of the frozen frame, the
+# named register batches and the pipeline commit, so committing it would commit a
+# cache that can drift from its inputs without anything noticing. It is therefore
+# regenerated HERE, at deploy time, from the register that is committed.
+#
+# That is the whole point of the split: the repository holds the evidence (hashes
+# and extracted fields, ~35 MB) and the deploy holds the presentation (~117 MB of
+# derived JSON). If the two ever disagree, the register wins and this rebuild is
+# what makes that true rather than aspirational.
+#
+# materialise.py refuses to run against a frame that does not match
+# frame/MANIFEST, so a deploy cannot quietly publish figures describing a
+# different cohort than the pre-registered one.
+name: deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:                      # only rebuild when something the site shows changed
+      - 'web/**'
+      - 'data/register/**'
+      - 'frame/**'
+      - 'scripts/materialise.py'
+      - '.github/workflows/deploy.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:                    # a queued deploy replaces a pending one; never
+  group: pages                  # two builds racing to publish different states
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Confirm the frozen rules have not moved
+        run: python scripts/verdict.py --selftest
+
+      - name: Materialise the serving artefacts
+        run: |
+          python scripts/materialise.py \
+            --history-batch history-2026-08-30 \
+            --versions-batch versions-2026-08-30
+
+      - name: Assemble the site
+        run: |
+          mkdir -p _site
+          cp -r web/. _site/
+          mkdir -p _site/data
+          cp -r data/serve _site/data/serve
+          # A published figure must be traceable to its inputs without cloning
+          # the repository, so the provenance manifest ships with the site.
+          cp data/serve/manifest.json _site/manifest.json
+          echo "Endpoint — https://github.com/Muhammad-Haris-3/Endpoint" > _site/README.txt
+          du -sh _site
+          find _site -name '*.json' | wc -l
+
+      - name: Verify the site is complete before publishing
+        run: |
+          set -e
+          for f in index.html styles.css app.js diff.js switching.js \
+                   data/serve/summary.json data/serve/funnel.json \
+                   data/serve/breakdowns.json data/serve/distributions.json \
+                   data/serve/manifest.json data/serve/trials/index.json \
+                   data/serve/diffs/index.json; do
+            test -s "_site/$f" || { echo "MISSING OR EMPTY: $f"; exit 1; }
+          done
+          python - <<'PY'
+          import json, sys
+          s = json.load(open('_site/data/serve/summary.json'))
+          f1 = s['figure_1_outcome_switching']
+          # A deploy that publishes figure 1 without its F6 stratification would
+          # put the headline on the internet without the caveat that makes it
+          # readable. Fail the build rather than ship that.
+          if f1.get('available') and 'confounded_by_results_posting' not in f1:
+              print('REFUSING: figure 1 is available but carries no F6 stratification.')
+              sys.exit(1)
+          print('summary.json ok — figure 1 available=%s, caveat present=%s'
+                % (f1.get('available'), 'confounded_by_results_posting' in f1))
+          PY
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

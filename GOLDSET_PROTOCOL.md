@@ -91,10 +91,23 @@ thing, reported differently. This is a very common results-form restatement.
 warts"* → *"**Complete** clearance of warts **at or before week 12**"* changes
 which participants count as successes. It could flip the result.
 
-**Rule 4 — splitting one outcome into two, or merging two into one, with the
-same underlying measurements, is `SAME`** even though the count changed. Tier 1
-calls this `COUNT_CHANGED`; it is a formatting artefact and one of the errors
-this gold set exists to quantify.
+**Rule 4 — splitting or merging is `SAME` only if each resulting measure is
+still judged on its own.** Presenting the same measurements as two rows instead
+of one, or one instead of two, is a formatting artefact even though the count
+changed — Tier 1 calls it `COUNT_CHANGED`, and quantifying that error is part of
+why this gold set exists.
+
+**But combining separate outcomes into a single `COMPOSITE` score is
+`DIFFERENT`.** *"All-cause death"* and *"ventilator-free days"* judged separately
+require an effect on one or the other; a composite of the two is one number that
+**can come out positive when neither component would**. That moves the bar, so it
+fails the counterfactual test and is a substantive change however much it looks
+like tidying.
+
+**Rule 8 — order is not meaning.** Compare the outcome sets as *sets*. The
+results form reorders outcomes routinely. If the same measures appear in both
+versions with only their positions changed, that is `SAME`; judge only whether a
+measure was added, dropped, or altered.
 
 **Rule 5 — an empty earlier version is `UNCLEAR`, not `SET_CHANGED`,** unless the
 later version's outcome contradicts something the trial stated elsewhere. A
@@ -165,6 +178,27 @@ to report one.
 
 ---
 
+## 6a. Codebook revision log
+
+A codebook tuned after seeing results is not a codebook (§5). Revisions are
+therefore recorded here with what had been labelled when they were made.
+
+| # | Date | Change | Labels existing at the time |
+|---|---|---|---|
+| 1 | 31 Aug 2026 | **Rule 8 added** (order is not meaning) and **Rule 4 corrected** (merging is `SAME` only if the parts are still judged separately; a *composite* is `DIFFERENT`). Both gaps surfaced on first contact with real pairs — the very first pair drawn is a reorder, and a worked example was a two-endpoint→composite merge that Rule 4 as written would have waved through. | **3** (`NCT00329706`, `NCT00475982`, `NCT00508794`) |
+
+**On revision 1 and those three labels.** None contradicts the new rules.
+`NCT00329706` is a reorder already labelled `SAME`, which is what Rule 8 now
+states; the other two are one-to-one changes untouched by either rule. They were
+made under an undocumented judgement that the revision has since formalised, and
+they are **not** being relabelled. This note exists so a reader can see that and
+disagree, rather than having to reconstruct it from timestamps.
+
+No result had been computed when this revision was made. The revision cannot
+have been tuned to one.
+
+---
+
 ## 7. Status
 
 | | |
@@ -173,5 +207,5 @@ to report one.
 | Protocol written before labelling | ✅ this document |
 | Labelling tool built | ✅ `scripts/label_tool.py` |
 | Evaluation harness built | ✅ `scripts/gold_eval.py` |
-| **Pairs labelled** | **0 — blocked on a human labeller (§0)** |
+| **Pairs labelled** | **3 of 419** — labelling under way |
 | Tier 2 built | ❌ and may not be, until the above is non-zero |

@@ -10,6 +10,46 @@ amendment** and stays proposed until it is argued and numbered under §11.
 
 ---
 
+## F7 — The codebook had two gaps, and labelling found both in its first minutes
+
+**31 August 2026 · [`GOLDSET_PROTOCOL.md`](GOLDSET_PROTOCOL.md) §3, §6a ·
+protocol revision**
+
+The gold-set codebook was written before anyone had labelled a pair. Two rules
+were wrong or missing, and both showed up within the first few real examples.
+
+**The very first pair drawn is a reorder** — four primary outcomes, same four
+after, listed in a different order, with `2 years` restated as `baseline and 2
+years`. The codebook said nothing about ordering at all, so the labeller's first
+decision would have been an undocumented judgement call. **Rule 8** now states
+that order is not meaning and sets are compared as sets.
+
+**Rule 4 was actively wrong.** It said merging two outcomes into one is `SAME`
+"with the same underlying measurements". A worked example — `NCT02622724`,
+*"any cause death"* and *"days free of mechanical ventilation"* becoming
+*"Composite Endpoint (VFDsurv; All-cause Mortality and Number of Days Free of
+Mechanical Ventilation)"* — shows why that is backwards. Judged separately, the
+trial needs an effect on one or the other. As a composite it is **one number that
+can be positive when neither component would be.** The bar moved. Rule 4 as
+written would have classified one of the most consequential changes a trial can
+make as tidying.
+
+Corrected: merging is `SAME` only if each resulting measure is still judged on
+its own; a composite is `DIFFERENT`.
+
+**Both revisions were made with 3 pairs labelled and no result computed**, so
+neither can have been tuned to an outcome. None of the three contradicts the new
+rules and none is being relabelled; the reasoning is recorded in
+`GOLDSET_PROTOCOL.md` §6a so a reader can disagree with it.
+
+**Worth keeping:** a codebook written in the abstract survived about four real
+examples. The instrument had to meet the data before it was right, which is an
+argument for labelling a handful of pairs *deliberately* as a codebook shakedown
+before committing to a full pass — and for the revision log that makes such
+changes visible rather than silent.
+
+---
+
 ## F6 — Primary figure 1 cannot separate outcome switching from results posting
 
 **31 August 2026 · `data/register/versions-2026-08-30/verdicts.ndjson.gz` ·

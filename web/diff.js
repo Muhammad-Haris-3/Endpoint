@@ -142,6 +142,7 @@ async function showDiff(nct) {
       return;
     }
     renderDiff(d);
+    writeState({ diff: nct });
   } catch (e) {
     $('#diff-status').textContent = 'could not load ' + nct + ': ' + e.message;
   }
@@ -174,5 +175,8 @@ async function initDiff() {
     if (/^NCT\d{8}$/.test(v)) showDiff(v);
   });
 
-  if (feat.length) showDiff(feat[0].nct);
+  // A shared link to a specific diff wins over the default example.
+  const wanted = readState().diff;
+  if (wanted && /^NCT\d{8}$/.test(wanted)) showDiff(wanted);
+  else if (feat.length) showDiff(feat[0].nct);
 }

@@ -11,7 +11,10 @@
  */
 'use strict';
 
-const DATA = '../data/serve';
+// Works from both layouts without a build step: locally the page is served at
+// /web/index.html with the register a level up; the deploy assembles the page at
+// the site root with data/serve beneath it.
+const DATA = location.pathname.includes('/web/') ? '../data/serve' : 'data/serve';
 const $ = (s) => document.querySelector(s);
 
 const fmt = (n) => (n === null || n === undefined) ? '—' : n.toLocaleString('en-US');
@@ -276,8 +279,18 @@ async function initExplorer(breakdowns) {
       renderTrials(explorer.rows.filter((r) => r.nct.includes(v)), `shard ${explorer.currentPrefix}`);
     }
   });
-  $('#f-sponsor').addEventListener('change', applyFilters);
-  $('#f-results').addEventListener('change', applyFilters);
+  $('#f-sponsor').addEventListener('change', () => {
+    writeState({ sponsor: $('#f-sponsor').value }); applyFilters();
+  });
+  $('#f-results').addEventListener('change', () => {
+    writeState({ results: $('#f-results').value }); applyFilters();
+  });
+
+  // Restore any filter state the URL carried in.
+  const st = readState();
+  if (st.sponsor) $('#f-sponsor').value = st.sponsor;
+  if (st.results) $('#f-results').value = st.results;
+  if (st.sponsor || st.results) applyFilters();
 }
 
 /* ---------- methods ---------- */
@@ -308,6 +321,27 @@ function renderProvenance(m) {
     ['HTTP 403 / 429', `${fmt(st.http_403)} / ${fmt(st.http_429)}`],
     ['version crawl', vc.available ? `adjudicated ${fmt(vc.adjudicated)}` : 'pending'],
   ].map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
+}
+
+/* ---------- UI-6: URL-addressable state ---------- */
+
+/* Any view a reader reaches should be a link they can send. The explorer's
+ * filters and the selected diff live in the hash, so "look at this trial" is a
+ * URL rather than an instruction. Written with replaceState so that filtering
+ * does not fill the back button with intermediate states. */
+
+function readState() {
+  const h = new URLSearchParams(location.hash.replace(/^#/, ''));
+  return { q: h.get('q') || '', sponsor: h.get('sponsor') || '',
+           results: h.get('results') || '', diff: h.get('diff') || '' };
+}
+
+function writeState(patch) {
+  const s = Object.assign(readState(), patch);
+  const h = new URLSearchParams();
+  for (const k of ['q', 'sponsor', 'results', 'diff']) if (s[k]) h.set(k, s[k]);
+  const str = h.toString();
+  history.replaceState(null, '', str ? '#' + str : location.pathname + location.search);
 }
 
 /* ---------- boot ---------- */
