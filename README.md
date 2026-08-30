@@ -118,11 +118,13 @@ a measured error rate is an opinion generator.
 
 ## What is being recorded
 
-| Path | Contents |
-|---|---|
-| `data/cold/<ab>/<sha256>.json.gz` | Every fetched document, content-addressed, never mutated |
-| `data/register/<batch>/manifest.ndjson.gz` | `{"u": url, "t": unix_fetched, "h": sha256, "s": status}` |
-| `data/register/<batch>/run.json` | What happened, including every request that failed |
+| Path | Contents | Committed? |
+|---|---|---|
+| `data/register/<batch>/manifest.ndjson.gz` | Per-document `{url, unix_fetched, sha256, status}` | **yes** |
+| `data/register/<batch>/records.ndjson.gz` | The extracted fields the analysis consumes, ~3.4 MB | **yes** |
+| `data/register/<batch>/run.json` | What happened, including every request that failed | **yes** |
+| `data/register/<batch>/missing.txt` | Trials the crawl did not get, by name | **yes** |
+| `data/cold/<ab>/<sha256>.json.gz` | Every fetched document, content-addressed, never mutated | no — 1.5 GB |
 
 `t` is stamped **per document, not per run**. A 126,760-trial crawl spans hours,
 so one run-level timestamp would be a fiction.
@@ -131,10 +133,21 @@ so one run-level timestamp would be a fiction.
 the affected NCT IDs written to `run.json`, so a gap reads as a gap rather than as
 an absence. A trial the crawl missed is excluded, never imputed.
 
-**The cold store is the asset.** The archive endpoints are undocumented and
-unversioned and may disappear without notice. Once a version is fetched and
-hashed, the evidence is held independently of the source, and the register proves
-when it was taken.
+**What is durable, stated precisely.** An earlier draft of this README claimed
+"the cold store is the asset — once a version is fetched and hashed, the evidence
+is held independently of the source." That was half true, and measuring the sizes
+is what forced the correction.
+
+The full documents gzip to **~1.5 GB** across the frame. They do not go in git.
+What is committed is the **per-document SHA-256 and the extracted fields** — about
+3.4 MB — which is enough to recompute every primary figure and enough for anyone
+holding the documents to verify they match. The documents themselves are retained
+best-effort as CI artefacts, and CI artefacts expire.
+
+So: this project can prove **what it saw and when**, and can recompute its
+results from committed data. It cannot yet hand a stranger the original bytes.
+Publishing the cold store durably as release assets is **M3.1 and is not built**.
+The archive endpoints are undocumented and may disappear before that happens.
 
 ## The awkward part
 

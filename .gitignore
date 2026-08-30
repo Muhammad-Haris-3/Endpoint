@@ -5,8 +5,15 @@ node_modules/
 .next/
 
 # The cold store. Raw archived registry versions, content-addressed.
-# Hundreds of gigabytes at full frame size; reproducible from the register's
-# manifest, so it is rebuilt rather than committed (SRS 6.1).
+# Measured at ~1.5 GB gzipped across the frame, so it cannot be committed.
+#
+# It is NOT "reproducible from the manifest" -- an earlier version of this
+# comment said so and was wrong. The manifest records each document's SHA-256,
+# which lets a holder VERIFY the bytes; it cannot regenerate them, and if the
+# undocumented archive endpoints disappear nothing re-fetches them.
+#
+# What is committed instead is data/register/: the hashes and the extracted
+# fields the analysis consumes. See README, "What is durable, stated precisely".
 data/cold/
 
 # Derived analytical artefacts. Everything here is a pure function of the cold

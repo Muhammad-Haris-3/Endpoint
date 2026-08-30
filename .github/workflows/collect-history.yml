@@ -1,0 +1,158 @@
+# M3. The version-index crawl, sharded across runners.
+#
+# 126,760 trials, one request each. Measured on a spread sample: 24.6 KB mean
+# response, and 2.0 req/s is achievable per runner with 4 workers (serially it is
+# 1.1 req/s, because the crawl is latency-bound rather than pace-bound).
+#
+# Eight shards at ~15,845 trials each is ~2.2 h per shard against the 6-hour job
+# ceiling. That is real margin, not the thin kind.
+#
+# THE COLD STORE IS OFF BY DEFAULT HERE, DELIBERATELY. The full documents are
+# ~1.25 GB gzipped across the frame. CI artefacts expire, so uploading them
+# creates the impression of an archive without the durability of one. What CI
+# produces and commits is the record that matters: per-document SHA-256 plus the
+# extracted fields the analysis consumes (~3.4 MB). Set cold_store=true to also
+# write and upload the documents for a run where someone intends to keep them.
+# Publishing them durably as release assets is M3.1 and is not built.
+#
+# Not scheduled. The frame is frozen and closed, so this crawl is a one-shot
+# collection followed by amendments, not a recurring poll. A cron here would
+# re-fetch a fixed cohort forever for no reason.
+name: collect-history
+
+on:
+  workflow_dispatch:
+    inputs:
+      shards:
+        description: 'Number of shards (runners)'
+        default: '8'
+      rate:
+        description: 'Requests per second, per shard'
+        default: '2.0'
+      workers:
+        description: 'Concurrent requests per shard'
+        default: '4'
+      limit:
+        description: 'Trials per shard (0 = all; use a small number to rehearse)'
+        default: '0'
+      cold_store:
+        description: 'Write and upload the full documents (~1.25 GB total)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.build.outputs.matrix }}
+      batch: ${{ steps.build.outputs.batch }}
+    steps:
+      - id: build
+        run: |
+          N=${{ github.event.inputs.shards }}
+          echo "matrix=$(python3 -c "import json,sys;print(json.dumps(list(range($N))))")" >> $GITHUB_OUTPUT
+          echo "batch=history-$(date -u +%Y-%m-%d)" >> $GITHUB_OUTPUT
+
+  collect:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 350          # under the 360-minute ceiling, so a hung shard
+                                  # fails loudly instead of being killed silently
+    strategy:
+      fail-fast: false            # one refused shard must not cancel the rest;
+                                  # a partial crawl is recoverable, a cancelled
+                                  # one wastes every shard's progress
+      max-parallel: 8
+      matrix:
+        shard: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Collect shard ${{ matrix.shard }}
+        run: |
+          python scripts/collect_history.py \
+            --shard ${{ matrix.shard }} \
+            --shards ${{ github.event.inputs.shards }} \
+            --rate ${{ github.event.inputs.rate }} \
+            --workers ${{ github.event.inputs.workers }} \
+            --limit ${{ github.event.inputs.limit }} \
+            --batch ${{ needs.plan.outputs.batch }} \
+            ${{ github.event.inputs.cold_store == 'true' && ' ' || '--no-cold' }}
+
+      - name: Upload register shard
+        if: always()              # a shard that died still recorded what it saw
+        uses: actions/upload-artifact@v4
+        with:
+          name: register-${{ needs.plan.outputs.batch }}-shard-${{ matrix.shard }}
+          path: data/register/${{ needs.plan.outputs.batch }}/shard-*
+          if-no-files-found: warn
+
+      - name: Upload cold store
+        if: ${{ github.event.inputs.cold_store == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: cold-${{ needs.plan.outputs.batch }}-shard-${{ matrix.shard }}
+          path: data/cold/
+          retention-days: 7       # named short so nobody mistakes this for an archive
+          if-no-files-found: warn
+
+  merge:
+    needs: [plan, collect]
+    if: always()                  # merge whatever landed; the reconciliation
+                                  # report is the point, including when it is bad
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Download all register shards
+        uses: actions/download-artifact@v4
+        with:
+          pattern: register-${{ needs.plan.outputs.batch }}-shard-*
+          path: /tmp/shards
+          merge-multiple: true
+
+      - name: Stage shards into the batch directory
+        run: |
+          mkdir -p data/register/${{ needs.plan.outputs.batch }}
+          cp -v /tmp/shards/* data/register/${{ needs.plan.outputs.batch }}/ || true
+          ls -la data/register/${{ needs.plan.outputs.batch }}/
+
+      - name: Merge and reconcile against the frozen frame
+        id: merge
+        continue-on-error: true   # exit 2 means "merged, but incomplete", which is
+                                  # a result to be committed, not a build failure
+        run: python scripts/merge_shards.py --batch ${{ needs.plan.outputs.batch }}
+
+      - name: Commit the register
+        run: |
+          git config user.name  "endpoint-collector"
+          git config user.email "noreply@github.com"
+          git add data/register/
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "Register: ${{ needs.plan.outputs.batch }} history crawl
+
+          Collected by .github/workflows/collect-history.yml, run ${{ github.run_id }}.
+          Reconciliation against the frozen frame is in run.json; any trial the
+          crawl missed is named in missing.txt and is excluded, never imputed."
+          git push
+
+      - name: Fail if the batch is incomplete
+        if: steps.merge.outcome != 'success'
+        run: |
+          echo "The batch merged but did not cover the frame. See run.json and missing.txt."
+          echo "The register is committed either way -- a gap is data."
+          exit 1

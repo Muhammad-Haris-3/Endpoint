@@ -1,8 +1,9 @@
 # Endpoint — Software Requirements Specification v1.0
 
-**Status:** 30 August 2026. M1 and M2 complete. The frame is frozen at 126,760
-trials and `frame/MANIFEST` is committed, so §5.1 is now fixed rather than
-proposed. M3 (the history crawl) is the next buildable step.
+**Status:** 30 August 2026. M0–M2 complete; M3 built and smoke-tested but **not
+run**. The frame is frozen at 126,760 trials and `frame/MANIFEST` is committed,
+so §5.1 is fixed rather than proposed. §5.2.1 corrects a durability claim this
+document made before the sizes were measured.
 **Author:** Muhammad Haris Khokhar
 **Companion documents:** [`FEASIBILITY.md`](FEASIBILITY.md) (what was measured
 before any of this was designed), [`PREREGISTRATION.md`](PREREGISTRATION.md)
@@ -202,14 +203,34 @@ Every fetched document is written content-addressed by SHA-256 and never
 mutated. Layout:
 
 ```
-data/cold/<sha256[0:2]>/<sha256>.json.gz
-data/register/<batch>/manifest.ndjson.gz    one line per fetch
-data/register/<batch>/run.json              what happened, including failures
+data/cold/<sha256[0:2]>/<sha256>.json.gz    documents.  NOT committed (~1.5 GB)
+data/register/<batch>/manifest.ndjson.gz    one line per fetch.   committed
+data/register/<batch>/records.ndjson.gz     extracted fields.     committed
+data/register/<batch>/run.json              what happened.        committed
+data/register/<batch>/missing.txt           what was not got.     committed
 ```
 
-`manifest.ndjson.gz` lines are `{"u": url, "t": unix_fetched, "h": sha256, "s": status}`.
+`manifest.ndjson.gz` lines are `{"p": nct, "u": url, "t": unix_fetched, "h": sha256, "s": status}`.
 `t` is stamped **per document, not per run** — a 126,760-trial crawl spans hours
 and one run-level timestamp would be a fiction.
+
+#### 5.2.1 What is durable, corrected
+
+The cold store gzips to **~1.5 GB** across the frame (measured: 24.6 KB mean
+response on a spread sample, 42% gzip ratio). It cannot be committed, and it is
+**not** regenerable from the manifest — an earlier draft of this document and of
+`.gitignore` both claimed it was, and both were wrong. The manifest lets a holder
+*verify* bytes; nothing *regenerates* them, and the archive endpoints are
+undocumented and may disappear.
+
+What is committed is the manifest and the extraction — about **3.4 MB** — which
+carries every field §5.4 and §6 consume. **The primary figures are therefore
+computable from committed data alone.** The documents are retained best-effort as
+CI artefacts, which expire.
+
+Publishing the cold store durably as GitHub release assets is **M3.1**, and until
+it is done the honest claim is that Endpoint can prove what it saw and when, and
+can recompute its figures, but cannot itself hand a stranger the original bytes.
 
 **Failures are data.** Every 403, 429, timeout and parse failure is counted and
 the affected NCT IDs written to `run.json`, so a gap reads as a gap rather than
@@ -451,7 +472,8 @@ unescapes twice, deliberately.
 | **M0** | Feasibility | ✅ Done. `FEASIBILITY.md`, backed by committed pilot data |
 | **M1** | Runner access probe | ✅ Done. Both runners served; result committed to `data/pilot/` |
 | **M2** | Frame freeze | ✅ Done. 126,760 trials; `frame/MANIFEST` committed; pre-registration v1.0 FROZEN |
-| **M3** | History crawl | Version index for the full frame in the cold store |
+| **M3** | History crawl | Collector, merge and workflow built and smoke-tested; **the full crawl has not been run** |
+| **M3.1** | Durable cold store | Documents published as release assets. Not built |
 | **M4** | Version crawl + Tier 1 | Every flagged change adjudicated deterministically |
 | **M5** | Gold set + Tier 2 | Precision/recall published |
 | **M6** | Warehouse + materialisation | Static serving artefacts regenerable end to end |
