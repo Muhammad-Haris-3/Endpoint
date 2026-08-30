@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endpoint — what clinical trials promised, and what they reported</title>
+<meta name="description" content="126,760 completed interventional trials, their full registration version history, and what happened to the outcomes they promised to measure.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span> Endpoint</div>
+    <nav class="top-nav">
+      <a href="#reporting">Reporting</a>
+      <a href="#switching">Outcome switching</a>
+      <a href="#participants">Participants</a>
+      <a href="#explorer">Explorer</a>
+      <a href="#methods">Methods</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="hero wrap narrow">
+  <div class="kicker">A census of 126,760 completed trials</div>
+  <h1>Trials write down what they will measure. Then most of them never report it.</h1>
+  <p class="lede">
+    Every interventional trial declares its primary outcome before it enrols anyone,
+    and ClinicalTrials.gov keeps every edit to that declaration, dated, in public.
+    Endpoint reads the whole registry: what was promised, what changed, and what was
+    never reported at all.
+  </p>
+
+  <div class="headline-figure">
+    <div class="num" id="hero-num">—</div>
+    <div class="say">
+      of completed trials <strong>posted no results at all</strong>, more than three
+      years after the deadline that applies to many of them.
+    </div>
+  </div>
+  <div class="denominator" id="hero-denom">loading…</div>
+</div>
+
+<!-- ============ REPORTING ============ -->
+<section id="reporting">
+  <div class="wrap">
+    <h2>What was reported</h2>
+    <p class="sub">
+      Results reporting is carried in the frozen frame itself, so this section is a
+      <strong>census, not a sample</strong>. Every trial counted here has a primary
+      completion date between 2015 and 2022 and reached an end state, so it is more
+      than three years past the 12-month deadline — an absent result is settled,
+      not pending.
+    </p>
+
+    <div class="tiles" id="reporting-tiles"></div>
+
+    <div class="notice">
+      <h4>What this is not</h4>
+      <p>
+        This is <strong>not a count of legal violations</strong>. The FDA Final Rule's
+        12-month deadline applies to <em>applicable clinical trials</em>, and whether a
+        given trial is one is not exposed by the API and is not adjudicated here. The
+        claim is “no results posted”, never “in breach”.
+      </p>
+    </div>
+
+    <div class="grid2" style="margin-top:32px">
+      <div class="card">
+        <h3 style="margin:0 0 4px;font-size:16px">Who reports, and who does not</h3>
+        <p class="hint" style="margin:0 0 18px">Silent rate by lead sponsor class.</p>
+        <div class="scroll-x"><table class="data" id="sponsor-table"></table></div>
+        <p class="hint" style="margin-top:16px">
+          Industry reports at roughly twice the rate of academia — the opposite of the
+          direction most readers expect.
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 4px;font-size:16px">By trial phase</h3>
+        <p class="hint" style="margin:0 0 18px">Phase 3 trials support approvals.</p>
+        <div class="scroll-x"><table class="data" id="phase-table"></table></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h3 style="margin:0 0 4px;font-size:16px">How late, among those that did post</h3>
+      <p class="hint" style="margin:0 0 8px">
+        Days from primary completion to results first posted. The dashed line is the
+        365-day deadline.
+      </p>
+      <svg class="chart" id="lateness-chart" height="220" role="img"
+           aria-label="Histogram of days from primary completion to results posting"></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FUNNEL ============ -->
+<section id="funnel">
+  <div class="wrap">
+    <h2>The attrition</h2>
+    <p class="sub">
+      Every trial in the frame, followed through to what survived. The final stage
+      depends on reading the outcome text at two archived versions each — that is the
+      version crawl, and it is not finished.
+    </p>
+    <div class="card">
+      <svg class="chart" id="funnel-chart" height="230" role="img"
+           aria-label="Attrition funnel from registered trials to outcome-consistent trials"></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SWITCHING ============ -->
+<section id="switching">
+  <div class="wrap">
+    <h2>Outcome switching</h2>
+    <p class="sub">
+      Whether a trial rewrote the outcome it promised, <em>after</em> the date it could
+      already see the answer.
+    </p>
+    <div id="switching-body"></div>
+
+    <div class="notice accent" style="margin-top:28px">
+      <h4>Why the registry's own flag is not the answer</h4>
+      <p>
+        ClinicalTrials.gov records which version last modified the primary outcome. Taking
+        that at face value gives a large, clean number — and on a 400-trial pilot,
+        <strong>37.7% of it did not survive reading the actual text</strong>. For one
+        flagged trial in seven the outcome set was <em>byte-identical</em> across the
+        change the registry flagged; others were capitalisation passes applied when
+        results were attached.
+      </p>
+      <p>
+        So the flag is reported here as the flag, and the adjudicated figure is reported
+        only once every flagged pair has been fetched and diffed. They are different
+        numbers and the site does not blur them.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTICIPANTS ============ -->
+<section id="participants">
+  <div class="wrap">
+    <h2>The participant count, and why it is not the headline</h2>
+    <p class="sub">
+      The pre-registered figure is the sum of enrolment across every trial that reported
+      nothing. It is a count rather than an estimate, which is exactly why it was meant
+      to lead this page. It cannot.
+    </p>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="tile" style="padding:0">
+          <div class="v" id="enrol-sum">—</div>
+          <div class="k">participants enrolled in trials that posted no results</div>
+          <div class="n" id="enrol-note"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tile" style="padding:0">
+          <div class="v" id="enrol-median">—</div>
+          <div class="k">participants in the <em>median</em> such trial</div>
+          <div class="n">The gap between these two numbers is the entire problem.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h3 style="margin:0 0 4px;font-size:16px">Where the sum comes from</h3>
+      <p class="hint" style="margin:0 0 14px">
+        Share of the total carried by the largest N trials.
+      </p>
+      <svg class="chart" id="concentration-chart" height="150" role="img"
+           aria-label="Share of total enrolment carried by the largest trials"></svg>
+    </div>
+
+    <div class="notice">
+      <h4>One record is a fifth of the figure</h4>
+      <p>
+        The single largest contributor is
+        <a class="src" href="https://clinicaltrials.gov/study/NCT05438901" target="_blank" rel="noopener">NCT05438901</a>,
+        <em>“Investigation of Oxidant-antioxidant Status in Patients Treated With
+        Hirudotherapy”</em> — a single-group before/after study of leech therapy — recorded
+        as an <span class="mono">ACTUAL</span> enrolment of <strong>12,317,546</strong>.
+        That is not a plausible count for that design, and it alone is over
+        <strong>21%</strong> of the pre-registered total.
+      </p>
+      <p>
+        Most remaining top contributors are behavioural megastudies — SMS nudges, online
+        health advertisements, vaccine-booking reminders. They genuinely enrolled millions.
+        But “enrolled in a clinical trial that never reported its results” invites you to
+        picture someone taking an experimental drug, not someone receiving a text message.
+      </p>
+      <p>
+        Depending on the estimator, this figure ranges from <strong>4.8 million to 58.7
+        million</strong>. The pre-registered one is shown unmodified and no substitution has
+        been made, because choosing an estimator after seeing which reads better is the
+        move a pre-registration exists to prevent.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPLORER ============ -->
+<section id="explorer">
+  <div class="wrap">
+    <h2>Every trial</h2>
+    <p class="sub">
+      All 126,760, with the record behind each one. Look up any NCT ID, or filter the
+      loaded slice. Every row links to its source on ClinicalTrials.gov.
+    </p>
+    <div class="controls">
+      <input id="q" type="search" placeholder="NCT01234567" aria-label="Search by NCT ID" spellcheck="false">
+      <select id="f-sponsor" aria-label="Filter by sponsor class"><option value="">All sponsors</option></select>
+      <select id="f-results" aria-label="Filter by reporting status">
+        <option value="">Reported or not</option>
+        <option value="0">No results posted</option>
+        <option value="1">Results posted</option>
+      </select>
+      <span class="hint" id="explorer-status"></span>
+    </div>
+    <div class="scroll-x card" style="padding:16px 8px">
+      <table class="data" id="trials-table"></table>
+    </div>
+    <p class="hint" style="margin-top:14px">
+      The explorer loads one shard of the register at a time — the site issues no queries,
+      it reads static files. Searching a full NCT ID fetches exactly the shard containing it.
+    </p>
+  </div>
+</section>
+
+<!-- ============ METHODS ============ -->
+<section id="methods">
+  <div class="wrap">
+    <h2>Methods and provenance</h2>
+    <p class="sub">
+      Every figure on this page is a pure function of a frozen cohort, a named register
+      batch, and a pipeline commit — all three recorded below.
+    </p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3 style="margin:0 0 14px;font-size:16px">This build</h3>
+        <dl class="prov" id="provenance"></dl>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 14px;font-size:16px">Pipeline health</h3>
+        <p class="hint" style="margin:0 0 12px">
+          Published rather than kept in the repository, so a gap in the record is visible
+          to a reader of the site.
+        </p>
+        <dl class="prov" id="health"></dl>
+      </div>
+    </div>
+
+    <div class="notice" style="margin-top:24px">
+      <h4>What is not claimed</h4>
+      <p>
+        <strong>A retrospective change is not fraud.</strong> Registrations are edited for
+        many legitimate reasons, including at a regulator's instruction. This site reports
+        what changed and when, never why, and never intent.
+      </p>
+      <p>
+        <strong>Non-reporting is not a legal violation.</strong> FDAAA applicability is not
+        exposed by the API and is not adjudicated here.
+      </p>
+      <p>
+        <strong>The adjudicator is a floor, not a ceiling.</strong> It compares text
+        lexically. It cannot tell that “HbA1c at 12 weeks” and “glycated haemoglobin at 3
+        months” are one endpoint, nor that a promoted secondary outcome is a switch.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bot">
+  <div class="wrap">
+    <p>
+      <strong>Endpoint</strong> — data from
+      <a href="https://clinicaltrials.gov" target="_blank" rel="noopener">ClinicalTrials.gov</a>,
+      a service of the U.S. National Library of Medicine. This project is not affiliated
+      with NIH or NLM.
+    </p>
+    <p id="footer-prov" class="mono"></p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
