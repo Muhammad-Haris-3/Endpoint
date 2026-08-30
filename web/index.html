@@ -15,6 +15,7 @@
     <nav class="top-nav">
       <a href="#reporting">Reporting</a>
       <a href="#switching">Outcome switching</a>
+      <a href="#diff">The diff</a>
       <a href="#participants">Participants</a>
       <a href="#explorer">Explorer</a>
       <a href="#methods">Methods</a>
@@ -139,6 +140,34 @@
         numbers and the site does not blur them.
       </p>
     </div>
+  </div>
+</section>
+
+<!-- ============ VERSION DIFF (UI-2) ============ -->
+<section id="diff">
+  <div class="wrap">
+    <h2>What changed, and when</h2>
+    <p class="sub">
+      The registry keeps every submitted version. This shows the primary outcome as it
+      stood <em>before</em> the change and <em>at</em> the change, side by side, with the
+      date each was submitted — so you can see for yourself whether the rewrite landed
+      before or after the trial could see its own answer.
+    </p>
+
+    <div class="controls">
+      <input id="diff-q" type="search" placeholder="NCT01234567" aria-label="Look up a trial's version diff" spellcheck="false">
+      <span class="hint" id="diff-status"></span>
+    </div>
+
+    <div id="diff-featured" class="featured-strip"></div>
+    <div id="diff-body"></div>
+
+    <p class="hint" style="margin-top:16px">
+      Only <span class="mono">measure</span> and <span class="mono">timeFrame</span> are
+      shown, because those are the only two fields the classifier reads. The viewer shows
+      exactly what the verdict was computed from — no more, so a reader is never invited
+      to argue with a verdict on evidence the rule never saw.
+    </p>
   </div>
 </section>
 
@@ -291,6 +320,7 @@
   </div>
 </footer>
 
+<script src="diff.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

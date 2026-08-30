@@ -271,3 +271,70 @@ footer.bot a { color: var(--ink-mid); }
   section { padding: 44px 0; }
   .headline-figure { gap: 12px; }
 }
+
+/* ---------- UI-2: the version diff ---------- */
+
+.featured-strip {
+  display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 14px;
+  scrollbar-width: thin;
+}
+.featured-strip button {
+  font: inherit; font-family: var(--mono); font-size: 11.5px;
+  white-space: nowrap; cursor: pointer; flex: none;
+  padding: 7px 11px; border-radius: 20px;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--ink-mid);
+}
+.featured-strip button:hover { border-color: var(--accent); color: var(--ink); }
+.featured-strip button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.diff-head {
+  display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap;
+  padding-bottom: 16px; margin-bottom: 20px; border-bottom: 1px solid var(--border);
+}
+.diff-head .nct { font-family: var(--mono); font-size: 17px; font-weight: 600; }
+.verdict {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .04em;
+  padding: 3px 9px; border-radius: 4px; border: 1px solid currentColor;
+}
+.verdict.COUNT_CHANGED, .verdict.SUBSTANTIVE { color: var(--accent); background: var(--accent-soft); }
+.verdict.REWORDED, .verdict.TIMEFRAME_ONLY { color: var(--warn); }
+.verdict.COSMETIC, .verdict.IDENTICAL { color: var(--ink-soft); }
+
+/* the timeline that makes "after the data was in" visible */
+.timeline { margin: 4px 0 24px; }
+.timeline svg { width: 100%; display: block; overflow: visible; }
+.tl-line { stroke: var(--border-strong); stroke-width: 2; }
+.tl-gap { stroke: var(--accent); stroke-width: 3; }
+.tl-dot { fill: var(--surface); stroke: var(--ink-mid); stroke-width: 2; }
+.tl-dot.accent { fill: var(--accent); stroke: var(--accent); }
+.tl-text { font-family: var(--mono); font-size: 10.5px; fill: var(--ink-soft); }
+.tl-text.strong { fill: var(--ink); }
+
+.diff-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 700px) { .diff-cols { grid-template-columns: 1fr; } }
+.diff-col h4 {
+  margin: 0 0 4px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.diff-col .when { font-family: var(--mono); font-size: 12px; color: var(--ink-mid); margin-bottom: 12px; }
+.outcome {
+  border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px;
+  margin-bottom: 10px; background: var(--bg);
+}
+.outcome .measure { font-size: 15px; line-height: 1.5; }
+.outcome .tf {
+  margin-top: 9px; padding-top: 9px; border-top: 1px dashed var(--border);
+  font-size: 13px; color: var(--ink-mid);
+}
+.outcome .tf b { font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--ink-soft); font-weight: 600; display: block; margin-bottom: 3px; }
+.outcome.empty { color: var(--ink-soft); font-style: italic; }
+
+ins.w { background: rgba(47,107,79,.20); text-decoration: none; border-radius: 2px; padding: 0 2px; }
+del.w { background: rgba(154,47,24,.16); text-decoration: line-through; border-radius: 2px; padding: 0 2px; opacity: .8; }
+:root[data-theme="dark"] ins.w { background: rgba(111,178,140,.22); }
+:root[data-theme="dark"] del.w { background: rgba(226,114,79,.20); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) ins.w { background: rgba(111,178,140,.22); }
+  :root:not([data-theme="light"]) del.w { background: rgba(226,114,79,.20); }
+}

@@ -329,6 +329,7 @@ function renderProvenance(m) {
     renderParticipants(summary, distributions);
     renderProvenance(manifest);
     await initExplorer(breakdowns);
+    await initDiff();
   } catch (err) {
     document.querySelector('main').insertAdjacentHTML('afterbegin',
       `<div class="wrap"><div class="notice" style="margin-top:24px">

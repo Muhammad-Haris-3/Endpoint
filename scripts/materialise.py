@@ -113,6 +113,36 @@ def load_history(batch):
     return out
 
 
+def load_pairs(batch):
+    """nct -> the outcome sets at v-1 and v, as collect_versions.py stored them.
+
+    ONLY `measure` and `timeFrame` are carried through to the served artefact,
+    and that is deliberate rather than a size saving. verdict.classify() reads
+    exactly those two fields, so a diff viewer showing exactly those two fields
+    shows precisely what the verdict was computed from. Serving the description
+    as well would put text on the page that did not enter the judgement, and
+    invite a reader to disagree with a verdict on evidence the rule never saw.
+    """
+    if not batch:
+        return None
+    pattern = os.path.join(REGISTER, batch, '*.versions.ndjson.gz')
+    out = {}
+    for path in sorted(glob.glob(pattern)):
+        with gzip.open(path, 'rt', encoding='utf-8') as fh:
+            for line in fh:
+                if not line.strip():
+                    continue
+                r = json.loads(line)
+                out[r['p']] = {
+                    'v': r['v'],
+                    'before': [{'m': o.get('m', ''), 't': o.get('t', '')} for o in r.get('before') or []],
+                    'after': [{'m': o.get('m', ''), 't': o.get('t', '')} for o in r.get('after') or []],
+                    'before_sec': r.get('before_sec') or [],
+                    'after_sec': r.get('after_sec') or [],
+                }
+    return out or None
+
+
 def load_verdicts(batch):
     """nct -> verdict record, or None when M4 has not produced any yet."""
     if not batch:
@@ -158,11 +188,13 @@ def main():
     n = len(rows)
     history = load_history(args.history_batch)
     verdicts = load_verdicts(args.versions_batch)
+    pairs = load_pairs(args.versions_batch)
     outcomes_available = verdicts is not None
     print('frame %d, history %s, verdicts %s'
           % (n, 'loaded' if history else 'MISSING',
              '%d loaded' % len(verdicts) if outcomes_available else 'PENDING (M4)'))
 
+    rows_by_nct = {r['nct']: r for r in rows}
     silent = [r for r in rows if r['has_results'] == '0']
     posted = [r for r in rows if r['has_results'] == '1']
 
@@ -397,6 +429,60 @@ def main():
     write(os.path.join(args.out, 'trials', 'index.json'),
           {'provenance': built, 'scheme': 'nct[3:6]',
            'buckets': {k: len(v) for k, v in sorted(buckets.items())}})
+
+    # ---- diffs/<prefix>.json  (UI-2, the version diff viewer) ------------
+    if pairs and verdicts:
+        dbuckets = {}
+        for nct, pr in pairs.items():
+            v = verdicts.get(nct)
+            if not v:
+                continue
+            fr = rows_by_nct.get(nct) or {}
+            dbuckets.setdefault(nct[3:6], []).append({
+                'nct': nct,
+                'version': pr['v'],
+                'label': v['label'],
+                'detail': v.get('detail'),
+                'retrospective': v.get('retrospective'),
+                'days_after_pc': v.get('days_after_pc'),
+                'pc': fr.get('primary_completion'),
+                'change_date': (history.get(nct) or {}).get('cd') if history else None,
+                'before': pr['before'],
+                'after': pr['after'],
+                'before_sec': pr['before_sec'],
+                'after_sec': pr['after_sec'],
+                'source': 'https://clinicaltrials.gov/study/%s?tab=history' % nct,
+            })
+        diff_bytes = 0
+        for prefix, recs in dbuckets.items():
+            recs.sort(key=lambda x: x['nct'])
+            diff_bytes += write(os.path.join(args.out, 'diffs', prefix + '.json'),
+                                {'prefix': prefix, 'count': len(recs), 'diffs': recs})
+        artefacts['diffs/*.json'] = diff_bytes
+        # A landing set, so the viewer is populated before anyone searches.
+        # Ranked by days after completion among DEFENSIBLE retrospective changes
+        # only -- the ones the pre-registered figure actually counts. Ranking by
+        # anything looser would put the project's most-seen examples outside the
+        # set its headline is built from.
+        featured = sorted(
+            (d for recs in dbuckets.values() for d in recs
+             if d['retrospective'] and d['label'] in ('COUNT_CHANGED', 'SUBSTANTIVE')
+             and d['days_after_pc'] is not None),
+            key=lambda d: -d['days_after_pc'])[:24]
+        write(os.path.join(args.out, 'diffs', 'index.json'), {
+            'provenance': built, 'scheme': 'nct[3:6]', 'available': True,
+            'featured': [{'nct': d['nct'], 'label': d['label'],
+                          'days_after_pc': d['days_after_pc'], 'pc': d['pc'],
+                          'change_date': d['change_date']} for d in featured],
+            'note': 'Only measure and timeFrame are served, because those are the '
+                    'only fields verdict.classify() reads. The viewer shows exactly '
+                    'what the verdict was computed from.',
+            'buckets': {k: len(v) for k, v in sorted(dbuckets.items())},
+        })
+    else:
+        write(os.path.join(args.out, 'diffs', 'index.json'),
+              {'provenance': built, 'available': False, 'status': 'pending',
+               'blocked_on': 'M4 version crawl and adjudication', 'buckets': {}})
 
     # ---- manifest.json (FR-9, FR-11) -------------------------------------
     def run_json(batch):
