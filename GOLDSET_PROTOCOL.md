@@ -104,11 +104,6 @@ require an effect on one or the other; a composite of the two is one number that
 fails the counterfactual test and is a substantive change however much it looks
 like tidying.
 
-**Rule 8 — order is not meaning.** Compare the outcome sets as *sets*. The
-results form reorders outcomes routinely. If the same measures appear in both
-versions with only their positions changed, that is `SAME`; judge only whether a
-measure was added, dropped, or altered.
-
 **Rule 5 — an empty earlier version is `UNCLEAR`, not `SET_CHANGED`,** unless the
 later version's outcome contradicts something the trial stated elsewhere. A
 registration that had no primary outcome and later has one may be a registration
@@ -119,6 +114,11 @@ honestly rather than assumed.)
 **Rule 6 — a secondary outcome promoted to primary is `DIFFERENT`.** This is the
 classic form of outcome switching and Tier 1 cannot see it at all. The labelling
 tool shows the secondary outcomes for exactly this reason.
+
+**Rule 8 — order is not meaning.** Compare the outcome sets as *sets*. The
+results form reorders outcomes routinely. If the same measures appear in both
+versions with only their positions changed, that is `SAME`; judge only whether a
+measure was added, dropped, or altered.
 
 **Rule 7 — when genuinely torn, label `UNCLEAR`.** A forced guess is worse than a
 recorded uncertainty: `UNCLEAR` is reported as a count and excluded from the
