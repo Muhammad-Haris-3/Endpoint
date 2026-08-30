@@ -243,6 +243,7 @@ false.
 | [`frame/MANIFEST`](frame/MANIFEST) | The freeze: SHA-256 of the frame, its metadata, and the pre-registration |
 | `frame/studies.tsv` | The cohort. 126,760 rows, sorted by NCT ID |
 | [`FINDINGS.md`](FINDINGS.md) | Discoveries and corrections, accumulating |
+| [`GOLDSET_PROTOCOL.md`](GOLDSET_PROTOCOL.md) | How the gold set is labelled, and why an LLM must not label it |
 | `Endpoint_M0..M7_Summary.md` | Per-milestone: scope, what was built, how it was verified, decisions |
 | [`FEASIBILITY.md`](FEASIBILITY.md) | What was measured before anything was designed |
 | [`Endpoint_SRS_v1.0.md`](Endpoint_SRS_v1.0.md) | Requirements, architecture, milestones |

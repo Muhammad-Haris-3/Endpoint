@@ -476,7 +476,7 @@ unescapes twice, deliberately.
 | **M3** | History crawl | ✅ Done 30 Aug 2026. 126,760/126,760, zero failures, zero missing, zero duplicates |
 | **M3.1** | Durable cold store | Documents published as release assets. Not built |
 | **M4** | Version crawl + Tier 1 | Every flagged change adjudicated deterministically |
-| **M5** | Gold set + Tier 2 | Precision/recall published |
+| **M5** | Gold set + Tier 2 | ◐ Apparatus complete: 419 pairs drawn and hashed, codebook and blind labelling tool built. **0 labelled — blocked on a human labeller** (`GOLDSET_PROTOCOL.md` §0) |
 | **M6** | Warehouse + materialisation | ◐ Partial. `materialise.py` writes every artefact; outcome sections materialise as `available:false` until M4 lands |
 | **M7** | Web | UI-1 … UI-8 |
 | **M8** | Decision memo | `DECISION_MEMO.md`, two pages, no statistics required |

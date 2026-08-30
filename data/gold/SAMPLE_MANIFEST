@@ -1,0 +1,29 @@
+# Endpoint gold-set sample manifest
+#
+# Drawn once, before any labelling, under a fixed seed. PREREGISTRATION.md
+# 5.3 requires >=300 hand-labelled pairs labelled BEFORE Tier 2 runs.
+#
+# The sample is STRATIFIED and therefore UNEQUALLY WEIGHTED. Any estimate
+# over the frame must reweight by the `weight` column (inverse sampling
+# fraction). A raw mean over these rows is not a frame estimate.
+
+drawn_utc         2026-08-30T23:21:24Z
+seed              20260831
+pool              54203
+sample_size       419
+posting_window_d  31
+sample_sha256     bfaeac254b9469fce68bd2aae04a814dc7698a32904189dcd70a54c2e487fa03
+
+# stratum (verdict|posting_coincident)   drawn
+COSMETIC|0                                    29
+COSMETIC|1                                    32
+COUNT_CHANGED|0                               38
+COUNT_CHANGED|1                               35
+IDENTICAL|0                                   38
+IDENTICAL|1                                   29
+REWORDED|0                                    29
+REWORDED|1                                    28
+SUBSTANTIVE|0                                 47
+SUBSTANTIVE|1                                 47
+TIMEFRAME_ONLY|0                              36
+TIMEFRAME_ONLY|1                              31
