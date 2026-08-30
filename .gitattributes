@@ -1,0 +1,13 @@
+# No line-ending translation, anywhere, ever.
+#
+# Endpoint's claim is that a specific trial's primary outcome changed on a
+# specific date, and the evidence for that claim is a pair of archived registry
+# versions whose SHA-256 is recorded in the register. Git's autocrlf breaks
+# exactly that: with core.autocrlf=true a Windows checkout of a stored version
+# document hashes differently from the blob and from every Linux checkout, so a
+# verifier on another platform computes a different digest from the same commit
+# and concludes the record was altered.
+#
+# A hash nobody else can reproduce is not evidence. The repository is therefore
+# byte-exact on every platform: working copy == blob == what the manifest signed.
+* -text

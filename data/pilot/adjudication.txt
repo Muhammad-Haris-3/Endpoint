@@ -1,0 +1,64 @@
+ADJUDICATION OF FLAGGED PRIMARY-OUTCOME CHANGES
+flagged trials in pilot sample: 161 of 400
+fetching 2 versions each (before, at-change)
+
+  25/161 adjudicated
+  50/161 adjudicated
+  75/161 adjudicated
+  100/161 adjudicated
+  125/161 adjudicated
+  150/161 adjudicated
+  adjudicated 161, failed 0
+
+ALL FLAGGED CHANGES   (n=161)
+   verdict           count    share
+   ----------------------------------
+   COUNT_CHANGED        29    18.0%
+   SUBSTANTIVE          62    38.5%
+   REWORDED              6     3.7%
+   TIMEFRAME_ONLY       25    15.5%
+   COSMETIC              9     5.6%
+   IDENTICAL            30    18.6%
+   ----------------------------------
+   defensible           91    56.5%
+
+RETROSPECTIVE ONLY (changed after primary completion)   (n=122)
+   verdict           count    share
+   ----------------------------------
+   COUNT_CHANGED        25    20.5%
+   SUBSTANTIVE          51    41.8%
+   REWORDED              3     2.5%
+   TIMEFRAME_ONLY       18    14.8%
+   COSMETIC              8     6.6%
+   IDENTICAL            17    13.9%
+   ----------------------------------
+   defensible           76    62.3%
+
+THE NUMBER THAT MATTERS
+   naive retrospective rate     122 / 400 trials sampled = 30.5%
+   adjudicated retrospective    76 / 400 trials sampled = 19.0%
+   share of the naive signal that survives reading the text: 62.3%
+
+WORKED EXAMPLES  (defensible retrospective changes)
+   NCT02462187  +2346d  SUBSTANTIVE  (min token jaccard 0.60)
+       before: Efficacy: Clearance of Baseline External Genital and Perianal Warts
+       after : Efficacy: Complete Clearance of Baseline External Genital and Perianal Warts at or Before Week 12
+   NCT01360606  +2267d  COUNT_CHANGED  (1 -> 2 primary outcomes)
+       before: Maximum tolerated dose (MTD)
+       after : Maximum Tolerated Dose (MTD)
+       after : Number of Participants Who Experienced Dose-Limiting Toxicities (DLTs)
+   NCT02100631  +2228d  SUBSTANTIVE  (min token jaccard 0.06)
+       before: Seroconversion by vibriocidal antibody (i.e., a 4-fold rise over baseline titer)
+       after : Seroconversion Rate at Day 11
+   NCT00478361  +1906d  COUNT_CHANGED  (4 -> 1 primary outcomes)
+       before: Overall response rate (complete and partial response)
+       before: Time to progression
+       after : Objective Response Rate
+   NCT02547441  +1852d  COUNT_CHANGED  (3 -> 2 primary outcomes)
+       before: Efficacy Absolute change in inflammatory lesion count
+       before: Efficacy IGA: 2 grade reduction
+       after : Change in Inflammatory Lesion Count From Baseline to Week 12
+       after : Percentage of Participants Who Achieved 2 Grade IGA Reduction.
+   NCT02473276  +1810d  SUBSTANTIVE  (min token jaccard 0.75)
+       before: Percent of participants with postdural puncture headache
+       after : Number of Participants With Postdural Puncture Headache

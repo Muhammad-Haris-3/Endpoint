@@ -1,0 +1,30 @@
+RUNNER ACCESS PROBE  (M1)
+platform   : Windows 11
+python     : 3.13.12
+openssl    : OpenSSL 3.0.18 30 Sep 2025
+curl       : curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP
+
+target             client       status          bytes
+------------------------------------------------------
+v2 (documented)    urllib       200             20379
+v2 (documented)    requests     200             20380
+v2 (documented)    curl         200             20379
+------------------------------------------------------
+archive index      urllib       403                 0
+archive index      requests     403               134
+archive index      curl         200             23413
+------------------------------------------------------
+archive version    urllib       403                 0
+archive version    requests     403               134
+archive version    curl         200             10341
+------------------------------------------------------
+
+ARCHIVE REACHABLE FROM THIS MACHINE: yes, via curl
+
+SUSTAINED BURST  20 requests at 2.0 req/s against the archive index
+   ok 20 / 20, refused 0, 15.8s, 1.26 req/s effective
+   No refusal at this rate. The ceiling is UNKNOWN, not high.
+
+VERDICT
+   M1 PASSES on this machine. Record the platform line above beside
+   the result: it is a property of the environment, not of the project.

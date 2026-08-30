@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.next/
+
+# The cold store. Raw archived registry versions, content-addressed.
+# Hundreds of gigabytes at full frame size; reproducible from the register's
+# manifest, so it is rebuilt rather than committed (SRS 6.1).
+data/cold/
+
+# Derived analytical artefacts. Everything here is a pure function of the cold
+# store plus a pinned pipeline commit, so committing it would be committing a
+# cache (SRS 6.3).
+data/warehouse/
+data/serve/
+
+# data/pilot/ IS committed. It is the evidence for FEASIBILITY.md, and a
+# feasibility claim whose measurements are not in the repository is an assertion.

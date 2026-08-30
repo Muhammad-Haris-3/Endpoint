@@ -1,0 +1,2855 @@
+[
+ {
+  "after": [
+   "Relative Change in % pO2"
+  ],
+  "before": [
+   "Change in Tissue Oxygenation"
+  ],
+  "days_after_pc": 759,
+  "detail": "min token jaccard 0.33",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03348956",
+  "retrospective": true,
+  "version": 10
+ },
+ {
+  "after": [
+   "progression-free survival in the targeted drug arm compared to standard maintenance therapy arm"
+  ],
+  "before": [
+   "progression-free survival in the targeted drug arm compared to standard maintenance therapy arm"
+  ],
+  "days_after_pc": -1037,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT02117167",
+  "retrospective": false,
+  "version": 4
+ },
+ {
+  "after": [
+   "Average Depression Score Using the Hamilton Depression (HAM-D) 17 Scale",
+   "Mean Clinical Global Improvement- Severity&#x2F;Improvement Scale Score (CGI-I&#x2F;CGI-S)",
+   "Mean Suicidal Ideation as Assessed by the Beck Suicidal Ideation Scale (BSSI)"
+  ],
+  "before": [
+   "Number of Participants with improvement in depressive symptoms using the HAM-D scale."
+  ],
+  "days_after_pc": 306,
+  "detail": "1 -> 3 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT02367521",
+  "retrospective": true,
+  "version": 7
+ },
+ {
+  "after": [
+   "Change from Baseline to Week 12 in the European League Against Rheumatism Sj\u00f6gren&#x27;s Syndrome Disease Activity Index (ESSDAI)"
+  ],
+  "before": [
+   "Change from Baseline to Week 12 in the European League Against Rheumatism Sjogren&#x27;s Syndrome Disease Activity Index (ESSDAI)"
+  ],
+  "days_after_pc": -30,
+  "detail": "min token jaccard 0.86",
+  "has_results": false,
+  "label": "REWORDED",
+  "nct": "NCT02610543",
+  "retrospective": false,
+  "version": 8
+ },
+ {
+  "after": [
+   "changes in the Hamilton Depression Scale(HAMD-17) score from baseline to 9 months",
+   "changes in the Montgomery-Asberg Depression Rating Scale from baseline to 9 months"
+  ],
+  "before": [
+   "changes in the Hamilton Depression Scale(HAMD-17)",
+   "changes in the Montgomery-Asberg Depression Rating Scale"
+  ],
+  "days_after_pc": -903,
+  "detail": "min token jaccard 0.57",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03347487",
+  "retrospective": false,
+  "version": 2
+ },
+ {
+  "after": [
+   "Area under the curve (AUC) of the log10 Nasal Viral Load on Day 8"
+  ],
+  "before": [
+   "The primary endpoint is the time from initiation of VX-787 dosing to resolution of influenza symptoms as assessed by clinical symptom scores."
+  ],
+  "days_after_pc": 380,
+  "detail": "min token jaccard 0.06",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02342249",
+  "retrospective": true,
+  "version": 7
+ },
+ {
+  "after": [
+   "Percent of Participants With an Urticaria Control Test [UCT] Score of Greater Than or Equal to 12"
+  ],
+  "before": [
+   "proportion of patients with an urticaria control test [UCT] score of greater than or equal to 12"
+  ],
+  "days_after_pc": 1492,
+  "detail": "min token jaccard 0.78",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02550106",
+  "retrospective": true,
+  "version": 2
+ },
+ {
+  "after": [
+   "Intracranial Progression Free Survival (iPFS)"
+  ],
+  "before": [
+   "Intracranial progression free survival (iPFS)"
+  ],
+  "days_after_pc": 536,
+  "detail": "2 years -> from c1d1 until death or up to a maximum of 6 months",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT04610684",
+  "retrospective": true,
+  "version": 10
+ },
+ {
+  "after": [
+   "Overall Safety of Idelalisib",
+   "Clinical Response: Overall Response Rate"
+  ],
+  "before": [
+   "Evaluate the overall safety of idelalisib",
+   "Clinical response rate during treatment with idelalisib based on standard criteria"
+  ],
+  "days_after_pc": 423,
+  "detail": "min token jaccard 0.25",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT01306643",
+  "retrospective": true,
+  "version": 27
+ },
+ {
+  "after": [
+   "Large for Gestational Age (LGA) Infant"
+  ],
+  "before": [
+   "Large for gestational age (LGA) infant"
+  ],
+  "days_after_pc": 365,
+  "detail": "at birth approximately 40 weeks gestation -> at time of delivery",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT02309138",
+  "retrospective": true,
+  "version": 11
+ },
+ {
+  "after": [
+   "Percentage of Participants With Adverse Events"
+  ],
+  "before": [
+   "Percentage of participants with adverse events"
+  ],
+  "days_after_pc": 1319,
+  "detail": "364 weeks -> 106 weeks",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT02494778",
+  "retrospective": true,
+  "version": 28
+ },
+ {
+  "after": [
+   "Forced Vital Capacity (FVC)"
+  ],
+  "before": [
+   "Spirometry"
+  ],
+  "days_after_pc": 1268,
+  "detail": "min token jaccard 0.00",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02265874",
+  "retrospective": true,
+  "version": 5
+ },
+ {
+  "after": [
+   "Overall Survival"
+  ],
+  "before": [
+   "Overall Survival"
+  ],
+  "days_after_pc": 492,
+  "detail": "from randomization to death from any cause or last day known -> from randomization to death from any cause or last day known",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT03126435",
+  "retrospective": true,
+  "version": 21
+ },
+ {
+  "after": [
+   "Proportion of families providing consent for deceased organ donation."
+  ],
+  "before": [
+   "Consent rate for deceased organ and&#x2F;or tissue donation."
+  ],
+  "days_after_pc": 452,
+  "detail": "min token jaccard 0.38",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT01922310",
+  "retrospective": true,
+  "version": 4
+ },
+ {
+  "after": [
+   "Mean Change in Unified Parkinson&#x27;s Disease Rating Scale (UPDRS) Scores - Motor Section (Part III) at End of Randomized Phase"
+  ],
+  "before": [
+   "Optimal set of stimulation parameters as measured by therapeutic window"
+  ],
+  "days_after_pc": 405,
+  "detail": "min token jaccard 0.03",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02835274",
+  "retrospective": true,
+  "version": 9
+ },
+ {
+  "after": [
+   "Change in Language Content Production for Treated Stimuli: Effect Sizes (Magnitude of Change From Baseline to Follow-up)",
+   "Change in Production of Language Content for Untreated Sets - Generalization Measured in Effect Sizes"
+  ],
+  "before": [
+   "speech and language production"
+  ],
+  "days_after_pc": 804,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT01979159",
+  "retrospective": true,
+  "version": 12
+ },
+ {
+  "after": [
+   "Change in Length-for-age z Score Over 6 Months From Enrollment to End of Study.",
+   "% Lactulose From Dual Sugar Absorption Test at 9 and 12 Months of Age"
+  ],
+  "before": [
+   "Change in Length-for-age z Score Over Duration of the Study Looking for a Positive Change",
+   "% Lactulose From Dual Sugar Absorption Test at 9 and 12 Months of Age"
+  ],
+  "days_after_pc": 1052,
+  "detail": "min token jaccard 0.48",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02472262",
+  "retrospective": true,
+  "version": 6
+ },
+ {
+  "after": [
+   "Area Under the Concentration-time Curve of Midazolam in Plasma Over the Time Interval From 0 to the Last Quantifiable Data Point (AUC0-tz)",
+   "Maximum Measured Concentration of Midazolam in Plasma (Cmax)"
+  ],
+  "before": [
+   "Area under the concentration-time curve of midazolam in plasma over the time interval from 0 to the last quantifiable data point (AUC0-tz)",
+   "Maximum measured concentration of midazolam in plasma (Cmax)"
+  ],
+  "days_after_pc": 1379,
+  "detail": "up to 12 hours per each period -> plasma concentrations of midazolam were measured within 1 ho",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT05258110",
+  "retrospective": true,
+  "version": 8
+ },
+ {
+  "after": [
+   "Number of Participants With Adverse Events (AEs).",
+   "Number of Participants With Dose Limiting Toxicities (DLTs)"
+  ],
+  "before": [
+   "Number of Participants With Adverse Events (AEs).",
+   "Number of Participants With Dose Limiting Toxicities (DLTs)"
+  ],
+  "days_after_pc": 477,
+  "detail": "cycle 1 study day 1 study day 28 28 days -> aes were collected from the start of intervention through 30",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT03989115",
+  "retrospective": true,
+  "version": 27
+ },
+ {
+  "after": [
+   "Physician use of self-efficacy enhancing interviewing techniques"
+  ],
+  "before": [
+   "Physician use of self-efficacy enhancing interviewing techniques"
+  ],
+  "days_after_pc": -89,
+  "detail": "3 months after receiving intervention -> during the 3 months after receiving intervention",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT01618552",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Velocity (cm&#x2F;s)",
+   "Stride Length (cm)",
+   "Double leg support (% of gait cycle)",
+   "Functional Balance skills (score)"
+  ],
+  "before": [
+   "Velocity (cm&#x2F;s)",
+   "Stride Length (cm)",
+   "Double leg support (% of gait cycle)",
+   "Functional Balance skills (score)"
+  ],
+  "days_after_pc": 27,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT05136716",
+  "retrospective": true,
+  "version": 1
+ },
+ {
+  "after": [
+   "Change in body composition"
+  ],
+  "before": [
+   "Body composition"
+  ],
+  "days_after_pc": -435,
+  "detail": "min token jaccard 0.50",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03658278",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Efficacy: Complete Clearance of Baseline External Genital and Perianal Warts at or Before Week 12"
+  ],
+  "before": [
+   "Efficacy: Clearance of Baseline External Genital and Perianal Warts"
+  ],
+  "days_after_pc": 2346,
+  "detail": "min token jaccard 0.60",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02462187",
+  "retrospective": true,
+  "version": 14
+ },
+ {
+  "after": [
+   "Part 1: Wheal and erythema size after skin prick test with several different ciprofloxacin and icatibant concentrations.",
+   "Part 2: Change in wheal size after challenge procedure from Day 1 (pre-dose) to week 16."
+  ],
+  "before": [
+   "Part 1: Wheal and erythema size after skin prick test with several different ciprofloxacin and icatibant concentrations.",
+   "Part 2: Change in wheal size after challenge procedure from Day 1 (pre-dose) to week 16."
+  ],
+  "days_after_pc": -442,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT04513548",
+  "retrospective": false,
+  "version": 2
+ },
+ {
+  "after": [
+   "Change From Baseline in Hemoglobin A1c (HbA1c) at 12-Week Endpoint"
+  ],
+  "before": [
+   "Change from Baseline in Hemoglobin A1c (HbA1c) at 12 Week Endpoint"
+  ],
+  "days_after_pc": 996,
+  "detail": "identical after normalisation",
+  "has_results": true,
+  "label": "COSMETIC",
+  "nct": "NCT02020616",
+  "retrospective": true,
+  "version": 13
+ },
+ {
+  "after": [
+   "Change in Parent Needs &amp; Resources Domain of CANS - Provider Arm Only",
+   "Change in Parent Activation Measure Mental Health (P-PAM-MH) - Parent Arm Only"
+  ],
+  "before": [
+   "Parent Activation Measure Mental Health (P-PAM-MH): baseline",
+   "Parent Activation Measure Mental Health (P-PAM-MH): post-intervention",
+   "Communication Scale of the Kim Alliance Scale Refined (KAS-R): baseline",
+   "Communication Scale of the Kim Alliance Scale Refined (KAS-R): post-intervention",
+   "Perceived Efficacy in Parent-Physician Interactions (PEPPI)-Short Form: baseline",
+   "Perceived Efficacy in Parent-Physician Interactions (PEPPI)-Short Form: post-intervention",
+   "Perception of Care Quality Survey: baseline",
+   "Perception of Care Quality Survey: post-intervention",
+   "Parent Participation Engagement Measure (PPEM): baseline",
+   "Parent Participation Engagement Measure (PPEM): post-intervention",
+   "Parent Needs &amp; Resources Domain of CANS",
+   "Parent Needs &amp; Resources Domain of CANS"
+  ],
+  "days_after_pc": 453,
+  "detail": "12 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT04445155",
+  "retrospective": true,
+  "version": 7
+ },
+ {
+  "after": [
+   "Area under the curve during the dosing interval (AUCtau)"
+  ],
+  "before": [
+   "Area under the curve during the dosing interval (AUCtau)"
+  ],
+  "days_after_pc": 984,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT03527186",
+  "retrospective": true,
+  "version": 8
+ },
+ {
+  "after": [
+   "Pain Symptom Changes Will be Measured by a Visual Analogue Scale for Pain ."
+  ],
+  "before": [
+   "Pain Symptom Changes Will be Measured by a Visual Analogue Scale for Pain ."
+  ],
+  "days_after_pc": 742,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT03547869",
+  "retrospective": true,
+  "version": 12
+ },
+ {
+  "after": [
+   "Number of Subjects With Treatment-Emergent Adverse Events (TEAEs) and Dose Limiting Toxicities (DLTs)",
+   "Progression-free Survival (PFS) at Week 24 as Assessed by Response Evaluation Criteria in Solid Tumors Version 1.1 (RECIST 1.1)"
+  ],
+  "before": [
+   "Number of Subjects With Treatment-Emergent Adverse Events (TEAEs) and Dose Limiting Toxicities (DLTs)",
+   "Progression-free Survival (PFS) at Week 24 as Assessed by Response Evaluation Criteria in Solid Tumors Version 1.1 (RECIST 1.1)"
+  ],
+  "days_after_pc": 159,
+  "detail": "up to 24 weeks -> up to 24 weeks",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT02963831",
+  "retrospective": true,
+  "version": 28
+ },
+ {
+  "after": [
+   "Number of Participants That Did Not Have Test Material Induced Clinically Significant Dermal Irritation"
+  ],
+  "before": [
+   "Number of Participants That Did Not Have Test Material Induced Clinically Significant Dermal Irritation"
+  ],
+  "days_after_pc": 508,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT03450070",
+  "retrospective": true,
+  "version": 2
+ },
+ {
+  "after": [
+   "Safety (Adverse Event Profile)",
+   "CD4+ T Cell Responses in the Blood and in the Sentinel Immunized Node"
+  ],
+  "before": [
+   "Safety (Adverse Event Profile)",
+   "CD4+ T Cell Responses in the Blood and in the Sentinel Immunized Node"
+  ],
+  "days_after_pc": -85,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT02385669",
+  "retrospective": false,
+  "version": 9
+ },
+ {
+  "after": [
+   "A Change in the Fugl-Meyer Upper Extremity Assessment Score"
+  ],
+  "before": [
+   "A change in the Fugl-Meyer Upper Extremity Assessment score"
+  ],
+  "days_after_pc": 615,
+  "detail": "identical after normalisation",
+  "has_results": true,
+  "label": "COSMETIC",
+  "nct": "NCT04283253",
+  "retrospective": true,
+  "version": 3
+ },
+ {
+  "after": [
+   "Changes in Health related quality of life"
+  ],
+  "before": [
+   "Changes in Health related quality of life"
+  ],
+  "days_after_pc": 86,
+  "detail": "at baseline and after 24 months -> at baseline after 12 and 24 months",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT02957253",
+  "retrospective": true,
+  "version": 11
+ },
+ {
+  "after": [
+   "Change in Body Weight (%)",
+   "Number of Participants Who Achieve (Yes&#x2F;no): Body Weight Reduction More Than or Equal to 5%"
+  ],
+  "before": [
+   "Change in Body Weight (%)",
+   "Number of Participants Who Achieve (Yes&#x2F;no): Body Weight Reduction More Than or Equal to 5%"
+  ],
+  "days_after_pc": 460,
+  "detail": "at week 68 -> at week 68",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT03811574",
+  "retrospective": true,
+  "version": 28
+ },
+ {
+  "after": [
+   "Determine whether intake of probiotics reduce perceived stress"
+  ],
+  "before": [
+   "Determine whether intake of probiotics reduce perceived stress"
+  ],
+  "days_after_pc": -221,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT04931082",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Number of Participants With Arm Morbidity at 12 Months Post-surgery - Shoulder Mobility",
+   "Number of Participants With Arm Morbidity at 12 Months Post-surgery - Upper Body Muscle Strength",
+   "Number of Participants With Arm Morbidity at 12 Months Post-surgery - Upper Body Function",
+   "Number of Participants With Arm Morbidity at 12 Months Post-surgery - Arm Volume"
+  ],
+  "before": [
+   "Arm morbidity at 12 months post-surgery - shoulder mobility",
+   "Arm morbidity at 12 months post-surgery - upper body muscle strength",
+   "Arm morbidity at 12 months post-surgery - upper body function",
+   "Arm morbidity at 12 months post-surgery - arm volume"
+  ],
+  "days_after_pc": 1514,
+  "detail": "min token jaccard 0.67",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02754427",
+  "retrospective": true,
+  "version": 2
+ },
+ {
+  "after": [
+   "Percentage of Participants With Sustained Virologic Response at 24 Weeks After Treatment Discontinuation (SVR24)"
+  ],
+  "before": [
+   "Sustained Virological Response (SVR) defined as undetectable HCV RNA"
+  ],
+  "days_after_pc": 341,
+  "detail": "min token jaccard 0.10",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT01482767",
+  "retrospective": true,
+  "version": 76
+ },
+ {
+  "after": [
+   "Change in Lean Body Mass as Measured by Dual Energy X-ray Absorptiometry (DXA)"
+  ],
+  "before": [
+   "Change in lean body mass as measured by dual energy X-ray absorptiometry (DXA)"
+  ],
+  "days_after_pc": 365,
+  "detail": "5 years -> 6 months from baseline",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT01275365",
+  "retrospective": true,
+  "version": 12
+ },
+ {
+  "after": [
+   "Phase I Only: Recommended Phase II Dose of Tosedostat",
+   "Phase I Only: Number of Participants Who Experience Dose-limiting Toxicities (DLTs)",
+   "Progression-free Survival (PFS) Rate"
+  ],
+  "before": [
+   "Phase I only: Recommended Phase II dose and dose-limiting toxicities (DLTs)",
+   "Phase II only: Progression-free survival (PFS) rate"
+  ],
+  "days_after_pc": 419,
+  "detail": "2 -> 3 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT02352831",
+  "retrospective": true,
+  "version": 13
+ },
+ {
+  "after": [
+   "Pad Weight Difference"
+  ],
+  "before": [
+   "Change in Pad Test Score"
+  ],
+  "days_after_pc": 219,
+  "detail": "min token jaccard 0.14",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03010800",
+  "retrospective": true,
+  "version": 2
+ },
+ {
+  "after": [
+   "Number of Participants With qRT-PCR or Culture-confirmed Influenza-like Illness",
+   "Number of Participants With One or More Serious Adverse Events, New Onset Chronic Illness, and Non-solicited Adverse Events"
+  ],
+  "before": [
+   "Clinical Efficacy: PCR and Culture Confirmed Influenza",
+   "Safety: Occurrence of vaccine-related serious adverse events (SAEs)"
+  ],
+  "days_after_pc": 411,
+  "detail": "min token jaccard 0.04",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03450915",
+  "retrospective": true,
+  "version": 4
+ },
+ {
+  "after": [
+   "SOFA score"
+  ],
+  "before": [
+   "Oxygenation index"
+  ],
+  "days_after_pc": 541,
+  "detail": "min token jaccard 0.00",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT04711889",
+  "retrospective": true,
+  "version": 6
+ },
+ {
+  "after": [
+   "Yale Brown Obsessive Compulsive Scale (YBOCS) Modified for PSP (NE-YBOCS)"
+  ],
+  "before": [
+   "Yale Brown Obsessive Compulsive Scale (YBOCS) modified for PSP (NE-YBOCS)"
+  ],
+  "days_after_pc": 411,
+  "detail": "identical after normalisation",
+  "has_results": true,
+  "label": "COSMETIC",
+  "nct": "NCT01063348",
+  "retrospective": true,
+  "version": 16
+ },
+ {
+  "after": [
+   "Cumulative Number of Subjects With Adverse Events Indicating Possible Mechanical Failure or Weakness of the HAV",
+   "Number of Participants With Baseline Change of Panel Reactive Antibody (PRA) Value",
+   "Number of Participants With Adverse Events (AEs), Serious Adverse Events (SAEs) and Adverse Events of Special Interest (AESI)",
+   "Number of Participants With Primary Patency, Primary Assisted Patency and Secondary Patency"
+  ],
+  "before": [
+   "Cumulative Number of Subjects With Adverse Events Indicating Possible Mechanical Failure or Weakness of the HAV",
+   "Incidence Rate of Baseline Change of Panel Reactive Antibody (PRA) Value",
+   "Incidence Rate of All Adverse Events (AEs), Serious Adverse Events (SAEs) and Adverse Events of Special Interest (AESI)",
+   "Proportion of Subjects With Primary Patency, Primary Assisted Patency and Secondary Patency"
+  ],
+  "days_after_pc": 863,
+  "detail": "min token jaccard 0.62",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT04135417",
+  "retrospective": true,
+  "version": 8
+ },
+ {
+  "after": [
+   "Circumferential Visualization of the Z-line"
+  ],
+  "before": [
+   "Circumferential visualization of the Z-line and Detection rate of duodenal papilla"
+  ],
+  "days_after_pc": 446,
+  "detail": "min token jaccard 0.55",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03977935",
+  "retrospective": true,
+  "version": 1
+ },
+ {
+  "after": [
+   "Number of Subjects Not Experiencing Grade II-IV Acute Graph Versus Host Disease (aGVHD)"
+  ],
+  "before": [
+   "Grade II-IV aGVHD-free survival"
+  ],
+  "days_after_pc": 1594,
+  "detail": "min token jaccard 0.25",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02206035",
+  "retrospective": true,
+  "version": 12
+ },
+ {
+  "after": [
+   "Understanding of the Content of Summary Format"
+  ],
+  "before": [
+   "Understanding"
+  ],
+  "days_after_pc": 689,
+  "detail": "min token jaccard 0.17",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03002610",
+  "retrospective": true,
+  "version": 3
+ },
+ {
+  "after": [
+   "Achieving Psoriasis Area and Severity Index (PASI) - 75 at the End of Week 24",
+   "Achieving the Investigator&#x27;s Global Assessment (IGA) Score of 0 or 1"
+  ],
+  "before": [
+   "Achieving Psoriasis Area and Severity Index (PASI) - 75 at the End of Week 24",
+   "Achieving the Investigator&#x27;s Global Assessment (IGA) Score of 0 or 1"
+  ],
+  "days_after_pc": 383,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT03421197",
+  "retrospective": true,
+  "version": 9
+ },
+ {
+  "after": [
+   "Evaluate Toxicity by Assessing the Adverse Events of Metformin and Cytarabine",
+   "Study Treatment Dose Toxicity Will be Evaluated by Measurement of Adverse Events Experienced While on Treatment"
+  ],
+  "before": [
+   "Evaluate toxicity by assessing the adverse events of metformin and cytarabine",
+   "Study treatment dose toxicity will be evaluated by measurement of adverse events experienced while on treatment"
+  ],
+  "days_after_pc": 812,
+  "detail": "identical after normalisation",
+  "has_results": true,
+  "label": "COSMETIC",
+  "nct": "NCT01849276",
+  "retrospective": true,
+  "version": 8
+ },
+ {
+  "after": [
+   "Survival Without Moderate&#x2F;Severe Physiologic Bronchopulmonary Dysplasia (BPD)",
+   "Survival Without Moderate&#x2F;Severe Neurodevelopmental Impairment (NDI)"
+  ],
+  "before": [
+   "Survival without moderate&#x2F;severe physiologic bronchopulmonary dysplasia (BPD)",
+   "Survival without moderate&#x2F;severe neurodevelopmental impairment (NDI)"
+  ],
+  "days_after_pc": 673,
+  "detail": "at 22 26 moths corrected age -> from day of randomization to 22 26 months corrected age",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT01353313",
+  "retrospective": true,
+  "version": 22
+ },
+ {
+  "after": [
+   "Percentage of Participants With Primary Major Adverse Cardiovascular Events (MACE) Composite (75% Interim Analysis)",
+   "Percentage of Participants With Primary MACE Composite (Final Analysis)"
+  ],
+  "before": [
+   "First occurrence of any event in the predefined Major Adverse Cardiovascular Events Composite."
+  ],
+  "days_after_pc": 393,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT01101035",
+  "retrospective": true,
+  "version": 67
+ },
+ {
+  "after": [
+   "Number of Patients With Progression-free Survival at 2 Years"
+  ],
+  "before": [
+   "To determine the progression-free survival of patients with surgically staged, Stage I-II papillary serous, clear cell, or endometrioid carcinomas with high-intermediate risk factors treated by vaginal cuff brachytherapy followed by chemotherapy."
+  ],
+  "days_after_pc": 574,
+  "detail": "min token jaccard 0.17",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT00542490",
+  "retrospective": true,
+  "version": 10
+ },
+ {
+  "after": [
+   "Number of Participants With Postdural Puncture Headache"
+  ],
+  "before": [
+   "Percent of participants with postdural puncture headache"
+  ],
+  "days_after_pc": 1810,
+  "detail": "min token jaccard 0.75",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02473276",
+  "retrospective": true,
+  "version": 8
+ },
+ {
+  "after": [
+   "Overall survival"
+  ],
+  "before": [
+   "Overall survival"
+  ],
+  "days_after_pc": -252,
+  "detail": "90 days after registration into trial -> 28 days after registration into trial",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT04359290",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Safety as measured by the rate of adverse events, and serious adverse events"
+  ],
+  "before": [
+   "Safety as measured by the rate of adverse events, and serious adverse events",
+   "Safety as measured by the rate of adverse events, and serious adverse events"
+  ],
+  "days_after_pc": -97,
+  "detail": "2 -> 1 primary outcomes",
+  "has_results": false,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT01750580",
+  "retrospective": false,
+  "version": 15
+ },
+ {
+  "after": [
+   "Mean Percentage of Enlite Sensor Values That Are Within 20% Agreement of Gold Standard (Yellow Springs Instrument (YSI) YSI Plasma Glucose Values)"
+  ],
+  "before": [
+   "Accuracy analysis of Enlite 1 Sensor"
+  ],
+  "days_after_pc": 313,
+  "detail": "min token jaccard 0.14",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03417466",
+  "retrospective": true,
+  "version": 9
+ },
+ {
+  "after": [
+   "Average Pain Intensity"
+  ],
+  "before": [
+   "Average Pain Intensity"
+  ],
+  "days_after_pc": 736,
+  "detail": "one week -> baseline post treatment and 3 month follow up",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT01981096",
+  "retrospective": true,
+  "version": 4
+ },
+ {
+  "after": [
+   "Number of Participants With Adverse Events (AEs)"
+  ],
+  "before": [
+   "The safety of ALN-GO1 evaluated by the proportion of subjects experiencing adverse events (AEs)"
+  ],
+  "days_after_pc": 364,
+  "detail": "min token jaccard 0.25",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02706886",
+  "retrospective": true,
+  "version": 14
+ },
+ {
+  "after": [
+   "Recommended Phase 2 Dose (RP2D) of NHS-IL12 (M9241) Given With Bintrafusp Alfa (M7824) in Combination With Stereotactic Body Radiation Therapy (SBRT) as Neoadjuvant &#x2F; Perioperative Treatment in Participants With Pancreas Cancer",
+   "Number of Participants With \u2265Grade 3 Toxicities Possibly, Probably, or Definitely Related to Treatment of Bintrafusp Alfa (M7824) and NHS-IL12 (M9241) in Combination With Stereotactic Body Radiation Therapy (SBRT)",
+   "Best Overall Response (BOR) According to the Response Evaluation Criteria in Solid Tumors (RECIST) of Bintrafusp Alfa (M7824) &amp; NHS-IL12 (M9241) in Combination With Stereotactic Body Radiation Therapy in Participants With Locally Advanced Pancreas Cancer"
+  ],
+  "before": [
+   "To determine the safety and tolerability and the recommended phase 2 dose (RP2D) of M7824 and M9241 in combination with SBRT as neoadjuvant &#x2F; perioperative treatment in subjects with pancreas cancer",
+   "To determine a preliminary estimate of efficacy as best overall response (BOR) according to RECIST 1.1 of M7824 and M9241 in combination with SBRT as neoadjuvant &#x2F; perioperative treatment in subjects with locally advanced pancreas cancer"
+  ],
+  "days_after_pc": 62,
+  "detail": "2 -> 3 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT04327986",
+  "retrospective": true,
+  "version": 295
+ },
+ {
+  "after": [
+   "Functional Status",
+   "Depression Symptoms",
+   "Recovery Orientation",
+   "Quality of Life Enjoyment and Satisfaction"
+  ],
+  "before": [
+   "functional status",
+   "depression symptoms",
+   "recovery orientation",
+   "Quality of Life"
+  ],
+  "days_after_pc": 352,
+  "detail": "min token jaccard 0.50",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02057042",
+  "retrospective": true,
+  "version": 15
+ },
+ {
+  "after": [
+   "Time to Overt Hepatic Encephalopathy (OHE) Resolution Determined Using the Hepatic Encephalopathy Grading Instrument (HEGI), Defined as HEGI Score &lt; 2"
+  ],
+  "before": [
+   "Time to OHE resolution determined using the Hepatic Encephalopathy Grading Instrument (HEGI)."
+  ],
+  "days_after_pc": 1076,
+  "detail": "min token jaccard 0.71",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03515044",
+  "retrospective": true,
+  "version": 5
+ },
+ {
+  "after": [
+   "Area Under the Curve (AUC) of C-peptide on mixed meal tolerance test"
+  ],
+  "before": [
+   "C-peptide on mixed meal tolerance test",
+   "insulin requirements per kg of weight"
+  ],
+  "days_after_pc": -2451,
+  "detail": "2 -> 1 primary outcomes",
+  "has_results": false,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT02605564",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Participants With Adverse Events"
+  ],
+  "before": [
+   "Percentage of Participants With Adverse Events Assessed Using NCI Common Terminology Criteria for Adverse Events (CTCAE) Version 4.03"
+  ],
+  "days_after_pc": 1549,
+  "detail": "min token jaccard 0.24",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02874404",
+  "retrospective": true,
+  "version": 7
+ },
+ {
+  "after": [
+   "Percentage of Participants Achieving the Investigator&#x27;s Global Assessment (IGA) for Clear (0) or Almost Clear (1) and &gt;=2 Points Improvement From Baseline at Week 12"
+  ],
+  "before": [
+   "Proportion of subjects achieving the IGA for clear (0) or almost clear (1) and &gt;2 points improvement from baseline at Week 12."
+  ],
+  "days_after_pc": 381,
+  "detail": "min token jaccard 0.70",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02780167",
+  "retrospective": true,
+  "version": 16
+ },
+ {
+  "after": [
+   "Psychiatric Symptoms",
+   "Psychiatric Symptoms"
+  ],
+  "before": [
+   "Psychiatric Symptoms",
+   "Psychiatric Symptoms"
+  ],
+  "days_after_pc": -403,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT03062267",
+  "retrospective": false,
+  "version": 4
+ },
+ {
+  "after": [
+   "Absolute Change From Baseline in Mucociliary Clearance (MCC) at Day 28"
+  ],
+  "before": [
+   "Absolute change in mucociliary clearance (MCC)"
+  ],
+  "days_after_pc": 364,
+  "detail": "min token jaccard 0.55",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02508207",
+  "retrospective": true,
+  "version": 6
+ },
+ {
+  "after": [
+   "Percentage of Patients With a Reduction in CPRA to Less Than 20%",
+   "Percentage of Patients Transplanted",
+   "Percentage of Patients Who Suffer Mortality, a Serious Adverse Event, or Other Adverse Event During the Study Period",
+   "Percentage of Patients Who Experience Grade 3 and Above Non-Hematologic Toxicities",
+   "The Percentage of Patients Who Experience Any Grade of Peripheral Neuropathy",
+   "Percentage of Patients Who Experience CMV, PTLD, and PML",
+   "The Percentage of Patients Who Experience Either a Respiratory Tract Infection or a Urinary Tract Infection",
+   "The Percentage of Patients Who Experience Exacerbations Cardiac Dysrhythmias or Heart Failure",
+   "Percentage of Patients With Grade 4 Hematologic Toxicities"
+  ],
+  "before": [
+   "Anti-HLA alloantibody reduction",
+   "Proportion of Transplanted Patients",
+   "Overall Safety",
+   "Grade 3 Non-Hematologic Toxicities",
+   "Peripheral Neuropathy",
+   "CMV, PTLD, and PML",
+   "Infection",
+   "Cardiac Dysrhythmias and Heart Failure"
+  ],
+  "days_after_pc": 741,
+  "detail": "8 -> 9 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT01556347",
+  "retrospective": true,
+  "version": 10
+ },
+ {
+  "after": [
+   "Change in Objective Opioid Withdrawal Score (OOWS) From Baseline (Prevention of Opioid Withdrawal)",
+   "Change in Objective Opioid Withdrawal Score From Baseline (Prevention of Physical Dependence)"
+  ],
+  "before": [
+   "Change in baseline of Objective Opioid Withdrawal Score"
+  ],
+  "days_after_pc": 1343,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT01549652",
+  "retrospective": true,
+  "version": 2
+ },
+ {
+  "after": [
+   "Main-Quality of life in menopause"
+  ],
+  "before": [
+   "Main-Quality of life in menopause"
+  ],
+  "days_after_pc": 1395,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT03558451",
+  "retrospective": true,
+  "version": 1
+ },
+ {
+  "after": [
+   "Mean Adherence to Propranolol",
+   "Total Number of Participants Who Reached The Target Propranolol Dosing"
+  ],
+  "before": [
+   "Percentage of Patients Compliant With Taking &gt; 80% Take the Drug While on Chemotherapy."
+  ],
+  "days_after_pc": 962,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT01847001",
+  "retrospective": true,
+  "version": 10
+ },
+ {
+  "after": [
+   "Maximum Observed Plasma Concentration (Cmax) of PF-07321332",
+   "Area Under the Curve From Time Zero to Extrapolated Infinite Time (AUCinf) of PF-07321332"
+  ],
+  "before": [
+   "Maximum Observed Plasma Concentration (Cmax) of PF-07321332&#x2F;ritonavir when administered alone",
+   "Cmax of PF-07321332&#x2F;ritonavir when administered with carbamazepine",
+   "Area Under the Curve From Time Zero to Extrapolated Infinite Time (AUCinf) of PF-07321332&#x2F;ritonavir when administered alone",
+   "AUCinf of PF-07321332&#x2F;ritonavir when administered with carbamazepine"
+  ],
+  "days_after_pc": 727,
+  "detail": "4 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT04962230",
+  "retrospective": true,
+  "version": 4
+ },
+ {
+  "after": [
+   "Number of Participants Achieving Drug-free Diabetes Remission in the Experimental Group Compared to the Control Group"
+  ],
+  "before": [
+   "Proportion of participants achieving drug-free diabetes remission in the experimental group compared to the control group"
+  ],
+  "days_after_pc": 1190,
+  "detail": "min token jaccard 0.88",
+  "has_results": true,
+  "label": "REWORDED",
+  "nct": "NCT02561130",
+  "retrospective": true,
+  "version": 6
+ },
+ {
+  "after": [
+   "Relative Maximum Observed Total Serum Copper Concentration of VeraCept vs ParaGard (Cmax)",
+   "Mean Serum Concentration of Copper for VeraCept vs. ParaGard (Cmean)",
+   "Maximum Serum Concentration of Copper for VeraCept vs. ParaGard (AUC0-56)"
+  ],
+  "before": [
+   "Relative Maximum Observed Total Serum Copper Concentration of VeraCept vs ParaGard (Cmax)",
+   "Mean Serum Concentration of Copper for VeraCept vs. ParaGard (Cmean)",
+   "Maximum Serum Concentration of Copper for VeraCept vs. ParaGard (AUC0-56)"
+  ],
+  "days_after_pc": 2041,
+  "detail": "from day 1 day of insertion through the last measurable non  -> from baseline pre insertion through the last measurable non ",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT03785366",
+  "retrospective": true,
+  "version": 11
+ },
+ {
+  "after": [
+   "Number of Serum Creatinine Tests Ordered"
+  ],
+  "before": [
+   "Number of Serum Creatinine Tests Ordered"
+  ],
+  "days_after_pc": -182,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT02660931",
+  "retrospective": false,
+  "version": 4
+ },
+ {
+  "after": [
+   "Body Mass Index"
+  ],
+  "before": [
+   "Body Mass Index"
+  ],
+  "days_after_pc": 401,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT04662801",
+  "retrospective": true,
+  "version": 8
+ },
+ {
+  "after": [
+   "All Cases Improvement"
+  ],
+  "before": [
+   "All Cases Improvement"
+  ],
+  "days_after_pc": -109,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT02025270",
+  "retrospective": false,
+  "version": 3
+ },
+ {
+  "after": [
+   "Specificity of TEP-CT to point out malignant lesions in pancreas, the gold standard being the anatomopathological analysis of the piece of pancreas removed during the surgery."
+  ],
+  "before": [
+   "Specificity of TEP-CT to point out malignant lesions in pancreas, the gold standard being the anatomopathological analysis of the piece of pancreas removed during the surgery."
+  ],
+  "days_after_pc": -954,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT01485679",
+  "retrospective": false,
+  "version": 2
+ },
+ {
+  "after": [
+   "Weight Change",
+   "Change From Baseline in the Total HEI Score, as a Measure of Diet Quality Change"
+  ],
+  "before": [
+   "Weight change",
+   "Diet Quality Change"
+  ],
+  "days_after_pc": 592,
+  "detail": "min token jaccard 0.21",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03783962",
+  "retrospective": true,
+  "version": 6
+ },
+ {
+  "after": [
+   "Bone Mineral Density"
+  ],
+  "before": [
+   "Bone Mineral Density"
+  ],
+  "days_after_pc": -631,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT01952496",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Objective Response Rate"
+  ],
+  "before": [
+   "Overall response rate (complete and partial response)",
+   "Time to progression",
+   "Survival duration",
+   "Frequency of neutropenic fever or treatment delay because of neutropenia"
+  ],
+  "days_after_pc": 1906,
+  "detail": "4 -> 1 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT00478361",
+  "retrospective": true,
+  "version": 34
+ },
+ {
+  "after": [
+   "Pain Score"
+  ],
+  "before": [
+   "Pain Score"
+  ],
+  "days_after_pc": 1479,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT06298760",
+  "retrospective": true,
+  "version": 1
+ },
+ {
+  "after": [
+   "Progression-free Survival (PFS)"
+  ],
+  "before": [
+   "Progression-free survival"
+  ],
+  "days_after_pc": -503,
+  "detail": "min token jaccard 0.75",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT00887159",
+  "retrospective": false,
+  "version": 196
+ },
+ {
+  "after": [
+   "Grade 3 gastrointestinal toxicity at 6 months as defined by CTCAE v 3.0"
+  ],
+  "before": [
+   "Grade 3 gastrointestinal toxicity at 6 months as defined by CTCAE v 3.0"
+  ],
+  "days_after_pc": -335,
+  "detail": " -> 6 months",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT01230996",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "MTD of radiation delivered via 90 Y-BC8-DOTA",
+   "Tissue localization of 111In-BC8-DOTA Ab"
+  ],
+  "before": [
+   "Tissue localization of 111In-BC8-DOTA Ab",
+   "MTD of radiation delivered via 90 Y-BC8-DOTA"
+  ],
+  "days_after_pc": -769,
+  "detail": "identical after normalisation",
+  "has_results": false,
+  "label": "COSMETIC",
+  "nct": "NCT01503242",
+  "retrospective": false,
+  "version": 12
+ },
+ {
+  "after": [
+   "Contact Force Through Measurement of Force-time Integral (FTI)"
+  ],
+  "before": [
+   "Contact force through measurement of force-time integral (FTI)"
+  ],
+  "days_after_pc": 585,
+  "detail": "at time of the ablation procedure -> at time of the ablation procedure which typically lasts 30 6",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT02467179",
+  "retrospective": true,
+  "version": 8
+ },
+ {
+  "after": [
+   "Number of Participants with Adverse Events (AEs)",
+   "Change in Vital Signs",
+   "Change in Clinical Laboratory Test Results",
+   "Maximum Observed Serum Concentration (Cmax) of ABBV-368",
+   "Time to Maximum Serum Concentration (Tmax) of ABBV-368",
+   "Area Under Serum Concentration-Time Curve of ABBV-368 From Time 0 to the Time of Last Measurable Concentration (AUCt)",
+   "Terminal-Phase Elimination Rate Constant (\u03b2) of ABBV-368",
+   "Terminal Half-Life (t1&#x2F;2) of ABBV-368",
+   "Maximum Plasma Concentration (Cmax) of Tilsotolimod",
+   "Time to Maximum Plasma Concentration (Tmax) of Tilsotolimod",
+   "Area Under Plasma Concentration-Time Curve of Tilsotolimod From Time 0 to the Time of Last Measurable Concentration (AUCt)",
+   "Terminal-Phase Elimination Rate Constant (\u03b2) of Tilsotolimod",
+   "Terminal Half-Life (t1&#x2F;2) of Tilsotolimod",
+   "Maximum Observed Serum Concentration (Cmax) of ABBV-181 (Arm 3 Only)",
+   "Time to Maximum Serum Concentration (Tmax) of ABBV-181 (Arm 3 Only)",
+   "Area Under Serum Concentration-Time Curve of ABBV-181 From Time 0 to the Time of Last Measurable Concentration (AUCt) (Arm 3 Only)",
+   "Terminal-Phase Elimination Rate Constant (\u03b2) of ABBV-181 (Arm 3 Only)",
+   "Terminal Half-Life (t1&#x2F;2) of ABBV-181 (Arm 3 Only)"
+  ],
+  "before": [
+   "Maximum Observed Serum Concentration (Cmax) of ABBV-368",
+   "Time to Maximum Serum Concentration (Tmax) of ABBV-368",
+   "Area Under Serum Concentration-Time Curve of ABBV-368 From Time 0 to the Time of Last Measurable Concentration (AUCt)",
+   "Terminal-Phase Elimination Rate Constant (\u03b2) of ABBV-368",
+   "Terminal Half-Life (t1&#x2F;2) of ABBV-368",
+   "Maximum Plasma Concentration (Cmax) of Tilsotolimod",
+   "Time to Maximum Plasma Concentration (Tmax) of Tilsotolimod",
+   "Area Under Plasma Concentration-Time Curve of Tilsotolimod From Time 0 to the Time of Last Measurable Concentration (AUCt)",
+   "Terminal-Phase Elimination Rate Constant (\u03b2) of Tilsotolimod",
+   "Terminal Half-Life (t1&#x2F;2) of Tilsotolimod",
+   "Maximum Observed Serum Concentration (Cmax) of ABBV-181 (Arm 3 Only)",
+   "Time to Maximum Serum Concentration (Tmax) of ABBV-181 (Arm 3 Only)",
+   "Area Under Serum Concentration-Time Curve of ABBV-181 From Time 0 to the Time of Last Measurable Concentration (AUCt) (Arm 3 Only)",
+   "Terminal-Phase Elimination Rate Constant (\u03b2) of ABBV-181 (Arm 3 Only)",
+   "Terminal Half-Life (t1&#x2F;2) of ABBV-181 (Arm 3 Only)"
+  ],
+  "days_after_pc": -736,
+  "detail": "15 -> 18 primary outcomes",
+  "has_results": false,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT04196283",
+  "retrospective": false,
+  "version": 5
+ },
+ {
+  "after": [
+   "Change of Points on Impact of event scale before and after Lifespan Integration treatment after a sexual trauma"
+  ],
+  "before": [
+   "Change of Points on Impact of event scale before and after Lifespan Integration treatment after a sexual trauma"
+  ],
+  "days_after_pc": -1122,
+  "detail": "5 3 days before treatment and 20 3 days after treatment -> 3 weeks",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT03141047",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Number of participants who have SARI and have been mechanically ventilated for at least 5 days."
+  ],
+  "before": [
+   "Feasibility of the study will be measured by the recruitment of eligible participants"
+  ],
+  "days_after_pc": -471,
+  "detail": "min token jaccard 0.08",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT04708457",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Incidence of COVID-19 in cancer patients using interferon-alpha as prophylaxis without known positive contact with COVID-19 (COVID-19 confirmed by qPCR from respiratory swab)",
+   "incidence of any upper or lower community acquired respiratory viral infection assessed using local standard of care testing",
+   "incidence of COVID-19 when Interferon alpha is given as post-exposure prophylaxis with a known positive contact or exposure with COVID-19. COVID-19 confirmed by qPCR from respiratory swab .",
+   "incidence of any upper or lower community acquired respiratory viral infection assessed using local standard of care testing",
+   "incidence of death and&#x2F;or need for invasive or non-invasive ventilation. assessed using medical records",
+   "time to clinical improvement or discharge from hospital assessed using medical records"
+  ],
+  "before": [
+   "ARM 1: Coprimary outcome 1",
+   "ARM 1: Coprimary outcome 2.",
+   "ARM 2: Coprimary outcome 1",
+   "ARM 2: Coprimary outcome 2.",
+   "ARM 3 Primary outcome",
+   "ARM 4 Primary outcome"
+  ],
+  "days_after_pc": -813,
+  "detail": "min token jaccard 0.00",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT04534725",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Number of Participants With Dose Limiting Toxicities (DLTs) in the First Cycle for the Determination of the Maximum Tolerated Dose (MTD)",
+   "Maximum Tolerated Dose of Volasertib"
+  ],
+  "before": [
+   "Maximum tolerated dose (MTD)",
+   "Dose limiting toxicities (DLT)"
+  ],
+  "days_after_pc": 996,
+  "detail": "min token jaccard 0.12",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02201329",
+  "retrospective": true,
+  "version": 15
+ },
+ {
+  "after": [
+   "HAI Antibody Responses for Vaccine Homologous Influenza Strains Expressed as Ratio of Geometric Mean Fold Ratio (GMFR)",
+   "Mean Difference in the Seroconversion Rate (SCR) HAI Antibody Responses for Vaccine Homologous Influenza Strains Expressed as a Percentage of Participants",
+   "Number of Subjects With Solicited Local and Systemic Adverse Events (AEs)",
+   "Number of Subjects With Medically Attended Adverse Events (MAAEs), Serious Adverse Events (SAEs), Significant New Medical Conditions (SNMCs)",
+   "Number of Subjects With MAAEs, SAEs, SNMCs"
+  ],
+  "before": [
+   "Comparative HAI Antibody Responses for Vaccine Homologous Influenza Strains Expressed as Ratio of Geometric Mean Fold Ratio (GMFR)",
+   "Mean Difference in the Seroconversion Rate (SCR) HAI Antibody Responses for Vaccine Homologous Influenza Strains Expressed as a Percentage of Participants",
+   "Number of Subjects With Solicited Local and Systemic Adverse Events (AEs)",
+   "Number of Subjects With Medically Attended Adverse Events (MAAEs), Serious Adverse Events (SAEs), Significant New Medical Conditions (SNMCs)",
+   "Number of Subjects With MAAEs, SAEs, SNMCs"
+  ],
+  "days_after_pc": 894,
+  "detail": "min token jaccard 0.94",
+  "has_results": true,
+  "label": "REWORDED",
+  "nct": "NCT04120194",
+  "retrospective": true,
+  "version": 10
+ },
+ {
+  "after": [
+   "Blood Glucose",
+   "Maximum Oxygen Consumption"
+  ],
+  "before": [
+   "Blood Glucose",
+   "Maximum Oxygen Consumption"
+  ],
+  "days_after_pc": 496,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT02855541",
+  "retrospective": true,
+  "version": 4
+ },
+ {
+  "after": [
+   "safety"
+  ],
+  "before": [],
+  "days_after_pc": -1389,
+  "detail": "0 -> 1 primary outcomes",
+  "has_results": false,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT00534729",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "AUC from the time of dosing of clopidogrel as affected by single and multiple daily dosing with MGL-3196 100 mg&#x2F;day in healthy subjects",
+   "Pharmacokinetics (Cmax) of clopidogrel as affected by chronic dosing with MGL-3196 100 mg&#x2F;day in healthy subjects"
+  ],
+  "before": [
+   "The purpose of this study is to determine whether the single and multiple-dose pharmacokinetics (AUC) of clopidogrel are affected by chronic dosing with MGL-3196 100 mg&#x2F;day in healthy subjects.",
+   "The purpose of this study is to determine whether the single and multiple-dose pharmacokinetics (Cmax) of clopidogrel are affected by chronic dosing with MGL-3196 100 mg&#x2F;day in healthy subjects."
+  ],
+  "days_after_pc": 481,
+  "detail": "min token jaccard 0.55",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT04671069",
+  "retrospective": true,
+  "version": 1
+ },
+ {
+  "after": [
+   "mortality"
+  ],
+  "before": [
+   "postoperative pain in visual analogue score"
+  ],
+  "days_after_pc": 1286,
+  "detail": "min token jaccard 0.00",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT04329845",
+  "retrospective": true,
+  "version": 1
+ },
+ {
+  "after": [
+   "The variable absence &#x2F; presence of the disruptive mood dysregulation disorder (DMDD)"
+  ],
+  "before": [
+   "The variable absence &#x2F; presence of the disruptive mood dysregulation disorder (DMDD)"
+  ],
+  "days_after_pc": -21,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT02803632",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Controllability of sedation"
+  ],
+  "before": [
+   "Controllability of sedation"
+  ],
+  "days_after_pc": 848,
+  "detail": "up to 8 days -> up to 50 hours",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT02022592",
+  "retrospective": true,
+  "version": 17
+ },
+ {
+  "after": [
+   "Height (Unit: m)",
+   "Weight (Unit: kg)",
+   "Generally Phisical examination",
+   "Pulse (Unit: bpm)",
+   "Respiration (Unit: bpm)",
+   "Blood pressure (Unit: mmHg)",
+   "Temperature (Unit: \u2103)",
+   "Electrocardiogram: P-R (Unit: ms), QRS (Unit: ms), QTc (Unit: ms), etc",
+   "WBC (Unit: 10E9&#x2F;L), RBC (Unit: 10E9&#x2F;L), NEUT (Unit: 10E9&#x2F;L), BASO (Unit: 10E9&#x2F;L)",
+   "ALT (Unit: U&#x2F;L), AST (Unit: U&#x2F;L)",
+   "Fibrinogen (Unit: g&#x2F;L), Prothrombin time (Unit: s), APTT (Unit: s)",
+   "Serum iron (Unit: umol&#x2F;L)",
+   "Urine colour",
+   "Urine appearance",
+   "Urine glucose (Unit: mmol&#x2F;L)",
+   "Urine protein (Unit: g&#x2F;L)",
+   "Number of subjects with adverse events",
+   "AUC0-t of CN128",
+   "AUC0-\u221e of CN128",
+   "Cmax of CN128",
+   "Tmax of CN128",
+   "t1&#x2F;2 of CN128",
+   "CL&#x2F;F of CN128",
+   "Vd&#x2F;F of CN128",
+   "MRT of CN128",
+   "Css-av of CN128",
+   "Css-min of CN128",
+   "Css-max of CN128",
+   "Accumulation rate of CN128",
+   "Fluctuation index of CN128",
+   "\u03bbz of CN128"
+  ],
+  "before": [
+   "Height (Unit: m)",
+   "Weight (Unit: kg)",
+   "Generally Phisical examination",
+   "Pulse (Unit: bpm)",
+   "Respiration (Unit: bpm)",
+   "Blood pressure (Unit: mmHg)",
+   "Temperature (Unit: \u2103)",
+   "Electrocardiogram: P-R (Unit: ms), QRS (Unit: ms), QTc (Unit: ms), etc",
+   "WBC (Unit: 10E9&#x2F;L), RBC (Unit: 10E9&#x2F;L), NEUT (Unit: 10E9&#x2F;L), BASO (Unit: 10E9&#x2F;L)",
+   "ALT (Unit: U&#x2F;L), AST (Unit: U&#x2F;L)",
+   "Fibrinogen (Unit: g&#x2F;L), Prothrombin time (Unit: s), APTT (Unit: s)",
+   "Serum iron (Unit: umol&#x2F;L)",
+   "Urine colour",
+   "Urine appearance",
+   "Urine glucose (Unit: mmol&#x2F;L)",
+   "Urine protein (Unit: g&#x2F;L)",
+   "Number of subjects with adverse events",
+   "AUC0-t of CN128",
+   "AUC0-\u221e of CN128",
+   "Cmax of CN128",
+   "Tmax of CN128",
+   "t1&#x2F;2 of CN128",
+   "CL&#x2F;F of CN128",
+   "Vd&#x2F;F of CN128",
+   "MRT of CN128",
+   "Css-av of CN128",
+   "Css-min of CN128",
+   "Css-max of CN128",
+   "Accumulation rate of CN128",
+   "Fluctuation index of CN128"
+  ],
+  "days_after_pc": 225,
+  "detail": "30 -> 31 primary outcomes",
+  "has_results": false,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT03935633",
+  "retrospective": true,
+  "version": 2
+ },
+ {
+  "after": [
+   "SGRQ-C",
+   "CAT"
+  ],
+  "before": [
+   "pulmonary function test (FEV1&#x2F;FVC) %"
+  ],
+  "days_after_pc": 104,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": false,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT04878367",
+  "retrospective": true,
+  "version": 4
+ },
+ {
+  "after": [
+   "Change From Baseline in BCVA in the Study Eye Averaged Over Weeks 40, 44, and 48"
+  ],
+  "before": [
+   "Average Change from Baseline in Best-Corrected Visual Acuity (BCVA) at Week 48"
+  ],
+  "days_after_pc": 487,
+  "detail": "min token jaccard 0.27",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03823287",
+  "retrospective": true,
+  "version": 21
+ },
+ {
+  "after": [
+   "Quantification of Gas Volume Coming From Ambient Air Towards the Alveoli Space of the Non-ventilated Lung During OLV With the Use of DLT and BB."
+  ],
+  "before": [
+   "Quantification of gas volume coming from ambient air towards the alveoli space of the non-ventilated lung during OLV with the use of DLT and BB."
+  ],
+  "days_after_pc": 855,
+  "detail": "identical after normalisation",
+  "has_results": true,
+  "label": "COSMETIC",
+  "nct": "NCT02919267",
+  "retrospective": true,
+  "version": 3
+ },
+ {
+  "after": [
+   "Change in Epworth Sleepiness Scale (ESS) Score"
+  ],
+  "before": [
+   "The number and percent of subjects who experienced treatment emergent adverse events."
+  ],
+  "days_after_pc": 520,
+  "detail": "min token jaccard 0.00",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02348632",
+  "retrospective": true,
+  "version": 19
+ },
+ {
+  "after": [
+   "Montgomery-Asberg Depression Rating Scale (MADRS)"
+  ],
+  "before": [
+   "Montgomery-Asberg Depression Rating Scale (MADRS)"
+  ],
+  "days_after_pc": 1510,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT02977299",
+  "retrospective": true,
+  "version": 20
+ },
+ {
+  "after": [
+   "Changes in six meter walking test (6-MWT) score"
+  ],
+  "before": [
+   "Changes in six meter walking test (6-MWT) score"
+  ],
+  "days_after_pc": 6,
+  "detail": "baseline up to five weeks -> baseline up to six weeks",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT03879304",
+  "retrospective": true,
+  "version": 8
+ },
+ {
+  "after": [
+   "Incidence of Adverse Events",
+   "Dose limiting toxicities",
+   "maximum tolerated dose"
+  ],
+  "before": [
+   "Incidence of Adverse Events",
+   "Dose limiting toxicities",
+   "maximum tolerated dose"
+  ],
+  "days_after_pc": -242,
+  "detail": "after completion of dose limiting toxicity dlt period 21 day -> at every treatment and follow up visit until disease progres",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT03218683",
+  "retrospective": false,
+  "version": 33
+ },
+ {
+  "after": [
+   "Visual analog scale (VAS)",
+   "Pressure Pain Threshold (PPT)"
+  ],
+  "before": [
+   "Visual analog scale (VAS)",
+   "Pressure Pain Threshold (PPT)"
+  ],
+  "days_after_pc": 1571,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT05546203",
+  "retrospective": true,
+  "version": 1
+ },
+ {
+  "after": [
+   "Glycemic Response During Exercise and Early Recovery"
+  ],
+  "before": [
+   "Glycemic response"
+  ],
+  "days_after_pc": 511,
+  "detail": "min token jaccard 0.29",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02660242",
+  "retrospective": true,
+  "version": 6
+ },
+ {
+  "after": [
+   "The median progression free survival (mPFS)"
+  ],
+  "before": [
+   "The progression free survival (PFS) RATIO: PFS on the experimental treatment over PFS on the last (previous) line of treatment"
+  ],
+  "days_after_pc": -1037,
+  "detail": "min token jaccard 0.25",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02280694",
+  "retrospective": false,
+  "version": 2
+ },
+ {
+  "after": [
+   "Percentage of Participants Achieving SVR12 (Sustained Virologic Response 12 Weeks After the End of All Study Therapy)",
+   "Percentage of Participants Experiencing an Adverse Event (AE)",
+   "Percentage of Participants Discontinuing From Study Therapy Due to an AE"
+  ],
+  "before": [
+   "Percentage of participants achieving SVR12 (Sustained Virologic Response 12 weeks after the end of all study therapy)",
+   "Number of participants experiencing an adverse event (AE)",
+   "Number of participants discontinuing from study therapy due to an AE"
+  ],
+  "days_after_pc": 359,
+  "detail": "min token jaccard 0.14",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02601573",
+  "retrospective": true,
+  "version": 13
+ },
+ {
+  "after": [
+   "Number of Participants That Showed Improvement in Their Visible Acne (Efficacy of Once Weekly Isotretinoin)"
+  ],
+  "before": [
+   "Change in visible acne (efficacy of once weekly isotretinoin)"
+  ],
+  "days_after_pc": 73,
+  "detail": "min token jaccard 0.53",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT04594759",
+  "retrospective": true,
+  "version": 5
+ },
+ {
+  "after": [
+   "Seroconversion Rate at Day 11"
+  ],
+  "before": [
+   "Seroconversion by vibriocidal antibody (i.e., a 4-fold rise over baseline titer)"
+  ],
+  "days_after_pc": 2228,
+  "detail": "min token jaccard 0.06",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02100631",
+  "retrospective": true,
+  "version": 6
+ },
+ {
+  "after": [
+   "Recommended phase 2 dose (R2PD)",
+   "Toxicity profile of onalespib in combination with paclitaxel"
+  ],
+  "before": [
+   "Recommended phase 2 dose (R2PD)",
+   "Toxicity profile of onalespib in combination with paclitaxel"
+  ],
+  "days_after_pc": -1626,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT02474173",
+  "retrospective": false,
+  "version": 38
+ },
+ {
+  "after": [
+   "Change From Baseline in Log-Transformed Testicular Volume at Week 52",
+   "Percentage of Participants With Anti-Corifollitropin Alfa Antibodies"
+  ],
+  "before": [
+   "Change From Baseline in Log-Transformed Testicular Volume at Week 52",
+   "Percentage of Participants With Anti-Corifollitropin Alfa Antibodies"
+  ],
+  "days_after_pc": 427,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT01709331",
+  "retrospective": true,
+  "version": 25
+ },
+ {
+  "after": [
+   "Rate of Change in Brain Parenchymal Fraction"
+  ],
+  "before": [
+   "Rate of change in brain parenchymal fraction"
+  ],
+  "days_after_pc": 1451,
+  "detail": "identical after normalisation",
+  "has_results": true,
+  "label": "COSMETIC",
+  "nct": "NCT01259388",
+  "retrospective": true,
+  "version": 12
+ },
+ {
+  "after": [
+   "Primary PD parameter - Adjusted area under the serial spirometry FEV1-time curve"
+  ],
+  "before": [
+   "Primary PD parameter"
+  ],
+  "days_after_pc": -218,
+  "detail": "min token jaccard 0.25",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT05161156",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Person-time Incidence Rates (Subject Based)",
+   "The Person-time Incidence Rates (Event Based)"
+  ],
+  "before": [
+   "The person-time incidence rates of specified safety events"
+  ],
+  "days_after_pc": 391,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT02316353",
+  "retrospective": true,
+  "version": 31
+ },
+ {
+  "after": [
+   "Depression",
+   "HIV Transmission Risk"
+  ],
+  "before": [
+   "Change in Depression"
+  ],
+  "days_after_pc": 711,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT03464422",
+  "retrospective": true,
+  "version": 4
+ },
+ {
+  "after": [
+   "Dynamic balance assessment"
+  ],
+  "before": [
+   "Dynamic balance assessment"
+  ],
+  "days_after_pc": 83,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT04587102",
+  "retrospective": true,
+  "version": 1
+ },
+ {
+  "after": [
+   "Treatment-related Mortality (TRM) Rate at 6 Months After Transplantation"
+  ],
+  "before": [
+   "To determine if haplotype-mismatched HSCT is associated with a \u226440% treatment-related mortality (TRM) rate at 6 months after transplantation; a TRM \u226560% being considered unacceptable."
+  ],
+  "days_after_pc": 562,
+  "detail": "min token jaccard 0.40",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT00593554",
+  "retrospective": true,
+  "version": 17
+ },
+ {
+  "after": [
+   "Part 1: Change From Baseline in Systolic Blood Pressure (SBP) and Diastolic Blood Pressure (DBP) at Indicated Time Points",
+   "Part 2: Change From Baseline in SBP and DBP at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in SBP and DBP at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Heart Rate at Indicated Time Points",
+   "Part 2: Change From Baseline in Heart Rate at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Heart Rate at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Respiratory Rate at Indicated Time Points",
+   "Part 2: Change From Baseline in Respiratory Rate at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Respiratory Rate at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Body Temperature at Indicated Time Points",
+   "Part 2: Change From Baseline in Body Temperature at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Body Temperature at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Number of Participants With Abnormal Findings in Physical Examination",
+   "Part 2: Number of Participants With Abnormal Findings in Physical Examination (Up to Day 169-Interim Analysis)",
+   "Part 2: Number of Participants With Abnormal Findings in Physical Examination (Up to Day 450-Optional Follow-up)",
+   "Part 1: Number of Participants With Maximum Post-Baseline Grade by Category in Hematology and Coagulation Parameters",
+   "Part 2: Number of Participants With Maximum Post-Baseline Grade by Category in Hematology and Coagulation Parameters (Up to Day 169-Interim Analysis)",
+   "Part 2: Number of Participants With Maximum Post-Baseline Grade by Category in Hematology and Coagulation Parameters (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Complement C3 and Complement C4 Level at Indicated Time Points",
+   "Part 2: Change From Baseline in Complement C3 and Complement C4 Level at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Complement C3 and Complement C4 Level at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Complement Bb Level at Indicated Time Points",
+   "Part 2: Change From Baseline in Complement Bb Level at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Complement Bb Level at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Complement C5a Level at Indicated Time Points",
+   "Part 2: Change From Baseline in Complement C5a Level at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Complement C5a Level at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Number of Participants With Maximum Post-Baseline Grade by Category in Clinical Chemistry Parameters",
+   "Part 2: Number of Participants With Maximum Post-Baseline Grade by Category in Clinical Chemistry Parameters (Up to Day 169-Interim Analysis)",
+   "Part 2: Number of Participants With Maximum Post-Baseline Grade by Category in Clinical Chemistry Parameters (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Urine Albumin at Indicated Time Points",
+   "Part 2: Change From Baseline in Urine Albumin at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Urine Albumin at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Urine Creatinine at Indicated Time Points",
+   "Part 2: Change From Baseline in Urine Creatinine at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Urine Creatinine at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Urine Potential of Hydrogen (pH) at Indicated Time Points",
+   "Part 2: Change From Baseline in Urine pH at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Urine pH at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Urine Specific Gravity at Indicated Time Points",
+   "Part 2: Change From Baseline in Urine Specific Gravity at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Urine Specific Gravity at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Change From Baseline in Urobilinogen at Indicated Time Points",
+   "Part 2: Change From Baseline in Urobilinogen at Indicated Time Points (Up to Day 169-Interim Analysis)",
+   "Part 2: Change From Baseline in Urobilinogen at Indicated Time Points (Up to Day 450-Optional Follow-up)",
+   "Part 1: Number of Participants With Abnormal Electrocardiogram (ECG) Findings",
+   "Part 2: Number of Participants With Abnormal ECG Findings (Up to Day 169-Interim Analysis)",
+   "Part 2: Number of Participants With Abnormal ECG Findings (Up to Day 450-Optional Follow-up)",
+   "Part 1: Number of Participants With Adverse Events (AEs) and Serious Adverse Events (SAEs)",
+   "Part 2: Number of Participants With AEs and SAEs (Up to Day 169-Interim Analysis)",
+   "Part 2: Number of Participants With AEs and SAEs (Up to Day 450-Optional Follow-up)",
+   "Part 1: Area Under the Concentration-time Curve From Time Zero (Pre-dose) to the Time of the Last Quantifiable Concentration (AUC[0-t]) for GSK3389404",
+   "Part 2: AUC (0-t) for GSK3389404",
+   "Part 1: Area Under the Plasma Concentration-time Curve From Time Zero (Pre-dose) Extrapolated to Infinite Time (AUC[0-infinity]) for GSK3389404",
+   "Part 2: AUC (0-infinity) for GSK3389404",
+   "Part 1: Maximum Observed Plasma Concentration (Cmax) of GSK3389404",
+   "Part 2: Cmax of GSK3389404",
+   "Part 1: Time to Achieve Cmax (Tmax) of GSK3389404",
+   "Part 2: Tmax of GSK3389404",
+   "Part 1: Apparent Terminal Phase Half-life(t1&#x2F;2) of GSK3389404",
+   "Part 2: t1&#x2F;2 of GSK3389404",
+   "Part 1: Apparent Subcutaneous Plasma Clearance (CL&#x2F;F) of GSK3389404",
+   "Part 2: CL&#x2F;F of GSK3389404",
+   "Part 1: Number of Participants Achieving Response Rate (RR) Based on Reduction of Hepatitis B Surface Antigen (HBsAg) Level From Baseline",
+   "Part 2: Number of Participants Achieving RR Based on Reduction of HBsAg Level From Baseline"
+  ],
+  "before": [
+   "Part 1: Change From Baseline in Systolic Blood Pressure (SBP) and Diastolic Blood Pressure (DBP) at Indicated Time Points",
+   "Part 2: Change From Baseline in SBP and DBP at Indicated Time Points",
+   "Part 1: Change From Baseline in Heart Rate at Indicated Time Points",
+   "Part 2: Change From Baseline in Heart Rate at Indicated Time Points",
+   "Part 1: Change From Baseline in Respiratory Rate at Indicated Time Points",
+   "Part 2: Change From Baseline in Respiratory Rate at Indicated Time Points",
+   "Part 1: Change From Baseline in Body Temperature at Indicated Time Points",
+   "Part 2: Change From Baseline in Body Temperature at Indicated Time Points",
+   "Part 1: Number of Participants With Abnormal Findings in Physical Examination",
+   "Part 2: Number of Participants With Abnormal Findings in Physical Examination",
+   "Part 1: Number of Participants With Maximum Post-Baseline Grade by Category in Hematology and Coagulation Parameters",
+   "Part 2: Number of Participants With Maximum Post-Baseline Grade by Category in Hematology and Coagulation Parameters",
+   "Part 1: Change From Baseline in Complement C3 and Complement C4 Level at Indicated Time Points",
+   "Part 2: Change From Baseline in Complement C3 and Complement C4 Level at Indicated Time Points",
+   "Part 1: Change From Baseline in Complement Bb Level at Indicated Time Points",
+   "Part 2: Change From Baseline in Complement Bb Level at Indicated Time Points",
+   "Part 1: Change From Baseline in Complement C5a Level at Indicated Time Points",
+   "Part 2: Change From Baseline in Complement C5a Level at Indicated Time Points",
+   "Part 1: Number of Participants With Maximum Post-Baseline Grade by Category in Clinical Chemistry Parameters",
+   "Part 2: Number of Participants With Maximum Post-Baseline Grade by Category in Clinical Chemistry Parameters",
+   "Part 1: Change From Baseline in Urine Albumin at Indicated Time Points",
+   "Part 2: Change From Baseline in Urine Albumin at Indicated Time Points",
+   "Part 1: Change From Baseline in Urine Creatinine at Indicated Time Points",
+   "Part 2: Change From Baseline in Urine Creatinine at Indicated Time Points",
+   "Part 1: Change From Baseline in Urine Potential of Hydrogen (pH) at Indicated Time Points",
+   "Part 2: Change From Baseline in Urine pH at Indicated Time Points",
+   "Part 1: Change From Baseline in Urine Specific Gravity at Indicated Time Points",
+   "Part 2: Change From Baseline in Urine Specific Gravity at Indicated Time Points",
+   "Part 1: Change From Baseline in Urobilinogen at Indicated Time Points",
+   "Part 2: Change From Baseline in Urobilinogen at Indicated Time Points",
+   "Part 1: Number of Participants With Abnormal Electrocardiogram (ECG) Findings",
+   "Part 2: Number of Participants With Abnormal ECG Findings",
+   "Part 1: Number of Participants With Adverse Events (AEs) and Serious Adverse Events (SAEs)",
+   "Part 2: Number of Participants With AEs and SAEs",
+   "Part 1: Area Under the Concentration-time Curve From Time Zero (Pre-dose) to the Time of the Last Quantifiable Concentration (AUC[0-t]) for GSK3389404",
+   "Part 2: AUC (0-t) for GSK3389404",
+   "Part 1: Area Under the Plasma Concentration-time Curve From Time Zero (Pre-dose) Extrapolated to Infinite Time (AUC[0-infinity]) for GSK3389404",
+   "Part 2: AUC (0-infinity) for GSK3389404",
+   "Part 1: Maximum Observed Plasma Concentration (Cmax) of GSK3389404",
+   "Part 2: Cmax of GSK3389404",
+   "Part 1: Time to Achieve Cmax (Tmax) of GSK3389404",
+   "Part 2: Tmax of GSK3389404",
+   "Part 1: Apparent Terminal Phase Half-life(t1&#x2F;2) of GSK3389404",
+   "Part 2: t1&#x2F;2 of GSK3389404",
+   "Part 1: Apparent Subcutaneous Plasma Clearance (CL&#x2F;F) of GSK3389404",
+   "Part 2: CL&#x2F;F of GSK3389404",
+   "Part 1: Number of Participants Achieving Response Rate (RR) Based on Reduction of Hepatitis B Surface Antigen (HBsAg) Level From Baseline",
+   "Part 2: Number of Participants Achieving RR Based on Reduction of HBsAg Level From Baseline"
+  ],
+  "days_after_pc": 592,
+  "detail": "48 -> 65 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT03020745",
+  "retrospective": true,
+  "version": 25
+ },
+ {
+  "after": [
+   "Percentage of Incidence Rates of Serious Adverse Events (SAEs), Adverse Events (AEs), Immune-mediated AEs, AEs Leading to Discontinuation, and Deaths",
+   "Composite of Vital Signs and Electrocardiogram (ECG)",
+   "Peak Nivolumab Serum Concentration (Cmax)",
+   "Trough Nivolumab Serum Concentration (Cmin)",
+   "Average Nivolumab Serum Concentration (Cavg)",
+   "Time of Maximum Observed Concentration (Tmax)",
+   "Area Under the Serum Concentration-time Curve From Time Zero to Time of Last Quantifiable Concentration [AUC(0-T)]",
+   "Total Clearance (CLT)",
+   "Volume of Distribution (Vd)",
+   "Half-life (T1&#x2F;2)"
+  ],
+  "before": [
+   "Composite of incidence rates of serious adverse events (SAEs), adverse events (AEs), immune-mediated AEs, AEs leading to discontinuation, and deaths",
+   "Composite of vital signs, electrocardiogram (ECG), and clinical laboratory abnormalities",
+   "Peak nivolumab serum concentration (Cmax)",
+   "Trough nivolumab serum concentration (Cmin)",
+   "Average nivolumab serum concentration (Cavg)",
+   "Time of maximum observed concentration (Tmax)",
+   "Area under the serum concentration-time curve from time zero to time of last quantifiable concentration [AUC(0-T)]",
+   "Total clearance (CLT)",
+   "Volume of distribution (Vd)",
+   "Half-life (T1&#x2F;2)"
+  ],
+  "days_after_pc": 365,
+  "detail": "min token jaccard 0.00",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02960854",
+  "retrospective": true,
+  "version": 27
+ },
+ {
+  "after": [
+   "Mean Global Dystonia Rating Scale Score as Measured by Blinded Rater"
+  ],
+  "before": [
+   "Change in Global Dystonia Rating Scale Score"
+  ],
+  "days_after_pc": 253,
+  "detail": "min token jaccard 0.38",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT01921270",
+  "retrospective": true,
+  "version": 11
+ },
+ {
+  "after": [
+   "Area Under the Concentration-time Curve (AUC\u03c4) of Infliximab at Steady State (Part 1)",
+   "Change From Baseline of Disease Activity Score Using 28 Joint Counts (DAS28) (CRP) at Week 22 (Part 2)"
+  ],
+  "before": [
+   "To demonstrate that CT-P13 SC is noninferior to CT-P13 IV at Week 22, in terms of efficacy, as determined by clinical response according to change from baseline in disease activity measured by Disease Activity Score using 28 joint counts"
+  ],
+  "days_after_pc": 676,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT03147248",
+  "retrospective": true,
+  "version": 4
+ },
+ {
+  "after": [
+   "SF-36, subscale Physical functioning.",
+   "Illness Management Questionnaire (IMQ)."
+  ],
+  "before": [
+   "SF-36, subscale Physical functioning.",
+   "Illness Management Questionnaire (IMQ)."
+  ],
+  "days_after_pc": -1451,
+  "detail": "february june and december 2012 and june 2013 -> t0 baseline t1 after 4 months t2 after 10 months t3 after 16",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT01765725",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Compare the delta in E&#x2F;e&#x27; at rest exercise measured with echocardiography between the elamipretide and placebo groups"
+  ],
+  "before": [
+   "Compare the delta in E&#x2F;e&#x27; at rest and during sub maximal exercise measured with echocardiography between the elamipretide and placebo groups"
+  ],
+  "days_after_pc": -31,
+  "detail": "min token jaccard 0.84",
+  "has_results": false,
+  "label": "REWORDED",
+  "nct": "NCT02814097",
+  "retrospective": false,
+  "version": 3
+ },
+ {
+  "after": [
+   "Mean Change in the Total Improvement Score (TIS) From Start to End of Zetomipzomib (KZR-616) Treatment Period"
+  ],
+  "before": [
+   "Primary Outcome Measure"
+  ],
+  "days_after_pc": 617,
+  "detail": "min token jaccard 0.00",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT04033926",
+  "retrospective": true,
+  "version": 14
+ },
+ {
+  "after": [
+   "2D Radiographic Healing at 12 Months Follow up (Overall Cases)",
+   "3D Radiographic Healing at 12 Months Follow up (Overall Cases)",
+   "2D Radiographic Healing at 12 Months Follow up (Asymptomatic Cases Only)",
+   "3D Radiographic Healing at 12 Months Follow up (Asymptomatic Cases Only)"
+  ],
+  "before": [
+   "Success&#x2F;Failure"
+  ],
+  "days_after_pc": 117,
+  "detail": "1 -> 4 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT04514991",
+  "retrospective": true,
+  "version": 5
+ },
+ {
+  "after": [
+   "Change in Liver Fat",
+   "Change in Enhanced Liver Fibrosis Score (ELF)",
+   "Change in NAFLD Fibrosis Score",
+   "Change in Bifidobacterium Spp."
+  ],
+  "before": [
+   "Change in biomarkers for NAFLD and change in liver fat",
+   "Change in biomarkers for NAFLD and change in liver fat",
+   "Change in biomarkers for NAFLD and change in liver fat"
+  ],
+  "days_after_pc": 719,
+  "detail": "3 -> 4 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT01680640",
+  "retrospective": true,
+  "version": 11
+ },
+ {
+  "after": [
+   "Evaluate the Safety Profile of Pioglitazone in Patients With Severe Sepsis and Septic Shock as the Number of Hypoglycemic Events",
+   "Safety Labs - Blood Urea Nitrogen (BUN)",
+   "Safety Labs - Creatinine",
+   "Safety Labs - Alanine Aminotransferase (ALT)",
+   "Pioglitazone Area Under Curve Estimates by Treatment Group and Route of Administration"
+  ],
+  "before": [
+   "Evaluate the pharmacokinetic and safety profile of pioglitazone in patients with severe sepsis and septic shock"
+  ],
+  "days_after_pc": 1540,
+  "detail": "1 -> 5 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT01352182",
+  "retrospective": true,
+  "version": 8
+ },
+ {
+  "after": [
+   "Rate of COVID-19 infection"
+  ],
+  "before": [
+   "Rate of COVID-19 infection in healthcare professionals"
+  ],
+  "days_after_pc": -571,
+  "detail": "min token jaccard 0.62",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT04590365",
+  "retrospective": false,
+  "version": 2
+ },
+ {
+  "after": [
+   "Phase 1: Dose Limiting Toxicities (DLT) Following Intravesical Administration of ABI-009",
+   "Phase 2: Number of Participants Achieving a Complete Response Following Intravesical Administration of ABI-009 and Gemcitabine"
+  ],
+  "before": [
+   "Number of Participants with Adverse Events as a Measure of Safety and Tolerability"
+  ],
+  "days_after_pc": 528,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT02009332",
+  "retrospective": true,
+  "version": 8
+ },
+ {
+  "after": [
+   "Viral load suppression",
+   "Patient Health Questionnaire 9 (PHQ-9) response"
+  ],
+  "before": [
+   "Viral load suppression (reduction in HIV RNA copies measured by PCR)",
+   "Reduced depressive symptoms (measured by Patient Health Questionnaire 9 (PHQ-9) score)"
+  ],
+  "days_after_pc": -357,
+  "detail": "min token jaccard 0.27",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02407691",
+  "retrospective": false,
+  "version": 3
+ },
+ {
+  "after": [
+   "Change in Minimal Fibrous Cap Thickness (FCT)",
+   "Number of Participants With FCT &lt;65 \u00b5m",
+   "Number of Participants With Increased Fibrous Cap",
+   "Change in maxNIRS4mm",
+   "Number of Participants With Decreased maxLCBI4mm"
+  ],
+  "before": [
+   "Change in Minimal Fibrous Cap Thickness (FCT)",
+   "Number of Participants With FCT &lt;65 \u00b5m",
+   "Number of Participants With Increased Fibrous Cap",
+   "Change in maxNIRS4mm",
+   "Number of Participants With Decreased maxLCBI4mm"
+  ],
+  "days_after_pc": 160,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT04710368",
+  "retrospective": true,
+  "version": 6
+ },
+ {
+  "after": [
+   "Change in Cutaneous Lupus Disease Area and Severity Index (CLASI) Activity Score"
+  ],
+  "before": [
+   "CLASI activity score"
+  ],
+  "days_after_pc": 328,
+  "detail": "min token jaccard 0.25",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT01776190",
+  "retrospective": true,
+  "version": 10
+ },
+ {
+  "after": [
+   "Overall Survival (OS) From Time of Randomization"
+  ],
+  "before": [
+   "survival"
+  ],
+  "days_after_pc": 888,
+  "detail": "min token jaccard 0.14",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT01887717",
+  "retrospective": true,
+  "version": 19
+ },
+ {
+  "after": [
+   "Percentage of Participants With Target Lesion Failure (TLF) and Constituent Elements"
+  ],
+  "before": [
+   "Target Lesion Failure (TLF)"
+  ],
+  "days_after_pc": 621,
+  "detail": "min token jaccard 0.36",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03168776",
+  "retrospective": true,
+  "version": 40
+ },
+ {
+  "after": [
+   "Incidence of Treatment Emergent Adverse Events (TEAE)"
+  ],
+  "before": [
+   "Incidence, severity and relationship to trial drug of treatment-emergent adverse events and serious adverse events during each treatment and the trial overall"
+  ],
+  "days_after_pc": 1338,
+  "detail": "min token jaccard 0.33",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03004248",
+  "retrospective": true,
+  "version": 6
+ },
+ {
+  "after": [
+   "Statistical equivalence of %FMD determined by AngioDefender vs brachial artery ultrasound imaging (BAUI)"
+  ],
+  "before": [
+   "Statistical equivalence of %FMD determined by AngioDefender vs brachial artery ultrasound imaging (BAUI)"
+  ],
+  "days_after_pc": -189,
+  "detail": "2 days -> 1 day",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT02468336",
+  "retrospective": false,
+  "version": 6
+ },
+ {
+  "after": [
+   "Linkage to HIV Care (Indicated by a HIV-related Laboratory Blood Test Within 8 Months)"
+  ],
+  "before": [
+   "Attendance to a second laboratory blood test within 8 months"
+  ],
+  "days_after_pc": 945,
+  "detail": "min token jaccard 0.50",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02756949",
+  "retrospective": true,
+  "version": 1
+ },
+ {
+  "after": [
+   "Maximum Tolerated Dose (MTD)",
+   "Number of Participants Who Experienced Dose-Limiting Toxicities (DLTs)"
+  ],
+  "before": [
+   "Maximum tolerated dose (MTD)"
+  ],
+  "days_after_pc": 2267,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT01360606",
+  "retrospective": true,
+  "version": 14
+ },
+ {
+  "after": [
+   "Score of quality of the surgical procedure"
+  ],
+  "before": [
+   "Quality of the surgical procedure"
+  ],
+  "days_after_pc": -564,
+  "detail": "min token jaccard 0.83",
+  "has_results": false,
+  "label": "REWORDED",
+  "nct": "NCT01579864",
+  "retrospective": false,
+  "version": 2
+ },
+ {
+  "after": [
+   "Mean score using the Commitment to Living: Primary Care Observational Rating form"
+  ],
+  "before": [
+   "Mean score using the Commitment to Living: Primary Care Observational Rating form"
+  ],
+  "days_after_pc": -148,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT02996344",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Scoliosis Research Society-22 questionnaire"
+  ],
+  "before": [
+   "Scoliosis Research Society-22 questionnaire"
+  ],
+  "days_after_pc": 181,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT05392504",
+  "retrospective": true,
+  "version": 3
+ },
+ {
+  "after": [
+   "occurrence of surgical site infections"
+  ],
+  "before": [
+   "occurrence of wound infection"
+  ],
+  "days_after_pc": -1314,
+  "detail": "min token jaccard 0.29",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT01220700",
+  "retrospective": false,
+  "version": 2
+ },
+ {
+  "after": [
+   "Incidence of solicited adverse events after vaccination",
+   "Incidence of unsolicited adverse events of any severity 28 days after vaccination",
+   "Incidence of serious adverse events or new chronic medical conditions through the last study visit",
+   "Mean change from baseline in safety laboratory measures"
+  ],
+  "before": [
+   "Incidence of solicited adverse events after vaccination",
+   "Incidence of unsolicited adverse events of any severity 28 days after vaccination",
+   "Incidence of serious adverse events or new chronic medical conditions through the last study visit",
+   "Mean change from baseline in safety laboratory measures"
+  ],
+  "days_after_pc": 226,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT02354404",
+  "retrospective": true,
+  "version": 5
+ },
+ {
+  "after": [
+   "Percentage of Randomized Participants With a Complete Response"
+  ],
+  "before": [
+   "Percentage of randomized participants with a complete response"
+  ],
+  "days_after_pc": 825,
+  "detail": "identical after normalisation",
+  "has_results": true,
+  "label": "COSMETIC",
+  "nct": "NCT02697734",
+  "retrospective": true,
+  "version": 44
+ },
+ {
+  "after": [
+   "Eczema Area Severity Index (EASI)"
+  ],
+  "before": [
+   "Clinical Grading of Efficacy Parameters"
+  ],
+  "days_after_pc": -85,
+  "detail": "min token jaccard 0.00",
+  "has_results": false,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03719742",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Percent Change From Baseline in IL-6 Stimulated Intracellular p-STAT3 at Week 12"
+  ],
+  "before": [
+   "Immune Responses to IL-6"
+  ],
+  "days_after_pc": 568,
+  "detail": "min token jaccard 0.12",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02641522",
+  "retrospective": true,
+  "version": 5
+ },
+ {
+  "after": [
+   "Prognosis in arterial hypertension"
+  ],
+  "before": [
+   "Prognosis in arterial hypertension"
+  ],
+  "days_after_pc": 422,
+  "detail": "on year after inclusion in the study -> one year after inclusion in the study",
+  "has_results": false,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT04802369",
+  "retrospective": true,
+  "version": 2
+ },
+ {
+  "after": [
+   "Overall Response Rate (ORR) by Independent Review Committee (IRC) Assessment"
+  ],
+  "before": [
+   "Overall Response Rate (ORR) by Independent Review Committee"
+  ],
+  "days_after_pc": 394,
+  "detail": "min token jaccard 0.80",
+  "has_results": true,
+  "label": "REWORDED",
+  "nct": "NCT03846427",
+  "retrospective": true,
+  "version": 25
+ },
+ {
+  "after": [
+   "GI symptom severity"
+  ],
+  "before": [
+   "GI symptom severity"
+  ],
+  "days_after_pc": -498,
+  "detail": "byte-identical primary outcome set",
+  "has_results": false,
+  "label": "IDENTICAL",
+  "nct": "NCT04639141",
+  "retrospective": false,
+  "version": 1
+ },
+ {
+  "after": [
+   "Galectin-3",
+   "ST2",
+   "NGAL",
+   "KIM-1",
+   "L-FABP",
+   "IL-18",
+   "Alpha GST",
+   "Troponin I",
+   "Pi GST",
+   "NAG",
+   "Cystatin-C",
+   "BNP",
+   "ACR"
+  ],
+  "before": [
+   "Myocardial injury summary score (MISS)",
+   "Kidney Injury Summary Score (KISS)",
+   "Cardiac fibrosis",
+   "Left ventricular strain"
+  ],
+  "days_after_pc": 1210,
+  "detail": "4 -> 13 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT02251431",
+  "retrospective": true,
+  "version": 11
+ },
+ {
+  "after": [
+   "Engagement",
+   "Retention",
+   "Number of Participants Rating the Intervention &#x27;Acceptable"
+  ],
+  "before": [
+   "Engagement",
+   "Retention",
+   "Acceptability"
+  ],
+  "days_after_pc": 393,
+  "detail": "min token jaccard 0.00",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02656680",
+  "retrospective": true,
+  "version": 14
+ },
+ {
+  "after": [
+   "Risk of Solitary Elective Volume Recurrence Following Elective Volume Reduction Using INRT"
+  ],
+  "before": [
+   "To determine the risk of solitary elective volume recurrence following elective volume reduction using INRT."
+  ],
+  "days_after_pc": 1172,
+  "detail": "min token jaccard 0.77",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT03953976",
+  "retrospective": true,
+  "version": 15
+ },
+ {
+  "after": [
+   "Mean Pulmonary Arterial Pressure Change From Baseline"
+  ],
+  "before": [
+   "Mean pulmonary arterial pressure change from baseline"
+  ],
+  "days_after_pc": 872,
+  "detail": "identical after normalisation",
+  "has_results": true,
+  "label": "COSMETIC",
+  "nct": "NCT02290613",
+  "retrospective": true,
+  "version": 3
+ },
+ {
+  "after": [
+   "Change in Inflammatory Lesion Count From Baseline to Week 12",
+   "Percentage of Participants Who Achieved 2 Grade IGA Reduction."
+  ],
+  "before": [
+   "Efficacy Absolute change in inflammatory lesion count",
+   "Efficacy IGA: 2 grade reduction",
+   "Safety Adverse events"
+  ],
+  "days_after_pc": 1852,
+  "detail": "3 -> 2 primary outcomes",
+  "has_results": true,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT02547441",
+  "retrospective": true,
+  "version": 17
+ },
+ {
+  "after": [
+   "Measurement of medroxyprogesterone acetate and estradiol cypionate plasma levels",
+   "Measurement of estradiol cypionate plasma levels"
+  ],
+  "before": [
+   "Measurement of medroxyprogesterone acetate and estradiol cypionate plasma levels"
+  ],
+  "days_after_pc": 326,
+  "detail": "1 -> 2 primary outcomes",
+  "has_results": false,
+  "label": "COUNT_CHANGED",
+  "nct": "NCT03443089",
+  "retrospective": true,
+  "version": 1
+ },
+ {
+  "after": [
+   "Change in Baseline Aerobic Capacity After 3 Months of FES-row Training."
+  ],
+  "before": [
+   "Change in Baseline Aerobic Capacity After 3 Months of FES-row Training."
+  ],
+  "days_after_pc": 388,
+  "detail": "byte-identical primary outcome set",
+  "has_results": true,
+  "label": "IDENTICAL",
+  "nct": "NCT02865343",
+  "retrospective": true,
+  "version": 7
+ },
+ {
+  "after": [
+   "MCP-Mod Estimates of the Ratio to Baseline of Urine Protein to Creatinine Ratio (UPCR) (g&#x2F;Mol) - Parts 1 and 2 at Day 90"
+  ],
+  "before": [
+   "MCP-Mod Estimates of the Ratio to Baseline of Urine Protein to Creatinine Ratio (UPCR) (g&#x2F;Mol) - Parts 1 and 2 at Day 90"
+  ],
+  "days_after_pc": 576,
+  "detail": "baseline days 30 and 90 -> baseline and day 90",
+  "has_results": true,
+  "label": "TIMEFRAME_ONLY",
+  "nct": "NCT03373461",
+  "retrospective": true,
+  "version": 27
+ },
+ {
+  "after": [
+   "Count of Participants Who Experienced Adverse Events",
+   "Dose Limiting Toxicity (DLT) Rates",
+   "Highest Treatment Dose Administered on Study",
+   "Maximum JCAR014 Cmax by Flow Cytometry",
+   "Area Under the Curve (AUC) of JCAR014 by Flow Cytometry",
+   "Maximum JCAR014 Cmax in Blood by Quantitative Polymerase Chain Reaction (qPCR) Analysis",
+   "AUC of JCAR014 Cells by qPCR Analysis",
+   "Time to Loss of JCAR014 Detection in Blood by qPCR Analysis"
+  ],
+  "before": [
+   "Count of participants who experienced adverse events",
+   "Dose limiting toxicity (DLT) rates",
+   "Maximum tolerated dose (MTD)",
+   "Maximum JCAR014 Cmax by flow cytometry",
+   "Area under the curve (AUC) of JCAR014 by flow cytometry",
+   "Maximum JCAR014 Cmax in blood by quantitative polymerase chain reaction (qPCR) analysis",
+   "AUC of JCAR014 cells by qPCR analysis",
+   "Time to loss of JCAR014 detection in blood by qPCR analysis"
+  ],
+  "days_after_pc": 430,
+  "detail": "min token jaccard 0.00",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT02706405",
+  "retrospective": true,
+  "version": 19
+ },
+ {
+  "after": [
+   "Number of Wounds by Healing Category Per Investigator Visual Assessment",
+   "Percentage Surface Area of Wound Healing"
+  ],
+  "before": [
+   "Percentage surface area of wound healing",
+   "Investigator&#x27;s assessment of graft"
+  ],
+  "days_after_pc": 467,
+  "detail": "min token jaccard 0.25",
+  "has_results": true,
+  "label": "SUBSTANTIVE",
+  "nct": "NCT01263379",
+  "retrospective": true,
+  "version": 18
+ }
+]

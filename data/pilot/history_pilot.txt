@@ -1,0 +1,72 @@
+ENDPOINT FEASIBILITY PILOT
+sampled 2026-08-30 12:15Z
+frame filter: AREA[StudyType]INTERVENTIONAL AND AREA[PrimaryCompletionDate]RANGE[2015-01-01,2022-12-31] / COMPLETED|TERMINATED
+
+frame size (API totalCount): 126,760
+
+drawing sample (every 25th record, target 400)
+  scanned 1000, kept 40
+  scanned 2000, kept 80
+  scanned 3000, kept 120
+  scanned 4000, kept 160
+  scanned 5000, kept 200
+  scanned 6000, kept 240
+  scanned 7000, kept 280
+  scanned 8000, kept 320
+  scanned 9000, kept 360
+  scanned 10000, kept 400
+sample: 400 trials drawn from 10000 scanned
+
+fetching version history, one request per trial
+  50/400  (50 ok, 0 failed)
+  100/400  (100 ok, 0 failed)
+  150/400  (150 ok, 0 failed)
+  200/400  (200 ok, 0 failed)
+  250/400  (250 ok, 0 failed)
+  300/400  (300 ok, 0 failed)
+  350/400  (350 ok, 0 failed)
+  400/400  (400 ok, 0 failed)
+  history fetched: 400 ok, 0 failed
+
+1. VERSION HISTORY
+   trials with >1 submitted version     358 / 400   89.5%
+   median versions per trial            5.0
+   max versions seen                    297
+
+2. PRIMARY OUTCOME CHANGES  (the signal the project depends on)
+   primary outcome changed after registration    161 / 400   40.2%
+   ...of those, datable against completion        161
+   ...changed AFTER primary completion            122 / 161   75.8%
+   retrospective changes as share of all trials 30.5%
+   median days after completion                565.0
+   max days after completion                    2346
+
+3. RESULTS REPORTING
+   results posted                       106 / 400   26.5%
+   NO results posted                    294 / 400   73.5%
+   of those posted, later than 365d       90 / 106   84.9%
+   median days completion->posting    583.5
+   enrolled participants in trials with no posted results: 76,384
+
+4. CRAWL COST  (history endpoint, measured)
+   requests issued                      400
+   mean response                       29.1 KB
+   mean latency                        0.80 s
+   refusals (any 4xx/5xx)                 0
+   projected for frame of 126,760:
+     raw download                        3.5 GB
+     wall clock at 2 req/s              17.6 h
+     wall clock at 8 req/s (8 shards)    4.4 h
+
+5. DATE PRECISION
+   primary completion given to month only     99 / 400   24.8%   (read as month end)
+
+WORKED EXAMPLES  (largest retrospective gaps in the sample)
+   NCT02462187  completed 2016-10     outcome changed 2023-04-04  +2346d  results=yes
+   NCT01360606  completed 2018-07-25  outcome changed 2024-10-08  +2267d  results=yes
+   NCT02100631  completed 2015-02     outcome changed 2021-04-05  +2228d  results=yes
+   NCT03785366  completed 2019-12-30  outcome changed 2025-08-01  +2041d  results=yes
+   NCT00478361  completed 2015-06     outcome changed 2020-09-17  +1906d  results=yes
+   NCT02547441  completed 2017-07-05  outcome changed 2022-07-31  +1852d  results=yes
+   NCT02473276  completed 2020-01     outcome changed 2025-01-14  +1810d  results=yes
+   NCT02206035  completed 2018-09     outcome changed 2023-02-10  +1594d  results=yes

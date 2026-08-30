@@ -1,0 +1,42 @@
+# M1. The measurement that blocks the frame freeze.
+#
+# The archive endpoints gate on a TLS client fingerprint (FEASIBILITY.md 1.1).
+# The development machine is Windows and its curl links Schannel; these runners
+# are Linux and link OpenSSL. Whether they are served or refused is not implied
+# by the local result, and the entire sharded collection plan depends on it.
+#
+# Runs on both ubuntu and windows so the fingerprint hypothesis is tested rather
+# than assumed: if ubuntu is refused and windows is served on the same commit,
+# the cause is the TLS stack and not the project's code.
+#
+# Deliberately NOT scheduled. This is a one-shot measurement whose result gets
+# committed to data/pilot/ and cited by PREREGISTRATION.md; a cron job would turn
+# a recorded fact into a flapping status badge.
+name: runner-probe
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    strategy:
+      fail-fast: false          # a refusal on one OS must not hide the other's result
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Probe archive access
+        run: python scripts/runner_probe.py
+
+      - name: Upload result
+        if: always()            # a failing probe is the result worth keeping
+        uses: actions/upload-artifact@v4
+        with:
+          name: runner-probe-${{ matrix.os }}
+          path: data/pilot/runner_probe.txt
