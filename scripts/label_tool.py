@@ -55,14 +55,27 @@ def load_pairs(batch):
     return out
 
 
-def load_labels():
-    """nct -> most recent label row. Append-only file; last row wins."""
+def load_labels(labeller=None):
+    """nct -> most recent label row, optionally only this labeller's.
+
+    SCOPING THIS TO ONE LABELLER IS THE WHOLE POINT, and the first version got it
+    wrong. It skipped any pair that carried ANY label, which meant a second
+    labeller could never label a pair the first had already done -- so the
+    overlap subset that GOLDSET_PROTOCOL.md 5 needs for Cohen's kappa could not
+    be produced at all, and a machine reference pass silently locked the human
+    out of the entire sample.
+
+    Independent judgements are the product here. Two labellers seeing the same
+    pair is not duplicated work; it is the measurement.
+    """
     out = {}
     if os.path.exists(LABELS):
         with open(LABELS, encoding='utf-8') as fh:
             for line in fh:
                 if line.strip():
                     r = json.loads(line)
+                    if labeller is not None and r.get('labeller') != labeller:
+                        continue
                     out[r['nct']] = r
     return out
 
@@ -130,13 +143,19 @@ def main():
 
     sample = load_sample()
     pairs = load_pairs(args.versions_batch)
-    done = load_labels()
+    done = load_labels(args.labeller)
     todo = [r for r in sample if args.relabel or r['nct'] not in done]
     if args.limit:
         todo = todo[:args.limit]
 
+    others = {n: r for n, r in load_labels().items()
+              if r.get('labeller') != args.labeller and n not in done}
     print('GOLD-SET LABELLING   labeller: %s' % args.labeller)
-    print('sample %d, already labelled %d, to do %d' % (len(sample), len(done), len(todo)))
+    print('sample %d, labelled BY YOU %d, to do %d' % (len(sample), len(done), len(todo)))
+    if others:
+        print('%d pairs carry a label from someone else. You are not shown it --'
+              % len(others))
+        print('an independent judgement is the product, so they are yours to label too.')
     print('')
     print('Read GOLDSET_PROTOCOL.md 2 and 3 before starting. The question is NOT')
     print('"did the text change" -- it is:')
@@ -207,7 +226,8 @@ def main():
         if out[0] is not None:
             out[0].close()
 
-    print('\ndone. %d labelled this session, %d total.' % (n, len(load_labels())))
+    print('\ndone. %d labelled this session, %d total by you.'
+          % (n, len(load_labels(args.labeller))))
     return 0
 
 
