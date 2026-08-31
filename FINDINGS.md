@@ -10,6 +10,88 @@ amendment** and stays proposed until it is argued and numbered under §11.
 
 ---
 
+## F8 — The machine label pass agrees with the human at chance (kappa = 0.000)
+
+**31 August 2026 · `data/gold/labels.ndjson` · blocking for Tier 2**
+
+All 419 sampled pairs were labelled by an LLM as a **reference pass**, explicitly
+not as a gold set (`GOLDSET_PROTOCOL.md` §0). Ten of them also carry a human
+label. On those ten:
+
+| | |
+|---|---|
+| Binary agreement (substantive / not) | **5 / 10 = 50.0%** |
+| Exact label match | 4 / 10 = 40.0% |
+| **Cohen's κ** | **0.000** |
+
+κ = 0 is agreement at exactly the rate chance predicts. **n = 10 is far too small
+to estimate κ**, and the confidence interval on it spans nearly the whole range —
+so this is not evidence that the machine pass is worthless. It is, however,
+entirely absent of evidence that it is any good, which is the same thing for a
+figure that would otherwise be published.
+
+### The disagreements are systematic, which is more informative than the κ
+
+| Trial | Human | Machine |
+|---|---|---|
+| `NCT00669877` | `REFINED` | `DIFFERENT` |
+| `NCT00715273` | `REFINED` | `DIFFERENT` |
+| `NCT00942890` | `REFINED` | `DIFFERENT` |
+| `NCT00816062` | `REFINED` | `SAME` |
+
+Four of the six disagreements are the human choosing **`REFINED`** where the
+machine chose something substantive, and all four are the same shape: a **vague
+earlier outcome replaced by a specific later one** — *"lower extremity muscle
+strength and mobility"* becoming six named measures, or *"changes in carotid
+plaque composition"* becoming two named volumetric endpoints.
+
+`GOLDSET_PROTOCOL.md` §2 already names this as "the hard boundary and the reason
+a domain labeller matters". It is not merely hard — **the codebook does not
+adjudicate it at all.** Rule 3 covers adding a *threshold*; nothing covers
+replacing a vague endpoint with a specific one, which is one of the most common
+shapes in the data.
+
+**This is a defect in the instrument, not in either labeller.** Two careful
+readers applying the written rules can reach opposite verdicts on the same pair,
+which means the rules are underdetermined.
+
+### What the machine pass says about F6, and why it cannot be believed yet
+
+Using the machine labels, weighted to the frame:
+
+| | Substantive share |
+|---|---|
+| Changes **within 31 days** of results posting | **35.8%** |
+| Changes **not** posting-coincident | **39.1%** |
+
+If that held, it would substantially **defuse F6**: posting-coincident changes
+would be barely less substantive than any other kind, so the results-form
+restatement would not be quietly inflating the headline after all.
+
+**It cannot be believed on this basis.** The labels producing it agree with the
+only human check at chance. A number that would weaken the project's most serious
+caveat is precisely the number to distrust when its source is unvalidated — and
+it is exactly the direction an LLM asked to judge its own kind of output would be
+expected to err.
+
+### Consequences
+
+1. **Tier 2 remains blocked.** `PREREGISTRATION.md` §5.3 requires ≥300 hand
+   labels; there are 10.
+2. **The F6 answer above is not published on the site** and does not modify the
+   19.9% headline or its caveat.
+3. **The codebook needs a rule for vague → specific**, argued and written down
+   *before* more labelling, and recorded in §6a like the others.
+4. **The spot check needs to reach 60**, per `GOLDSET_PROTOCOL.md` §5, before κ
+   means anything at all.
+
+Tier 1 vs the machine pass, for completeness and with the same caveat: positive
+agreement **56.9%**, sensitivity **84.2%** (frame-weighted). Tier 1 flags
+substantially more than the machine pass calls substantive — consistent in
+direction with `FEASIBILITY.md` §4, and equally unvalidated.
+
+---
+
 ## F7 — The codebook had two gaps, and labelling found both in its first minutes
 
 **31 August 2026 · [`GOLDSET_PROTOCOL.md`](GOLDSET_PROTOCOL.md) §3, §6a ·
