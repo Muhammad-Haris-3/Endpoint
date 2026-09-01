@@ -10,7 +10,81 @@ amendment** and stays proposed until it is argued and numbered under §11.
 
 ---
 
+## F9 — kappa 0.402 on 59 pairs: the codebook, not the labellers
+
+**31 August 2026 · `data/gold/labels.ndjson` · supersedes F8's kappa · triggers
+`GOLDSET_PROTOCOL.md` §5**
+
+The spot check reached the 60 pairs §5 asks for. F8's κ = 0.000 was an artefact
+of n = 10 and is superseded.
+
+| | n=10 (F8) | **n=59** |
+|---|---|---|
+| Binary agreement | 50.0% | **72.9%** |
+| Exact label match | 40.0% | **52.5%** |
+| **Cohen's κ** | 0.000 | **0.402** |
+
+κ = 0.402 is fair-to-moderate. **It is below the 0.6 floor `GOLDSET_PROTOCOL.md`
+§5 sets**, and §5 is explicit about what that means: *the codebook is the problem,
+not the labellers.* That clause now fires on its own terms.
+
+### The aggregate agrees while the cases do not
+
+| | Substantive share |
+|---|---|
+| Human (n=60) | **28.3%** |
+| Machine (n=419) | **31.0%** |
+
+Within three points. **That is not reassurance.** Two labellers can disagree on
+half the individual pairs and still land on the same total, because the errors run
+in both directions and cancel. Endpoint publishes a per-trial explorer where every
+figure drills through to a specific trial, so **per-case accuracy is the product,
+not the aggregate.** A site that is right on average and wrong on the row you
+happen to open is not right.
+
+### Where the disagreements actually are
+
+Of 28 disagreements, only **16 cross the substantive boundary** — the rest are
+`SAME` vs `REFINED` or `DIFFERENT` vs `SET_CHANGED`, which land on the same side
+and cannot move any figure.
+
+Of those 16, **seven are one shape**: the human chose `REFINED` where the machine
+chose `DIFFERENT`, on a vague endpoint replaced by a specific one, or a changed
+timeframe.
+
+| Trial | Human | Machine |
+|---|---|---|
+| `NCT00669877`, `NCT00715273`, `NCT00942890` | `REFINED` | `DIFFERENT` |
+| `NCT01573507`, `NCT01591746`, `NCT01610414`, `NCT01930682` | `REFINED` | `DIFFERENT` |
+
+**That is precisely the gap the drafted Rule 8 addresses**, and it was drafted
+before these labels existed. Nearly half the consequential disagreement is one
+undefined boundary.
+
+A second, harmless pattern: the human labelled `REFINED` where the machine
+labelled `SAME` eight times, often on pure capitalisation. Both are
+non-substantive, so no figure moves — but it says the `SAME`/`REFINED` line is
+also underspecified, and a labeller reading the codebook cannot tell which to use.
+
+### What happens next, per §5
+
+1. **Commit Rules 8–10** (vague→specific, inverse framing, component dropped from
+   a stated combination), logged in §6a with the label count at the time.
+2. **Redo the 60-pair overlap** under the revised codebook. The tool appends, so
+   both judgements stay in the record and the revision's effect is measurable
+   rather than asserted.
+3. **Recompute κ.** If it clears 0.6, labelling continues toward the 300 §5.3
+   requires. If not, the codebook is still wrong and more labelling is waste.
+
+**No figure changes on the basis of this run**, and the machine pass remains a
+reference pass, not a gold set.
+
+---
+
 ## F8 — The machine label pass agrees with the human at chance (kappa = 0.000)
+
+> **Superseded by F9.** This entry's κ was computed on n = 10. At n = 59 the
+> figure is 0.402. The systematic pattern it identified stands; the κ does not.
 
 **31 August 2026 · `data/gold/labels.ndjson` · blocking for Tier 2**
 

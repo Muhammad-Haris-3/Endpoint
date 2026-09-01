@@ -207,6 +207,6 @@ have been tuned to one.
 | Protocol written before labelling | ✅ this document |
 | Labelling tool built | ✅ `scripts/label_tool.py` |
 | Evaluation harness built | ✅ `scripts/gold_eval.py` |
-| **Pairs labelled** | **419 machine (reference pass), 10 human** |
-| **Human/machine agreement** | **κ = 0.000 on n=10** — see [`FINDINGS.md`](FINDINGS.md) F8 |
+| **Pairs labelled** | **419 machine (reference pass), 60 human** |
+| **Human/machine agreement** | **κ = 0.402 on n=59** — below the §5 floor of 0.6; see [`FINDINGS.md`](FINDINGS.md) F9 |
 | Tier 2 built | ❌ **blocked**: §5.3 needs ≥300 human labels; there are 10 |

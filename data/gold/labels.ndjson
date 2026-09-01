@@ -427,3 +427,53 @@
 {"label":"SAME","labelled_utc":"2026-08-31T00:00:14Z","labeller":"claude-opus-5 (MACHINE)","machine":true,"nct":"NCT05711069","note":"","substantive":false,"unclear":false,"version":1}
 {"label":"SAME","labelled_utc":"2026-08-31T00:00:14Z","labeller":"claude-opus-5 (MACHINE)","machine":true,"nct":"NCT05818527","note":"","substantive":false,"unclear":false,"version":1}
 {"label":"SAME","labelled_utc":"2026-08-31T00:00:14Z","labeller":"claude-opus-5 (MACHINE)","machine":true,"nct":"NCT06156969","note":"","substantive":false,"unclear":false,"version":1}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:38:44Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01027702","note":"","substantive":false,"unclear":false,"version":11}
+{"label":"SET_CHANGED","labelled_utc":"2026-09-01T09:39:37Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01047644","note":"","substantive":true,"unclear":false,"version":1}
+{"label":"DIFFERENT","labelled_utc":"2026-09-01T09:40:39Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01163786","note":"","substantive":true,"unclear":false,"version":14}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:41:03Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01187849","note":"","substantive":false,"unclear":false,"version":7}
+{"label":"DIFFERENT","labelled_utc":"2026-09-01T09:41:19Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01222117","note":"","substantive":true,"unclear":false,"version":10}
+{"label":"DIFFERENT","labelled_utc":"2026-09-01T09:42:33Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01234597","note":"","substantive":true,"unclear":false,"version":9}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:43:09Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01243554","note":"","substantive":false,"unclear":false,"version":3}
+{"label":"DIFFERENT","labelled_utc":"2026-09-01T09:43:41Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01263704","note":"","substantive":true,"unclear":false,"version":78}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:43:56Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01269034","note":"","substantive":false,"unclear":false,"version":15}
+{"label":"DIFFERENT","labelled_utc":"2026-09-01T09:44:17Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01273844","note":"","substantive":true,"unclear":false,"version":5}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:44:48Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01329341","note":"option 1 is correct it's a mistake","substantive":false,"unclear":false,"version":23}
+{"label":"UNCLEAR","labelled_utc":"2026-09-01T09:45:11Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01362608","note":"","substantive":false,"unclear":true,"version":10}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:45:28Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01369199","note":"","substantive":false,"unclear":false,"version":27}
+{"label":"SAME","labelled_utc":"2026-09-01T09:45:55Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01393626","note":"","substantive":false,"unclear":false,"version":39}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:46:16Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01488045","note":"","substantive":false,"unclear":false,"version":4}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:46:44Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01497002","note":"","substantive":false,"unclear":false,"version":2}
+{"label":"SAME","labelled_utc":"2026-09-01T09:46:50Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01522365","note":"","substantive":false,"unclear":false,"version":11}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:47:18Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01555125","note":"","substantive":false,"unclear":false,"version":16}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:47:52Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01573507","note":"","substantive":false,"unclear":false,"version":1}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:48:45Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01591746","note":"","substantive":false,"unclear":false,"version":11}
+{"label":"SAME","labelled_utc":"2026-09-01T09:49:11Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01595529","note":"","substantive":false,"unclear":false,"version":40}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:49:20Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01609361","note":"","substantive":false,"unclear":false,"version":1}
+{"label":"SAME","labelled_utc":"2026-09-01T09:49:50Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01610271","note":"","substantive":false,"unclear":false,"version":5}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:50:18Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01610414","note":"","substantive":false,"unclear":false,"version":151}
+{"label":"SAME","labelled_utc":"2026-09-01T09:50:24Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01626352","note":"","substantive":false,"unclear":false,"version":17}
+{"label":"SAME","labelled_utc":"2026-09-01T09:50:36Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01632020","note":"","substantive":false,"unclear":false,"version":9}
+{"label":"SAME","labelled_utc":"2026-09-01T09:50:57Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01660451","note":"","substantive":false,"unclear":false,"version":115}
+{"label":"SAME","labelled_utc":"2026-09-01T09:51:11Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01661972","note":"","substantive":false,"unclear":false,"version":14}
+{"label":"SAME","labelled_utc":"2026-09-01T09:51:25Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01679522","note":"","substantive":false,"unclear":false,"version":3}
+{"label":"SET_CHANGED","labelled_utc":"2026-09-01T09:52:33Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01699789","note":"","substantive":true,"unclear":false,"version":7}
+{"label":"DIFFERENT","labelled_utc":"2026-09-01T09:52:46Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01715038","note":"","substantive":true,"unclear":false,"version":2}
+{"label":"DIFFERENT","labelled_utc":"2026-09-01T09:53:03Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01749033","note":"","substantive":true,"unclear":false,"version":5}
+{"label":"SAME","labelled_utc":"2026-09-01T09:53:28Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01755871","note":"","substantive":false,"unclear":false,"version":1}
+{"label":"SET_CHANGED","labelled_utc":"2026-09-01T09:54:03Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01765881","note":"","substantive":true,"unclear":false,"version":7}
+{"label":"SAME","labelled_utc":"2026-09-01T09:54:12Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01768923","note":"","substantive":false,"unclear":false,"version":6}
+{"label":"SAME","labelled_utc":"2026-09-01T09:54:26Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01814501","note":"","substantive":false,"unclear":false,"version":9}
+{"label":"SAME","labelled_utc":"2026-09-01T09:54:32Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01818479","note":"","substantive":false,"unclear":false,"version":18}
+{"label":"SAME","labelled_utc":"2026-09-01T09:54:40Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01845636","note":"","substantive":false,"unclear":false,"version":12}
+{"label":"SAME","labelled_utc":"2026-09-01T09:54:48Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01878786","note":"","substantive":false,"unclear":false,"version":10}
+{"label":"SAME","labelled_utc":"2026-09-01T09:54:56Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01881308","note":"","substantive":false,"unclear":false,"version":1}
+{"label":"SAME","labelled_utc":"2026-09-01T09:55:09Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01884077","note":"","substantive":false,"unclear":false,"version":6}
+{"label":"SAME","labelled_utc":"2026-09-01T09:55:16Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01885936","note":"","substantive":false,"unclear":false,"version":10}
+{"label":"SAME","labelled_utc":"2026-09-01T09:55:30Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01896869","note":"","substantive":false,"unclear":false,"version":20}
+{"label":"SET_CHANGED","labelled_utc":"2026-09-01T09:55:46Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01911819","note":"","substantive":true,"unclear":false,"version":8}
+{"label":"DIFFERENT","labelled_utc":"2026-09-01T09:55:55Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01917331","note":"","substantive":true,"unclear":false,"version":9}
+{"label":"DIFFERENT","labelled_utc":"2026-09-01T09:56:06Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01919476","note":"","substantive":true,"unclear":false,"version":1}
+{"label":"REFINED","labelled_utc":"2026-09-01T09:57:06Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01930682","note":"","substantive":false,"unclear":false,"version":1}
+{"label":"SAME","labelled_utc":"2026-09-01T09:57:17Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01938118","note":"","substantive":false,"unclear":false,"version":3}
+{"label":"SET_CHANGED","labelled_utc":"2026-09-01T09:57:49Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01939223","note":"","substantive":true,"unclear":false,"version":28}
+{"label":"DIFFERENT","labelled_utc":"2026-09-01T09:58:13Z","labeller":"Muhammad Haris Khokhar","nct":"NCT01939938","note":"","substantive":true,"unclear":false,"version":2}
