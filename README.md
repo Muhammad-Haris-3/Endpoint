@@ -28,6 +28,7 @@ the answer.
 
 | | |
 |---|---|
+| **Read one thing** | [`DECISION_MEMO.md`](DECISION_MEMO.md) — two pages, no statistics required: what was found, and why the number everyone wants is not ready |
 | **See the result** | [The live site](https://muhammad-haris-3.github.io/Endpoint/) — 126,760 trials, every figure drilling through to the trial it came from |
 | **See the judgement** | [`FINDINGS.md`](FINDINGS.md) — ten entries, most of them recording a number this project *refused* to publish and why |
 | **See the discipline** | [`PREREGISTRATION.md`](PREREGISTRATION.md) — the analysis rules, hashed and sealed before the data was collected |

@@ -1,7 +1,7 @@
 # Endpoint — Software Requirements Specification v1.0
 
-**Status:** 1 September 2026. **M0–M4, M6 and M7 complete; M5 at 60 of 300
-labels; M8 not started.** The frame is frozen at 126,760 trials, both crawls
+**Status:** 1 September 2026. **M0–M4 and M6–M8 complete; M5 at 60 of 300
+labels.** The frame is frozen at 126,760 trials, both crawls
 landed with zero failures, and the site is deployed.
 
 **§13 records every deviation between this specification and the code as built.**
@@ -10,9 +10,8 @@ a durability claim this document made before the sizes were measured.
 **Author:** Muhammad Haris Khokhar
 **Companion documents:** [`FEASIBILITY.md`](FEASIBILITY.md) (what was measured
 before any of this was designed), [`PREREGISTRATION.md`](PREREGISTRATION.md)
-(authoritative for every analysis rule). `DECISION_MEMO.md` — the finding, for a
-reader who will not open anything else — is M8 and does not exist yet, because
-there is no finding yet.
+(authoritative for every analysis rule), [`DECISION_MEMO.md`](DECISION_MEMO.md)
+(the finding, for a reader who will not open anything else).
 
 Where this document and `PREREGISTRATION.md` disagree about the analysis, the
 pre-registration wins. It is committed first and can only be amended by a
@@ -533,6 +532,6 @@ machine with Python 3.13 and nothing else.
 | **M5** | Gold set + Tier 2 | ◐ Apparatus complete: 419 pairs drawn and hashed, codebook and blind labelling tool built. **0 labelled — blocked on a human labeller** (`GOLDSET_PROTOCOL.md` §0) |
 | **M6** | Warehouse + materialisation | ◐ Partial. `materialise.py` writes every artefact; outcome sections materialise as `available:false` until M4 lands |
 | **M7** | Web | UI-1 … UI-8 |
-| **M8** | Decision memo | `DECISION_MEMO.md`, two pages, no statistics required |
+| **M8** | Decision memo | ✅ Done. [`DECISION_MEMO.md`](DECISION_MEMO.md) — two pages, no statistics required |
 
 M3 cannot start before M2, and M2 cannot start before M1.
