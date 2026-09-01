@@ -1,10 +1,12 @@
 # Endpoint — Software Requirements Specification v1.0
 
-**Status:** 30 August 2026. M0–M3 complete. The frame is frozen at 126,760 trials
-and the full version-history crawl has landed with zero failures. M4 (version
-fetches plus Tier 1 adjudication) is the next step and is what makes primary
-figure 1 computable. §5.2.1 corrects a durability claim this document made before
-the sizes were measured.
+**Status:** 1 September 2026. **M0–M4, M6 and M7 complete; M5 at 60 of 300
+labels; M8 not started.** The frame is frozen at 126,760 trials, both crawls
+landed with zero failures, and the site is deployed.
+
+**§13 records every deviation between this specification and the code as built.**
+Read it before trusting any technology named above it. §5.2.1 separately corrects
+a durability claim this document made before the sizes were measured.
 **Author:** Muhammad Haris Khokhar
 **Companion documents:** [`FEASIBILITY.md`](FEASIBILITY.md) (what was measured
 before any of this was designed), [`PREREGISTRATION.md`](PREREGISTRATION.md)
@@ -169,13 +171,14 @@ site loses a column, not a claim.
 ## 5. Architecture
 
 ```
-  ingest          register            warehouse           serve            web
-  ------          --------            ---------           -----            ---
-  frame build  →  cold store      →   normalise       →   materialise  →   static
-  history      →  (content-       →   adjudicate      →   Parquet /    →   Next.js
-  versions     →   addressed,     →   link            →   JSON on      →   (no live
-                   hashed,            aggregate           object           queries)
-                   immutable)                             storage
+  ingest          register             warehouse          serve           web
+  ------          --------             ---------          -----           ---
+  build_frame  →  frame/ (frozen,  →   adjudicate_    →  materialise  →  static HTML
+  collect_        hashed)              frame.py          .py             + CSS + JS
+   history     →  data/register/   →   reporting_     →  data/serve/  →  (no build
+  collect_         *.ndjson.gz         figures.py        *.json          step, no
+   versions    →  data/cold/ (not      (pure, offline)   (118 MB)        live queries)
+                   committed)
 ```
 
 Each stage writes only forward. No stage mutates the stage before it, and the
@@ -286,10 +289,16 @@ count is not published.
 
 ### 5.6 Serving
 
-The frontend issues **no live queries**. A nightly job materialises Parquet and
-JSON to object storage; the web tier reads static files. This is a cost
-decision and a correctness one: a static artefact is versionable and a query
-result is not.
+The frontend issues **no live queries**. `scripts/materialise.py` writes static
+JSON; the web tier reads files. This is a cost decision and a correctness one: a
+static artefact is versionable and a query result is not.
+
+**As built:** `data/serve/` (118 MB of JSON, not committed — regenerated at
+deploy), published to GitHub Pages by `.github/workflows/deploy.yml`, which
+rebuilds from the committed register on every push that touches the inputs and
+**fails the build if primary figure 1 would ship without its §F6 stratification**.
+
+Live at **https://muhammad-haris-3.github.io/Endpoint/**
 
 ---
 
@@ -463,6 +472,51 @@ unescapes twice, deliberately.
 6. Whether `TIMEFRAME_ONLY` counts as switching. It sometimes is. Decide before
    seeing the rate, not after.
 7. The Tier 2 gold-set protocol and who labels it.
+
+---
+
+## 13. Deviations from this specification, as built
+
+This document was written before the code. Where the two now differ, **the code
+is right and this section records why** — a specification describing software
+that does not exist is the failure this project is otherwise built to avoid.
+
+### 13.1 Technology substitutions
+
+| Specified | Built | Reason |
+|---|---|---|
+| Dagster orchestration | Plain Python scripts driven by GitHub Actions | Eight sequential steps. Dagster earns its complexity across dozens of interdependent assets, not eight run in order. Revisit if the pipeline grows a real DAG |
+| Postgres (entities) + DuckDB (analytics) | gzipped NDJSON committed to git | The project's central claim is the **integrity of a record**. A public commit history is evidence a stranger can check; a database grant is an assurance only its owner can inspect. Same reasoning as `PREREGISTRATION.md` §9 |
+| Parquet serving layer | JSON | At 118 MB, Parquet would require DuckDB-WASM in the browser to read, for no gain. JSON is directly inspectable, which suits a site whose claim is that every figure is traceable |
+| Next.js RSC, D3, deck.gl, TanStack Virtual | Vanilla HTML, CSS and one JS file per concern | No build step means no toolchain to break between now and whenever anyone next touches it, and it made the page verifiable in a real browser during development. Charts are hand-rolled SVG; four small charts did not justify a charting dependency |
+| Attrition **Sankey** | Horizontal attrition funnel | Same four stages, simpler mark. A Sankey needs branching flows; this data is a straight drain |
+
+**Cost of the substitutions:** the repository has **zero third-party
+dependencies** — no `package.json`, no `requirements.txt`, Python standard
+library only, plus `curl` for the transport (§9.3). Every script runs on a clean
+machine with Python 3.13 and nothing else.
+
+### 13.2 Not built
+
+| Component | Status |
+|---|---|
+| **Layer 3 — trial↔publication linkage** (§5.5) | **Not started.** PubMed, Europe PMC, OpenAlex and Crossref are unused. This is the largest capability gap against §4.2, and it is what would let the project ask whether the *paper* reported the registered outcome — not just whether the registry did |
+| **Layer 2 Tier 2** — embeddings + LLM adjudication (§5.4) | **Blocked by design.** `PREREGISTRATION.md` §5.3 forbids it entering any figure without ≥300 human labels; there are 60 |
+| **Cross-registry** — EU CTR/CTIS, ISRCTN, WHO ICTRP | Not started. `FEASIBILITY.md` §8 already scoped these out: none had its access checked |
+| **AACT bulk cross-check** | Not used. The API v2 frame build made it unnecessary for §5.1 |
+| **UI-4 lifecycle swimlane**, per-trial permalink pages | Not built. Per-trial data is reachable through the explorer and the diff viewer, but there is no URL per trial — a real gap against §7 UI-6 |
+
+### 13.3 Process deviations
+
+- **§12 staged an oncology slice first.** The whole frame was run instead,
+  because the measured crawl cost (28.3 KB mean, zero refusals) made the full
+  126,760 cheaper than the staging plan assumed. It worked, but it was a
+  deviation and the risk was real: a failure at frame scale would have cost the
+  whole crawl rather than a slice of it.
+- **UI-1 was retargeted.** §7 specified the participant count as the landing
+  figure; `FINDINGS.md` F5 measured that figure as ranging 4.8M–58.7M by
+  estimator, so the hero is the robust 72.2% instead. Recorded in
+  `Endpoint_M7_Summary.md` §5.
 
 ---
 
