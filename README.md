@@ -1,5 +1,7 @@
 # Endpoint
 
+### ▸ [**muhammad-haris-3.github.io/Endpoint**](https://muhammad-haris-3.github.io/Endpoint/) — the live findings
+
 **Every clinical trial writes down what it will measure before it enrols anyone.
 ClinicalTrials.gov keeps every edit to that promise, dated, in public. Nobody has
 checked the whole registry for edits that landed after the data was already in.**
@@ -20,6 +22,27 @@ the answer.
 > the registry's own change *flag*; primary figure 1 requires reading the outcome
 > text at both versions, which is M4 and has not run. On the pilot, 37.7% of that
 > flag did not survive reading the text.
+
+---
+
+## If you have five minutes
+
+| | |
+|---|---|
+| **See the result** | [The live site](https://muhammad-haris-3.github.io/Endpoint/) — 126,760 trials, every figure drilling through to the trial it came from |
+| **See the judgement** | [`FINDINGS.md`](FINDINGS.md) — ten entries, most of them recording a number this project *refused* to publish and why |
+| **See the discipline** | [`PREREGISTRATION.md`](PREREGISTRATION.md) — the analysis rules, hashed and sealed before the data was collected |
+| **See the engineering** | [`scripts/collect_history.py`](scripts/collect_history.py) — sharded, resumable, refuses to run against a frame that does not match its manifest |
+
+**The short version of what this project found.** 72.2% of completed trials never
+posted results. 19.9% rewrote the outcome they promised to measure after they
+could already see the answer — and the most important thing here is that
+[`FINDINGS.md`](FINDINGS.md) F6 explains, at length, why that second number
+cannot be read the way it wants to be read.
+
+Four separate times a headline figure turned out to be substantially an artefact,
+and each time the project recorded the artefact instead of shipping the number.
+That record is the deliverable.
 
 ---
 
