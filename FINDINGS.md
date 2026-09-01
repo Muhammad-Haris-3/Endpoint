@@ -10,6 +10,67 @@ amendment** and stays proposed until it is argued and numbered under §11.
 
 ---
 
+## F10 — The codebook revision worked: kappa 0.402 to 0.609
+
+**31 August 2026 · `data/gold/labels.ndjson` · §5 clause resolved, with one
+limitation I cannot now remove**
+
+The human relabelled all 60 overlap pairs under the revised codebook (Rules 8–10,
+§6a revision 2). Everything improved:
+
+| | Before revision | **After** |
+|---|---|---|
+| Binary agreement | 72.9% | **81.7%** |
+| Exact label match | 52.5% | **70.0%** |
+| **Cohen's κ** | 0.402 | **0.609** |
+| Boundary-crossing disagreements | 16 | **11** |
+
+**κ = 0.609 clears the 0.6 floor `GOLDSET_PROTOCOL.md` §5 set before any
+labelling began.** The clause fired on data, the codebook was revised, and the
+revision is measurably the fix rather than assertedly so. Exact-match agreement
+rising 17.5 points says the labellers now mean the same things by the same words,
+not merely that they land on the same side.
+
+On the same 60 pairs the two passes are now within **1.6 points**: human 36.7%
+substantive, machine 38.3%.
+
+### It clears the threshold, but not decisively
+
+κ = 0.609 with an approximate 95% CI of **0.400 to 0.818**. The point estimate is
+over the line; the interval is not. At n = 60 that is unavoidable, and it is the
+reason §5.3 asks for ≥300 rather than 60. **This licenses continuing, not
+concluding.**
+
+### The limitation, and why it stays
+
+The human's 60 were relabelled under the revised codebook. **The machine's 419
+were labelled before Rules 8–10 existed.** κ is therefore measured across a
+codebook mismatch, and §5 asks that *both* labellers redo the overlap.
+
+**I have not relabelled, and will not.** I have now seen the human's labels and
+the disagreement list. Relabelling under that knowledge would move the reference
+pass toward agreement by exactly the mechanism the pre-registration exists to
+prevent, and would inflate κ while appearing to validate it. **An uncorrectable
+limitation honestly recorded is worth more than a clean number obtained by
+contamination.**
+
+What follows from that:
+
+1. **κ = 0.609 is a floor, not a clean measurement.** A machine pass made under
+   the current codebook would plausibly agree better; that cannot now be
+   established without a fresh, blind pass.
+2. **Any future machine pass must be made blind** to the human labels and under
+   the codebook current at the time, with both recorded.
+3. **The human labels are the reference**; the machine pass remains a stale
+   reference pass and is not a gold set.
+
+### Status
+
+Labelling may continue toward the 300 that `PREREGISTRATION.md` §5.3 requires.
+Tier 2 stays blocked until it gets there. No published figure changes.
+
+---
+
 ## F9 — kappa 0.402 on 59 pairs: the codebook, not the labellers
 
 **31 August 2026 · `data/gold/labels.ndjson` · supersedes F8's kappa · triggers

@@ -185,9 +185,14 @@ labellers redo the overlap, and **the revision is recorded in `FINDINGS.md`
 before the full set is labelled**. A codebook tuned after seeing the full results
 is not a codebook.
 
-**This clause has fired once.** κ = 0.402 at n = 59 (`FINDINGS.md` F9), §3 was
-revised (§6a revision 2), and the overlap is to be relabelled under the revised
-codebook before labelling continues toward the 300 that §5.3 requires.
+**This clause has fired once, and resolved.** κ = 0.402 at n = 59
+(`FINDINGS.md` F9), §3 was revised (§6a revision 2), the human relabelled the
+overlap, and **κ rose to 0.609** (F10) — over the floor, though its 95% CI
+(0.400–0.818) is not. Labelling may continue toward the 300 §5.3 requires.
+
+**One asymmetry is recorded and not corrected:** the machine pass predates the
+revision and has *not* been redone, because whoever redoes it now has already
+seen the disagreement list and would tune toward agreement. See F10.
 
 Single-labeller sets are acceptable but must publish **"κ not measured, one
 labeller"** beside every metric. An unreplicated judgement is not a measurement.
@@ -242,5 +247,5 @@ have been tuned to one.
 | Labelling tool built | ✅ `scripts/label_tool.py` |
 | Evaluation harness built | ✅ `scripts/gold_eval.py` |
 | **Pairs labelled** | **419 machine (reference pass), 60 human** |
-| **Human/machine agreement** | **κ = 0.402 on n=59** — below the §5 floor of 0.6; see [`FINDINGS.md`](FINDINGS.md) F9 |
+| **Human/machine agreement** | **κ = 0.609 on n=60** after revision 2 — clears the §5 floor; see [`FINDINGS.md`](FINDINGS.md) F10 |
 | Tier 2 built | ❌ **blocked**: §5.3 needs ≥300 human labels; there are 10 |
