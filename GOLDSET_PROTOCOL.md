@@ -120,8 +120,37 @@ results form reorders outcomes routinely. If the same measures appear in both
 versions with only their positions changed, that is `SAME`; judge only whether a
 measure was added, dropped, or altered.
 
-**Rule 8 — when genuinely torn, label `UNCLEAR`.** A forced guess is worse than a
-recorded uncertainty: `UNCLEAR` is reported as a count and excluded from the
+**Rule 8 — vague to specific: ask what freedom the earlier wording left.**
+When the earlier version names a *domain* and the later names a *specific measure
+within it*, the question is not how much the wording changed. It is whether
+**some other measure would also have satisfied the earlier wording**.
+
+- **`DIFFERENT`** if it would. *"Lower extremity muscle strength and mobility"* →
+  *"Stair climb time"* is a **selection**: many measures fit the original, and
+  which one was chosen can decide the result. A choice made after the data exists
+  is exactly the freedom this project measures.
+- **`REFINED`** if it would not. *"HbA1c"* → *"HbA1c (%) at Week 26"* names the
+  only reading; nothing was chosen.
+
+The same test settles a changed `timeFrame`: if the earlier text left the
+timepoint open and the later one picks one, that is a selection.
+
+**Rule 9 — inverse and complementary framing is `SAME`.** Reporting the same
+events from the opposite side changes nothing. *"Aneurysm-related mortality"* →
+*"Freedom from aneurysm-related mortality"*; *"failure rate"* → *"success rate"*.
+One subtracted from the whole is not a different measurement.
+
+**Rule 10 — pulling a component out of a stated combination is `DIFFERENT`.**
+If the earlier version names two or more things joined together and the later
+keeps only some, the bar moved. *"Complete remission + disease-free survival"* →
+*"Complete remission rate"* removes a criterion the trial had to meet.
+
+This is the mirror of Rule 4: **combining separate endpoints into a composite is
+`DIFFERENT`, and so is decomposing a stated combination.** Both change what
+counts as success.
+
+**Rule 11 — when genuinely torn, label `UNCLEAR`.** A forced guess is worse than
+a recorded uncertainty: `UNCLEAR` is reported as a count and excluded from the
 metrics, so it costs coverage rather than corrupting accuracy.
 
 ---
@@ -156,6 +185,10 @@ labellers redo the overlap, and **the revision is recorded in `FINDINGS.md`
 before the full set is labelled**. A codebook tuned after seeing the full results
 is not a codebook.
 
+**This clause has fired once.** κ = 0.402 at n = 59 (`FINDINGS.md` F9), §3 was
+revised (§6a revision 2), and the overlap is to be relabelled under the revised
+codebook before labelling continues toward the 300 that §5.3 requires.
+
 Single-labeller sets are acceptable but must publish **"κ not measured, one
 labeller"** beside every metric. An unreplicated judgement is not a measurement.
 
@@ -186,6 +219,7 @@ therefore recorded here with what had been labelled when they were made.
 | # | Date | Change | Labels existing at the time |
 |---|---|---|---|
 | 1 | 31 Aug 2026 | **Rule 7 added** (order is not meaning) and **Rule 4 corrected** (merging is `SAME` only if the parts are still judged separately; a *composite* is `DIFFERENT`). Both gaps surfaced on first contact with real pairs — the very first pair drawn is a reorder, and a worked example was a two-endpoint→composite merge that Rule 4 as written would have waved through. | **3** (`NCT00329706`, `NCT00475982`, `NCT00508794`) |
+| 2 | 31 Aug 2026 | **Rules 8, 9 and 10 added**; the `UNCLEAR` catch-all renumbered 8 → 11. Rule 8 (vague→specific) is the substantive one: seven of the sixteen boundary-crossing disagreements in the κ = 0.402 spot check are that single shape ([`FINDINGS.md`](FINDINGS.md) F9). Rules 9 and 10 cover inverse framing and decomposing a stated combination, both of which also appeared in the overlap. **Rule 8 was drafted before the 50 labels that demonstrated the need existed** — the labels confirmed a gap already identified, they did not suggest the fix. | **60 human, 419 machine** |
 
 **On revision 1 and those three labels.** None contradicts the new rules.
 `NCT00329706` is a reorder already labelled `SAME`, which is what Rule 8 now
