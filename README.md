@@ -96,8 +96,9 @@ defensible-sounding number and a beautiful chart. The full measurement is in
 
 ## What survives
 
-**19.0% of sampled trials made a defensible change to their primary outcome
-after primary completion.** The clearest cases are not subtle:
+**19.9% of the frame — 25,187 of 126,760 trials — made a defensible change to
+their primary outcome after primary completion.** The clearest cases are not
+subtle:
 
 | Trial | After completion | Change |
 |---|---|---|
